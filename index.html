@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jigmo Webfonts — CJK rare character webfont CDN</title>
+  <link rel="stylesheet" href="jigmo.css">
+  <style>
+    :root {
+      --bg: #faf9f7;
+      --fg: #1a1a1a;
+      --muted: #666;
+      --accent: #b5451b;
+      --border: #e0ddd8;
+      --code-bg: #f0ede8;
+      --max: 780px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.65;
+      padding: 0 1.25rem;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    header, main, footer { max-width: var(--max); margin: 0 auto; }
+
+    header {
+      padding: 3.5rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+
+    header p {
+      margin-top: .5rem;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    main { padding: 2.5rem 0 3rem; }
+
+    section { margin-bottom: 2.75rem; }
+
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      padding-bottom: .35rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p { margin-bottom: .75rem; }
+
+    /* ── Code blocks ── */
+    pre, code {
+      font-family: ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+      font-size: .85rem;
+    }
+
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      overflow-x: auto;
+      margin: .75rem 0 1rem;
+    }
+
+    code { background: var(--code-bg); padding: .1em .35em; border-radius: 3px; }
+
+    /* ── Demo text ── */
+    .jigmo {
+      font-family: 'Jigmo', 'Source Han Serif TC', 'Noto Serif CJK TC',
+                   'STSong', 'SimSun', serif;
+    }
+
+    .demo-block {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: .75rem 0;
+    }
+
+    .demo-label {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin-bottom: .5rem;
+    }
+
+    .demo-chars {
+      font-size: 2rem;
+      line-height: 1.5;
+    }
+
+    .demo-names {
+      font-size: 1.3rem;
+      line-height: 2;
+    }
+
+    .demo-passage {
+      font-size: 1.1rem;
+      line-height: 2;
+    }
+
+    /* ── Coverage table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .875rem;
+      margin: .5rem 0;
+    }
+
+    th, td {
+      text-align: left;
+      padding: .5rem .75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .tag {
+      display: inline-block;
+      font-size: .7rem;
+      padding: .1em .45em;
+      border-radius: 3px;
+      background: #e8f4e8;
+      color: #2a6e2a;
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+      font-size: .825rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Jigmo Webfonts</h1>
+  <p>
+    Chunked woff2 webfonts for CJK rare ideograph display — covering
+    Unicode Extensions A through J (U+3400–U+323AF).
+    Based on <a href="https://kamichikoichi.github.io/jigmo/">Jigmo</a> (CC0).
+  </p>
+</header>
+
+<main>
+
+  <!-- ── Quick start ─────────────────────────────────────────────────── -->
+  <section>
+    <h2>Quick Start</h2>
+
+    <p>Add one stylesheet to your <code>&lt;head&gt;</code>:</p>
+    <pre>&lt;link rel="stylesheet" href="https://your-host/jigmo.css"&gt;</pre>
+
+    <p>
+      Then use <code>Jigmo</code> as a fallback in your font stack.
+      Place it <em>after</em> your primary font so browsers only fetch
+      the chunks they actually need:
+    </p>
+    <pre>body {
+  font-family:
+    'Source Han Serif TC',   /* primary — common CJK */
+    'Jigmo',                 /* fallback — rare ideographs */
+    serif;
+}</pre>
+
+    <p>
+      That is all. Browsers download only the 256-codepoint chunks that
+      contain characters present on each page, typically adding
+      <strong>a few KB per page</strong> for pages with rare characters.
+    </p>
+  </section>
+
+  <!-- ── Demo ────────────────────────────────────────────────────────── -->
+  <section>
+    <h2>Demo</h2>
+
+    <div class="demo-block">
+      <div class="demo-label">CJK Extension B — historical person names (CBDB)</div>
+      <div class="demo-chars jigmo">𪘏 𢘍 𥲅 𣔳 𤎖 𡼖 𢍰 𩕊 𡸕 𤩪 𤥻 𦒎 𤇸</div>
+      <div class="demo-names jigmo">
+        趙克𪘏　趙叔𢘍　趙與𥲅　石𡼖　齊𤇸<br>
+        趙𣔳夫　趙時𤎖　趙師𢍰　陳𩕊文
+      </div>
+    </div>
+
+    <div class="demo-block">
+      <div class="demo-label">CJK Extension A (U+3400–U+4DBF)</div>
+      <div class="demo-chars jigmo">㐅 㐌 㑂 㑞 㒜 㔠 㔶 㙉 㙊 㙋 㙏 㙐 㙑 㙓 㙔 㙖</div>
+    </div>
+
+    <div class="demo-block">
+      <div class="demo-label">CJK Extension G / H (U+30000+) — Jigmo3</div>
+      <div class="demo-chars jigmo">𰀀 𰀁 𰀂 𰀃 𰀄 𰀅 𰀆 𰀇 𰀈 𰀉 𰀊 𰀋 𰀌 𰀍 𰀎 𰀏</div>
+    </div>
+
+    <div class="demo-block">
+      <div class="demo-label">Mixed — regular + rare in context</div>
+      <div class="demo-passage jigmo">
+        宋史載，趙克𪘏官至朝奉郎，趙𣔳夫以文學見稱。<br>
+        石𡼖任提舉，齊𤇸累官至通判。
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How it works ─────────────────────────────────────────────────── -->
+  <section>
+    <h2>How It Works</h2>
+
+    <p>
+      <code>jigmo.css</code> declares hundreds of <code>@font-face</code> rules,
+      each covering a 256-codepoint block:
+    </p>
+
+    <pre>@font-face {
+  font-family: 'Jigmo';
+  font-display: swap;
+  src: url('fonts/jigmo-02a600.woff2') format('woff2');
+  unicode-range: U+2A600-U+2A6FF;  /* Ext-B block ending */
+}</pre>
+
+    <p>
+      The browser reads the <code>unicode-range</code> descriptor and
+      <strong>only downloads a chunk if that page contains a character
+      in that range</strong>. A page with no rare characters downloads
+      zero font bytes. A page with one Ext-B character downloads one
+      chunk (~10–40 KB).
+    </p>
+
+    <p>
+      This is the same technique Google uses to serve Noto CJK at scale.
+    </p>
+  </section>
+
+  <!-- ── Coverage ─────────────────────────────────────────────────────── -->
+  <section>
+    <h2>Coverage</h2>
+
+    <table>
+      <tr><th>Block</th><th>Unicode Range</th><th>Source TTF</th><th>Status</th></tr>
+      <tr>
+        <td>CJK URO + Compatibility</td>
+        <td>U+3000–U+9FFF, U+F900–U+FAFF</td>
+        <td>Jigmo.ttf</td>
+        <td><span class="tag">included</span></td>
+      </tr>
+      <tr>
+        <td>CJK Extension A</td>
+        <td>U+3400–U+4DBF</td>
+        <td>Jigmo.ttf</td>
+        <td><span class="tag">included</span></td>
+      </tr>
+      <tr>
+        <td>CJK Extension B</td>
+        <td>U+20000–U+2A6DF</td>
+        <td>Jigmo2.ttf</td>
+        <td><span class="tag">included</span></td>
+      </tr>
+      <tr>
+        <td>CJK Extension C–F, I</td>
+        <td>U+2A700–U+2EE5F</td>
+        <td>Jigmo2.ttf</td>
+        <td><span class="tag">included</span></td>
+      </tr>
+      <tr>
+        <td>CJK Extension G–J</td>
+        <td>U+30000–U+323AF</td>
+        <td>Jigmo3.ttf</td>
+        <td><span class="tag">included</span></td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td colspan="2">~145,975 characters (Unicode 17.0)</td>
+        <td></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- ── Build ────────────────────────────────────────────────────────── -->
+  <section>
+    <h2>Self-Hosting / Build</h2>
+
+    <p>
+      To host your own instance or regenerate the chunks from an updated
+      Jigmo release:
+    </p>
+
+    <pre># 1. Install Python dependencies
+pip install -r requirements.txt
+
+# 2. Build — downloads Jigmo zip, chunks into woff2, writes jigmo.css
+python build.py
+
+# 3. Deploy the whole directory to any static host
+#    (GitHub Pages, Cloudflare Pages, S3, etc.)
+#    Only index.html, jigmo.css, and fonts/ are needed.</pre>
+
+    <p>
+      To update to a newer Jigmo release, edit <code>JIGMO_URL</code>
+      at the top of <code>build.py</code>, delete <code>src/</code> and
+      <code>fonts/</code>, and re-run.
+    </p>
+
+    <pre># Force rebuild of all chunks from a new Jigmo release
+rm -rf src/ fonts/
+python build.py --force</pre>
+
+    <p>Options:</p>
+    <pre>python build.py --no-dl    # skip download (src/*.ttf already present)
+python build.py --force    # rebuild existing chunk files
+python build.py --jobs 8   # parallel workers (default: CPU count)</pre>
+  </section>
+
+  <!-- ── License ──────────────────────────────────────────────────────── -->
+  <section>
+    <h2>License</h2>
+    <p>
+      Jigmo is released under
+      <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Public Domain</a>
+      by Kamichi Koichi and the GlyphWiki community.
+      The chunking scripts in this repository are also CC0.
+    </p>
+    <p>
+      Source: <a href="https://kamichikoichi.github.io/jigmo/">https://kamichikoichi.github.io/jigmo/</a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    Jigmo Webfonts — static font hosting for CJK ideograph fallback.
+    Built with <a href="https://github.com/fonttools/fonttools">fonttools</a>.
+  </p>
+</footer>
+
+</body>
+</html>
