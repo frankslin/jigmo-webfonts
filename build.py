@@ -323,10 +323,12 @@ def build_all(
             + "\n\n".join(sht_rules) + "\n\n"
         )
     content = header + ss4_css + sht_css + "\n\n".join(all_rules) + "\n"
-    CSS_PATH.write_text(content, encoding="utf-8")
+    css_name = "jigmo.css" if variant == "jigmo" else f"jigmo-{variant}.css"
+    css_path = ROOT / css_name
+    css_path.write_text(content, encoding="utf-8")
     ss4_count = ss4_css.count("@font-face") if ss4_css else 0
     total = len(all_rules) + len(sht_rules) + ss4_count
-    print(f"\nCSS → {CSS_PATH}  ({total} @font-face rules)")
+    print(f"\nCSS → {css_path}  ({total} @font-face rules)")
 
 
 # ── Main ───────────────────────────────────────────────────────────────────────

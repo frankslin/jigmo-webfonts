@@ -90,16 +90,37 @@ function sha1(text) {
   return require("crypto").createHash("sha1").update(text).digest("hex");
 }
 
+function formatDuration(seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) {
+    return "?";
+  }
+  const rounded = Math.round(seconds);
+  const h = Math.floor(rounded / 3600);
+  const m = Math.floor((rounded % 3600) / 60);
+  const s = rounded % 60;
+  if (h) {
+    return `${h}h${String(m).padStart(2, "0")}m${String(s).padStart(2, "0")}s`;
+  }
+  if (m) {
+    return `${m}m${String(s).padStart(2, "0")}s`;
+  }
+  return `${s}s`;
+}
+
 function main() {
   const args = parseArgs(process.argv.slice(2));
+  console.log(`Loading kage-engine from ${args.engineDir}`);
   loadEngine(args.engineDir);
+  console.log(`Loading KAGE data from ${args.data}`);
   const kage = loadKageData(args.data);
   const targets = fs.readFileSync(args.targets, "utf8").split(/\n/).filter(Boolean);
+  console.log(`Rendering ${targets.length} SVG target(s) into ${args.outDir}`);
   const checkRows = [];
   let checked = 0;
   let written = 0;
   let skipped = 0;
   let failures = 0;
+  const startedAt = Date.now();
 
   for (let i = 0; i < targets.length; i += 1) {
     const name = targets[i];
@@ -139,13 +160,25 @@ function main() {
 
     const done = i + 1;
     if (done % 1000 === 0 || done === targets.length) {
-      console.log(`  [${String(done).padStart(6)}/${targets.length}] written=${written} skipped=${skipped} checked=${checked} failures=${failures}`);
+      const elapsed = (Date.now() - startedAt) / 1000;
+      const rate = done / Math.max(elapsed, 0.001);
+      const remaining = (targets.length - done) / Math.max(rate, 0.001);
+      console.log(
+        `  [${String(done).padStart(6)}/${targets.length}] `
+        + `written=${written} skipped=${skipped} checked=${checked} failures=${failures} `
+        + `rate=${rate.toFixed(1)}/s eta=${formatDuration(remaining)}`
+      );
     }
   }
 
   if (args.checkReport) {
     fs.writeFileSync(args.checkReport, `name\tstatus\trendered_sha1\texisting_sha1\n${checkRows.join("\n")}${checkRows.length ? "\n" : ""}`);
   }
+  const elapsed = (Date.now() - startedAt) / 1000;
+  console.log(
+    `Done rendering SVGs: targets=${targets.length} written=${written} skipped=${skipped} `
+    + `checked=${checked} failures=${failures} elapsed=${formatDuration(elapsed)}`
+  );
   if (failures) {
     process.exitCode = 1;
   }

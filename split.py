@@ -40,15 +40,16 @@ def build(clean: bool):
     total_mb = sum(f.stat().st_size for f in fonts_out.glob("*.woff2")) / 1024 / 1024
     print(f"dist/jigmo/fonts  {len(woff2_files)} files  {total_mb:.1f} MB")
 
-    # Copy CSS (URLs are already relative — no rewriting needed)
-    css_src = ROOT / "jigmo.css"
-    if not css_src.exists():
-        print("jigmo.css not found — run build.py first")
+    # Copy CSS files (URLs are already relative — no rewriting needed)
+    css_files = sorted(ROOT.glob("jigmo*.css"))
+    if not css_files:
+        print("No jigmo*.css found — run build.py first")
         return
-    shutil.copy2(css_src, DIST / "jigmo.css")
-    n_rules = css_src.read_text(encoding="utf-8").count("@font-face")
-    size_kb = css_src.stat().st_size // 1024
-    print(f"dist/jigmo/jigmo.css  ({n_rules} @font-face rules, {size_kb} KB)")
+    for css_src in css_files:
+        shutil.copy2(css_src, DIST / css_src.name)
+        n_rules = css_src.read_text(encoding="utf-8").count("@font-face")
+        size_kb = css_src.stat().st_size // 1024
+        print(f"dist/jigmo/{css_src.name}  ({n_rules} @font-face rules, {size_kb} KB)")
 
     # Copy landing page
     html_src = ROOT / "index.html"

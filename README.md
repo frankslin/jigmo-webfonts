@@ -129,7 +129,7 @@ python build_jigmo_variants.py --prepare-only
 ```
 
 生成過程會在 `src/glyphwiki/variant-glyph-map.tsv` 記錄每個 Unicode codepoint 實際替換用的 GlyphWiki glyph name；未列入的 codepoint 保留原始 Jigmo glyph。
-本地 KAGE 生成會讀取 dump 的 KAGE data 並寫入 `src/glyphwiki/glyph/` SVG cache；kage-engine 只作為 build-time tool 使用，不 vendoring 到本 repo。
+本地 KAGE 生成會讀取 dump 的 KAGE data 並寫入 `src/glyphwiki/glyph/` SVG cache；kage-engine 只作為 build-time tool 使用，不 vendoring 到本 repo。注意 KAGE data 會引用 `foo@版本` 形式的歷史部件，因此 renderer cache 會以 `dump_newest_only.txt` 為主，並從 `dump_all_versions.txt` 補齊被引用到的 versioned components。
 
 也可以生成 G/T/J 來源覆蓋查詢表：
 

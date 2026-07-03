@@ -24,6 +24,7 @@ import argparse
 import concurrent.futures
 import io
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -43,6 +44,8 @@ GLYPH_DIR = WORK_DIR / "glyph"
 FONT_DIR = WORK_DIR / "font"
 KAGE_ENGINE_DIR = WORK_DIR / "kage-engine"
 KAGE_DATA_PATH = WORK_DIR / "kage-data.tsv"
+KAGE_DATA_META_PATH = WORK_DIR / "kage-data.tsv.meta"
+KAGE_DATA_CACHE_VERSION = "3"
 KAGE_RENDERER = ROOT / "render_glyphwiki_svgs.js"
 
 GLYPHWIKI_DUMP_URL = "https://glyphwiki.org/dump.tar.gz"
@@ -99,6 +102,12 @@ CJK_RANGES = (
     (0x323B0, 0x3347F),
 )
 
+VERSIONED_REF_RE = re.compile(r":([^:$\s]+@[0-9]+)(?=[:$])")
+
+
+def log(message: str) -> None:
+    print(message, flush=True)
+
 
 @dataclass(frozen=True)
 class Replacement:
@@ -148,7 +157,7 @@ def output_font_name(variant: str, suffix: str) -> str:
 def download(url: str, dest: Path) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
     tmp = dest.with_suffix(dest.suffix + ".tmp")
-    print(f"Downloading {url} -> {dest}")
+    log(f"Downloading {url} -> {dest}")
     req = urllib.request.Request(url, headers=HTTP_HEADERS)
     with urllib.request.urlopen(req, timeout=120) as response, tmp.open("wb") as fp:
         shutil.copyfileobj(response, fp)
@@ -172,7 +181,7 @@ def ensure_dump(dump_path: Path) -> None:
     if legacy_dump.exists():
         dump_path.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(legacy_dump, dump_path)
-        print(f"Copied existing GlyphWiki dump -> {dump_path}")
+        log(f"Copied existing GlyphWiki dump -> {dump_path}")
         return
     download(GLYPHWIKI_DUMP_URL, dump_path)
 
@@ -194,6 +203,7 @@ def load_repertoire(ttf_path: Path) -> set[int]:
 
 
 def load_glyphwiki_names(dump_path: Path) -> set[str]:
+    log(f"Loading GlyphWiki names from {dump_path}")
     names: set[str] = set()
     with tarfile.open(dump_path, "r:gz") as tar:
         fp = tar.extractfile("dump_newest_only.txt")
@@ -206,34 +216,98 @@ def load_glyphwiki_names(dump_path: Path) -> set[str]:
             name = line.split("|", 1)[0].strip()
             if name and name != "name" and not set(name) <= {"-"}:
                 names.add(name)
+    log(f"Loaded {len(names):,} GlyphWiki names")
     return names
 
 
+def parse_dump_line(line: str) -> tuple[str, str] | None:
+    if "|" not in line:
+        return None
+    parts = line.rstrip("\n").split("|", 2)
+    if len(parts) < 3:
+        return None
+    name = parts[0].strip().replace("\\@", "@")
+    data = parts[2].strip()
+    if not name or not data or name == "name" or set(name) <= {"-"}:
+        return None
+    return name, data
+
+
+def versioned_refs(data: str) -> set[str]:
+    return set(VERSIONED_REF_RE.findall(data))
+
+
 def write_kage_data_cache(dump_path: Path) -> Path:
-    if KAGE_DATA_PATH.exists() and KAGE_DATA_PATH.stat().st_mtime >= dump_path.stat().st_mtime:
+    if (
+        KAGE_DATA_PATH.exists()
+        and KAGE_DATA_META_PATH.exists()
+        and KAGE_DATA_META_PATH.read_text(encoding="utf-8").strip() == KAGE_DATA_CACHE_VERSION
+        and KAGE_DATA_PATH.stat().st_mtime >= dump_path.stat().st_mtime
+    ):
         return KAGE_DATA_PATH
 
     KAGE_DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
     tmp = KAGE_DATA_PATH.with_suffix(".tsv.tmp")
-    count = 0
+    newest_count = 0
+    versioned_count = 0
+    pending_versioned: set[str] = set()
+    resolved_versioned: set[str] = set()
     with tarfile.open(dump_path, "r:gz") as tar, tmp.open("w", encoding="utf-8") as out:
+        log("Writing KAGE data cache from dump_newest_only.txt")
         fp = tar.extractfile("dump_newest_only.txt")
         if fp is None:
             raise RuntimeError("dump_newest_only.txt not found in GlyphWiki dump")
         wrapper = io.TextIOWrapper(fp, encoding="utf-8", errors="replace")
         for line in wrapper:
-            if "|" not in line:
+            parsed = parse_dump_line(line)
+            if parsed is None:
                 continue
-            parts = line.rstrip("\n").split("|", 2)
-            if len(parts) < 3:
-                continue
-            name = parts[0].strip()
-            data = parts[2].strip()
-            if name and data and name != "name" and not set(name) <= {"-"}:
+            name, data = parsed
+            out.write(f"{name}\t{data}\n")
+            newest_count += 1
+            pending_versioned.update(versioned_refs(data))
+
+        pass_no = 0
+        unresolved: set[str] = set()
+        while pending_versioned:
+            pass_no += 1
+            wanted = pending_versioned - resolved_versioned
+            if not wanted:
+                break
+            log(f"Resolving versioned KAGE components pass {pass_no}: {len(wanted):,} pending")
+            pending_versioned = set()
+            found_this_pass = 0
+            fp = tar.extractfile("dump_all_versions.txt")
+            if fp is None:
+                raise RuntimeError("dump_all_versions.txt not found in GlyphWiki dump")
+            wrapper = io.TextIOWrapper(fp, encoding="utf-8", errors="replace")
+            for line in wrapper:
+                parsed = parse_dump_line(line)
+                if parsed is None:
+                    continue
+                name, data = parsed
+                if name not in wanted:
+                    continue
                 out.write(f"{name}\t{data}\n")
-                count += 1
+                resolved_versioned.add(name)
+                versioned_count += 1
+                found_this_pass += 1
+                pending_versioned.update(ref for ref in versioned_refs(data) if ref not in resolved_versioned)
+            unresolved = wanted - resolved_versioned
+            log(
+                f"  resolved={found_this_pass:,}; "
+                f"new_pending={len(pending_versioned - resolved_versioned):,}; "
+                f"unresolved={len(unresolved):,}"
+            )
+            if found_this_pass == 0:
+                break
     tmp.replace(KAGE_DATA_PATH)
-    print(f"KAGE data cache -> {KAGE_DATA_PATH} ({count:,} glyphs)")
+    KAGE_DATA_META_PATH.write_text(KAGE_DATA_CACHE_VERSION + "\n", encoding="utf-8")
+    total = newest_count + versioned_count
+    log(
+        f"KAGE data cache -> {KAGE_DATA_PATH} "
+        f"({total:,} glyphs: newest={newest_count:,}, versioned={versioned_count:,}, unresolved={len(unresolved):,})"
+    )
     return KAGE_DATA_PATH
 
 
@@ -252,7 +326,9 @@ def build_replacements(dump_path: Path, variants: set[str]) -> list[Replacement]
     names = load_glyphwiki_names(dump_path)
     replacements: list[Replacement] = []
     for suffix, source_font, predicate in BASE_FONTS:
+        log(f"Scanning {source_font.name}")
         cps = sorted(cp for cp in load_repertoire(source_font) if predicate(cp))
+        log(f"  {source_font.name}: {len(cps):,} candidate codepoints")
         for variant in sorted(variants):
             font_name = output_font_name(variant, suffix)
             priority = VARIANTS[variant]["priority"]
@@ -274,7 +350,7 @@ def build_replacements(dump_path: Path, variants: set[str]) -> list[Replacement]
                     )
                 )
                 font_count += 1
-            print(f"{font_name}: {font_count:,} replacement glyphs")
+            log(f"{font_name}: {font_count:,} replacement glyphs")
     return replacements
 
 
@@ -307,8 +383,8 @@ def write_manifest(replacements: list[Replacement], limit: int | None = None) ->
         for entry in entries:
             key = f"{entry.variant}:{entry.source_kind}"
             counts[key] = counts.get(key, 0) + 1
-    print("Replacement selection:", ", ".join(f"{k}={v:,}" for k, v in sorted(counts.items())))
-    print(f"Map -> {WORK_DIR / 'variant-glyph-map.tsv'}")
+    log("Replacement selection: " + ", ".join(f"{k}={v:,}" for k, v in sorted(counts.items())))
+    log(f"Map -> {WORK_DIR / 'variant-glyph-map.tsv'}")
     return limited_by_font
 
 
@@ -353,7 +429,7 @@ def write_name_list(path: Path, names: list[str]) -> Path:
 def download_svgs(replacements_by_font: dict[str, list[Replacement]], jobs: int, force: bool) -> None:
     names = replacement_svg_names(replacements_by_font)
     targets = names if force else missing_svg_names(names)
-    print(f"SVGs: {len(names):,} unique replacement glyphs; missing={len(targets):,}")
+    log(f"SVGs: {len(names):,} unique replacement glyphs; missing={len(targets):,}")
     if not targets:
         return
 
@@ -370,7 +446,7 @@ def download_svgs(replacements_by_font: dict[str, list[Replacement]], jobs: int,
             if error:
                 failures.append((name, error))
             if done % 1000 == 0 or done == len(targets):
-                print(f"  [{done:6d}/{len(targets)}] downloaded={downloaded:,} failures={len(failures):,}")
+                log(f"  [{done:6d}/{len(targets)}] downloaded={downloaded:,} failures={len(failures):,}")
     if failures:
         report = WORK_DIR / "svg-failures.tsv"
         report.write_text("\n".join(f"{name}\t{error}" for name, error in failures) + "\n", encoding="utf-8")
@@ -408,7 +484,7 @@ def render_svgs_from_kage(
     names = replacement_svg_names(replacements_by_font)
     missing = missing_svg_names(names)
     targets = names if force or cross_check_limit else missing
-    print(f"KAGE SVGs: {len(names):,} unique replacement glyphs; missing={len(missing):,}")
+    log(f"KAGE SVGs: {len(names):,} unique replacement glyphs; missing={len(missing):,}")
     if not targets:
         return
 
@@ -435,14 +511,14 @@ def render_svgs_from_kage(
         cmd.append("--force")
     subprocess.run(cmd, check=True)
     if cross_check_limit:
-        print(f"KAGE cross-check -> {check_report}")
+        log(f"KAGE cross-check -> {check_report}")
 
 
 def check_svg_cache(replacements_by_font: dict[str, list[Replacement]]) -> None:
     names = replacement_svg_names(replacements_by_font)
     missing = missing_svg_names(names)
     if not missing:
-        print(f"SVG cache complete: {len(names):,} replacement glyphs")
+        log(f"SVG cache complete: {len(names):,} replacement glyphs")
         return
 
     sample = ", ".join(missing[:5])
@@ -472,8 +548,10 @@ def write_fontforge_script(font_name: str, replacements: list[Replacement]) -> P
     full_name = f"{family_name} {subfamily_name}"
     source_font = source_font_for_output(font_name)
     lines = [
+        f'Print("{font_name}: opening source font")',
         f'Open("{source_font}")',
         "Reencode(\"UnicodeFull\")",
+        f'Print("{font_name}: importing {len(replacements)} replacement glyphs")',
     ]
     for lang in ("0x409", "0x411"):
         lines.extend(
@@ -486,8 +564,11 @@ def write_fontforge_script(font_name: str, replacements: list[Replacement]) -> P
                 f'SetTTFName({lang},6,"{font_name}")',
             ]
         )
-    for entry in sorted(replacements, key=lambda item: item.codepoint):
+    sorted_replacements = sorted(replacements, key=lambda item: item.codepoint)
+    for index, entry in enumerate(sorted_replacements, start=1):
         svg = glyph_path(entry.source_name)
+        if index == 1 or index % 1000 == 0 or index == len(sorted_replacements):
+            lines.append(f'Print("{font_name}: import {index}/{len(sorted_replacements)}")')
         lines.extend(
             [
                 f"Select({fontforge_select(entry.codepoint)})",
@@ -505,7 +586,9 @@ def write_fontforge_script(font_name: str, replacements: list[Replacement]) -> P
         )
     lines.extend(
         [
+            f'Print("{font_name}: generating TTF")',
             f'Generate("{FONT_DIR / (font_name + ".ttf")}")',
+            f'Print("{font_name}: done")',
             "Quit()",
         ]
     )
@@ -517,19 +600,31 @@ def build_fonts(replacements_by_font: dict[str, list[Replacement]], force: bool)
     fontforge = shutil.which("fontforge")
     if not fontforge:
         raise RuntimeError("fontforge is required to build JigmoSC/JigmoTC fonts")
-    for font_name, replacements in sorted(replacements_by_font.items()):
+    font_items = sorted(replacements_by_font.items())
+    for font_index, (font_name, replacements) in enumerate(font_items, start=1):
         out_path = SRC_DIR / f"{font_name}.ttf"
         if out_path.exists() and not force:
-            print(f"{out_path} exists; use --force to rebuild")
+            log(f"[FontForge {font_index}/{len(font_items)}] skip {out_path}; use --force to rebuild")
             continue
+        started_at = time.monotonic()
         script = write_fontforge_script(font_name, replacements)
-        print(f"Building {font_name}.ttf ({len(replacements):,} replacements)")
+        log(
+            "\n"
+            f"=== FontForge START {font_index}/{len(font_items)}: {font_name}.ttf ===\n"
+            f"replacements: {len(replacements):,}\n"
+            f"script: {script} ({script.stat().st_size / 1024 / 1024:.1f} MB)\n"
+            f"output: {out_path}"
+        )
         subprocess.run([fontforge, "-script", str(script)], check=True)
         built = FONT_DIR / f"{font_name}.ttf"
         if not built.exists():
             raise RuntimeError(f"FontForge did not produce {built}")
         shutil.copy2(built, out_path)
-        print(f"  -> {out_path} ({out_path.stat().st_size / 1024 / 1024:.1f} MB)")
+        elapsed = time.monotonic() - started_at
+        log(
+            f"=== FontForge DONE {font_index}/{len(font_items)}: {font_name}.ttf "
+            f"({out_path.stat().st_size / 1024 / 1024:.1f} MB, {elapsed:.1f}s) ===\n"
+        )
 
 
 def parse_variants(raw: str) -> set[str]:
@@ -576,15 +671,19 @@ def main() -> None:
     args = ap.parse_args()
 
     variants = parse_variants(args.variants)
+    log(f"Build variants: {', '.join(sorted(variants))}; limit={args.limit if args.limit is not None else 'none'}")
     ensure_inputs()
     ensure_dump(args.dump)
 
+    log("Stage: select replacement glyphs")
     replacements = build_replacements(args.dump, variants)
     replacements_by_font = write_manifest(replacements, limit=args.limit)
     if args.prepare_only:
+        log("Done: prepare-only")
         return
 
     if args.render_kage_svg:
+        log("Stage: render missing SVGs from local KAGE data")
         render_svgs_from_kage(
             replacements_by_font,
             args.dump,
@@ -594,13 +693,18 @@ def main() -> None:
             args.kage_cross_check_limit,
         )
     elif args.allow_remote_svg:
+        log("Stage: download missing SVGs from GlyphWiki")
         download_svgs(replacements_by_font, jobs=args.jobs, force=args.force)
     else:
+        log("Stage: verify SVG cache")
         check_svg_cache(replacements_by_font)
     if args.download_only:
+        log("Done: download-only")
         return
 
+    log("Stage: build TTF variants with FontForge")
     build_fonts(replacements_by_font, force=args.force)
+    log("Done")
 
 
 if __name__ == "__main__":

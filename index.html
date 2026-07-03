@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jigmo Webfonts — CJK rare character webfont CDN</title>
   <link rel="stylesheet" href="jigmo.css">
+  <link rel="stylesheet" href="jigmo-tc.css">
+  <link rel="stylesheet" href="jigmo-sc.css">
   <style>
     :root {
       --bg: #faf9f7;
@@ -293,21 +295,28 @@
     <h2>快速上手 <span class="en-sub">Quick Start</span></h2>
 
     <p class="bi">
-      <span class="zh">在 <code>&lt;head&gt;</code> 加入一個樣式表：</span>
-      <span class="en">Add one stylesheet to your <code>&lt;head&gt;</code>:</span>
+      <span class="zh">在 <code>&lt;head&gt;</code> 加入一個樣式表（可依需求選擇原版 Jigmo、繁體 TC 或簡體 SC）：</span>
+      <span class="en">Add one stylesheet to your <code>&lt;head&gt;</code> (choose between original Jigmo, TC, or SC variants):</span>
     </p>
-    <pre>&lt;link rel="stylesheet" href="https://jigmo.digitalhumanities.dev/jigmo.css"&gt;</pre>
+    <pre>&lt;!-- 原版 Jigmo / Original --&gt;
+&lt;link rel="stylesheet" href="https://jigmo.digitalhumanities.dev/jigmo.css"&gt;
+
+&lt;!-- 繁體 TC / Traditional Chinese --&gt;
+&lt;link rel="stylesheet" href="https://jigmo.digitalhumanities.dev/jigmo-tc.css"&gt;
+
+&lt;!-- 簡體 SC / Simplified Chinese --&gt;
+&lt;link rel="stylesheet" href="https://jigmo.digitalhumanities.dev/jigmo-sc.css"&gt;</pre>
 
     <p class="bi">
-      <span class="zh">將 <code>Jigmo</code> 放在 font stack 的末段作為備援——瀏覽器只會下載頁面實際出現字符所在的分片：</span>
-      <span class="en">Use <code>Jigmo</code> as a fallback in your font stack, after your primary font — browsers only fetch the chunks they actually need:</span>
+      <span class="zh">將 <code>Jigmo</code>（或對應變體）放在 font stack 的末段作為備援——瀏覽器只會下載頁面實際出現字符所在的分片：</span>
+      <span class="en">Use <code>Jigmo</code> (or its variant) as a fallback in your font stack, after your primary font — browsers only fetch the chunks they actually need:</span>
     </p>
     <pre>body {
   font-family:
     'Source Serif 4',        /* 拉丁文 / Latin — pairs with Source Han Serif */
     'Source Han Serif TC',   /* 常用漢字 / common CJK */
     'Noto Serif CJK TC',     /* 常用漢字備援 / common CJK fallback */
-    'Jigmo',                 /* 生僻字 / rare ideographs (Ext A–J) */
+    'Jigmo',                 /* 生僻字 / rare (可改用 'Jigmo TC' 或 'Jigmo SC') */
     serif;
 }</pre>
 
@@ -348,11 +357,24 @@
           <span><span class="font-check-name">Noto Serif CJK TC</span><br>
           <span class="font-check-desc">常用漢字備援 / Common CJK fallback</span></span>
         </label>
-        <label class="font-check">
-          <input type="checkbox" class="font-cb" value="Jigmo" checked>
-          <span><span class="font-check-name">Jigmo</span><br>
-          <span class="font-check-desc">生僻字（本服務）/ Rare ideographs</span></span>
-        </label>
+        <div class="font-check-group" style="grid-column: span 2; border-top: 1px dashed var(--border); margin-top: .5rem; padding-top: .5rem;">
+          <label class="font-check" style="display: inline-flex;">
+            <input type="checkbox" id="jigmo-enable" checked>
+            <span><span class="font-check-name">Jigmo Webfont</span><br>
+            <span class="font-check-desc">生僻字（本服務）/ Rare ideographs</span></span>
+          </label>
+          <div id="jigmo-variant-select" style="display: flex; gap: 1rem; margin-top: .5rem; margin-left: 1.25rem; font-size: .8rem;">
+            <label style="cursor: pointer; display: flex; align-items: center; gap: .25rem;">
+              <input type="radio" name="jigmo-variant" value="Jigmo" checked> Original
+            </label>
+            <label style="cursor: pointer; display: flex; align-items: center; gap: .25rem;">
+              <input type="radio" name="jigmo-variant" value="Jigmo TC"> TC (繁體)
+            </label>
+            <label style="cursor: pointer; display: flex; align-items: center; gap: .25rem;">
+              <input type="radio" name="jigmo-variant" value="Jigmo SC"> SC (简体)
+            </label>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -536,22 +558,47 @@ python build.py --jobs 8   # 平行 worker 數（預設：CPU 核心數）/ para
 
   const FALLBACK = "'STSong', 'SimSun', serif";
   const toggle   = document.getElementById('webfonts-on');
+  const jigmoEnable = document.getElementById('jigmo-enable');
+  const variantRadios = () => [...document.querySelectorAll('input[name="jigmo-variant"]')];
   const cbs      = () => [...document.querySelectorAll('.font-cb')];
   const demos    = () => [...document.querySelectorAll('.jigmo, #sandbox-output')];
 
   function applyFonts() {
     const on = toggle.checked;
     cbs().forEach(cb => cb.disabled = !on);
+    jigmoEnable.disabled = !on;
+    variantRadios().forEach(r => r.disabled = !on || !jigmoEnable.checked);
 
-    const family = on
-      ? [...cbs().filter(cb => cb.checked).map(cb => `'${cb.value}'`), FALLBACK].join(', ')
-      : 'serif';
+    if (!on) {
+      demos().forEach(el => el.style.fontFamily = 'serif');
+      return;
+    }
+
+    const familyParts = [];
+    cbs().forEach(cb => {
+      if (cb.checked) {
+        familyParts.push(`'${cb.value}'`);
+      }
+    });
+
+    if (jigmoEnable.checked) {
+      const selectedVariant = document.querySelector('input[name="jigmo-variant"]:checked').value;
+      familyParts.push(`'${selectedVariant}'`);
+    }
+
+    familyParts.push(FALLBACK);
+    const family = familyParts.join(', ');
 
     demos().forEach(el => el.style.fontFamily = family);
   }
 
   toggle.addEventListener('change', applyFonts);
+  jigmoEnable.addEventListener('change', applyFonts);
+  variantRadios().forEach(r => r.addEventListener('change', applyFonts));
   document.querySelectorAll('.font-cb').forEach(cb => cb.addEventListener('change', applyFonts));
+
+  // Initialize UI state
+  applyFonts();
 </script>
 </body>
 </html>
