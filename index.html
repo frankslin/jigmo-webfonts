@@ -160,6 +160,34 @@
       font-size: .825rem;
       color: var(--muted);
     }
+
+    /* ── Sandbox ── */
+    #sandbox-input {
+      font-family: system-ui, sans-serif;
+      font-size: .9rem;
+      width: 100%;
+      padding: .6rem .75rem;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: var(--bg);
+      color: var(--fg);
+      resize: vertical;
+      min-height: 3rem;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    #sandbox-input:focus { border-color: #999; }
+
+    .sandbox-text {
+      font-size: 1.75rem;
+      line-height: 1.7;
+      min-height: 2.5rem;
+      margin-top: .75rem;
+      word-break: break-all;
+      white-space: pre-wrap;
+      color: var(--fg);
+    }
   </style>
 </head>
 <body>
@@ -204,6 +232,12 @@
   <!-- ── Demo ────────────────────────────────────────────────────────── -->
   <section>
     <h2>Demo</h2>
+
+    <div class="demo-block">
+      <div class="demo-label">Try it — type any text</div>
+      <textarea id="sandbox-input" spellcheck="false" placeholder="輸入任意文字，例如：趙克𪘏　石𡼖　㙊"></textarea>
+      <div id="sandbox-output" class="jigmo sandbox-text"></div>
+    </div>
 
     <div class="demo-block">
       <div class="demo-label">CJK Extension B — historical person names (CBDB)</div>
@@ -364,5 +398,10 @@ python build.py --jobs 8   # parallel workers (default: CPU count)</pre>
   </p>
 </footer>
 
+<script>
+  const input = document.getElementById('sandbox-input');
+  const output = document.getElementById('sandbox-output');
+  input.addEventListener('input', () => { output.textContent = input.value; });
+</script>
 </body>
 </html>
