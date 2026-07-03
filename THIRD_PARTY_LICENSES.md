@@ -10,7 +10,7 @@
 - **來源**：<https://kamichikoichi.github.io/jigmo/>
 - **授權**：CC0 1.0 公共領域貢獻宣告（Creative Commons Zero v1.0 Universal）
 
-  作者已放棄所有著作權及相關權利，將本字型貢獻至公共領域。  
+  作者已放棄所有著作權及相關權利，將本字型貢獻至公共領域。本 repo 的切片腳本同樣採用 CC0。  
   在法律允許的範圍內，任何人均可自由複製、修改、散布及再利用，無需取得許可或標示來源。
 
   完整條款：<https://creativecommons.org/publicdomain/zero/1.0/>

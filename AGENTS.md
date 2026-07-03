@@ -73,11 +73,11 @@ Jigmo 字型由 FontForge 製作，包含私有 `FFTM` 表，fontTools 不認識
 
 | 範圍 | 授權 |
 |------|------|
-| 本專案原始碼與網頁（build.py、split.py、index.html 等） | MIT © 2026 Frank Lin |
+| 本專案原始碼與網頁（build.py、split.py、index.html 等） | CC0 1.0（公共領域） |
 | Jigmo 字型（神地康一） | CC0 1.0（公共領域） |
 | Source Serif 4 字型（Adobe） | OFL-1.1 |
 
-詳見 `LICENSE`（MIT）與 `THIRD_PARTY_LICENSES.md`（CC0 / OFL 全文）。
+詳見 `LICENSE`（CC0）與 `THIRD_PARTY_LICENSES.md`（OFL 全文）。
 
 ## 在 CBDB 網站引入
 
