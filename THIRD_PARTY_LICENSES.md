@@ -10,10 +10,41 @@
 - **來源**：<https://kamichikoichi.github.io/jigmo/>
 - **授權**：CC0 1.0 公共領域貢獻宣告（Creative Commons Zero v1.0 Universal）
 
-  作者已放棄所有著作權及相關權利，將本字型貢獻至公共領域。本 repo 的切片腳本同樣採用 CC0。  
+  作者已放棄所有著作權及相關權利，將 Jigmo 字型貢獻至公共領域。
   在法律允許的範圍內，任何人均可自由複製、修改、散布及再利用，無需取得許可或標示來源。
 
   完整條款：<https://creativecommons.org/publicdomain/zero/1.0/>
+
+---
+
+## GlyphWiki data（Jigmo SC/TC 生成用）
+
+- **來源**：<https://glyphwiki.org/>；dump：<https://glyphwiki.org/dump.tar.gz>
+- **用途**：`build_jigmo_variants.py` 讀取 GlyphWiki dump 判定 `uXXXXX-g` / `uXXXXX-t` 的可用性，並下載對應 SVG 替換原始 Jigmo 的局部 glyph，生成 `JigmoSC*.ttf` 與 `JigmoTC*.ttf`。
+- **授權**：GlyphWiki data license
+
+GlyphWiki dump 的授權文字聲明：
+
+```
+These data files are free software.
+Unlimited permission is hereby granted to use, copy, and distribute
+these files, with or without modification, either commercially
+or non-commercially.
+
+THIS DATA IS PROVIDED "AS IS" WITHOUT ANY WARRANTY.
+License of this document is the same as the data files.
+
+Copyright 2009 GlyphWiki Project.
+```
+
+---
+
+## Jigmo build tools（Jigmo SC/TC 參考）
+
+- **作者**：神地康一（Kamichikoichi）
+- **來源**：<https://github.com/kamichikoichi/jigmo>
+- **用途**：`build_jigmo_variants.py` 參照上游 Jigmo 的 FontForge 匯入 SVG、縮放、設定 advance width 與生成 TTF 流程；生成時以原始 Jigmo 字型為基底，只替換選定 glyph。
+- **授權**：MIT（依上游 README 說明）
 
 ---
 

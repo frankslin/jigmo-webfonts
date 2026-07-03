@@ -88,6 +88,44 @@ python build.py --jobs 8   # 指定平行 worker 數（預設：CPU 核心數）
 
 升級 Jigmo 新版本：修改 `build.py` 頂部的 `JIGMO_URL`，刪除 `src/` 與 `fonts/` 後重新執行。
 
+### Jigmo SC / TC 來源優先變體
+
+GlyphWiki 同一 Unicode 字常有不同來源字形，例如 `u21a05-g`、`u21a05-t`、`u21a05-j`。本 repo 可從最新 GlyphWiki dump 生成兩套完整替換版字型：
+
+- `Jigmo SC`：以原始 Jigmo 為底，能替換時採用 `G -> T -> original Jigmo`
+- `Jigmo TC`：以原始 Jigmo 為底，能替換時採用 `T -> G -> original Jigmo`
+
+這兩套字型保留原始 Jigmo 的完整覆蓋；只在 GlyphWiki 有對應 G/T 來源字形時替換局部 glyph。
+
+```bash
+# 1. 先確保 src/Jigmo.ttf / Jigmo2.ttf / Jigmo3.ttf 存在
+python build.py --no-ss4 --no-sht
+
+# 2. 從 GlyphWiki dump 建立替換 mapping、下載 SVG、生成 src/JigmoSC*.ttf / src/JigmoTC*.ttf
+python build_jigmo_variants.py --jobs 8
+
+# 3. 切成 woff2，CSS family 會是 'Jigmo SC' 或 'Jigmo TC'
+python build.py --variant sc --no-dl
+python build.py --variant tc --no-dl
+```
+
+除錯/預覽可先跑小樣本：
+
+```bash
+python build_jigmo_variants.py --limit 1
+python build_jigmo_variants.py --prepare-only
+```
+
+生成過程會在 `src/glyphwiki/variant-glyph-map.tsv` 記錄每個 Unicode codepoint 實際替換用的 GlyphWiki glyph name；未列入的 codepoint 保留原始 Jigmo glyph。
+
+也可以生成 G/T/J 來源覆蓋查詢表：
+
+```bash
+python glyphwiki_sources_csv.py --only-source-coded
+```
+
+預設輸出 `src/glyphwiki/glyphwiki-sources-g-t-j.csv`，欄位包含 `has_g`、`has_t`、`has_j`、`missing_sources`、各來源 glyph name，以及 KAGE data 的短 SHA1（用於快速判斷不同來源是否實際同形）。
+
 ### 部署架構
 
 單一 Cloudflare Pages 專案。Cloudflare Pages 限制為 **25 MB per file**（不是總大小），所有分片個別最大 ~128 KB，全部字型（~36 MB）可放入同一個專案。
@@ -98,8 +136,9 @@ python build.py --jobs 8   # 指定平行 worker 數（預設：CPU 核心數）
 
 | 範圍 | 授權 |
 |------|------|
-| 本 repo 原始碼與網頁（build.py、split.py、index.html 等） | [CC0 1.0 公共領域](https://creativecommons.org/publicdomain/zero/1.0/) |
+| 本 repo 原始碼與網頁（build.py、split.py、index.html 等） | MIT |
 | Jigmo 字型（神地康一 / Kamichi Koichi） | CC0 1.0 |
+| Jigmo SC/TC 生成用 GlyphWiki glyph data | GlyphWiki data license（自由使用、修改、再散布；無保證） |
 | Source Serif 4（Adobe） | [OFL-1.1](https://openfontlicense.org) |
 
 第三方字型完整授權條款見 [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md)。
