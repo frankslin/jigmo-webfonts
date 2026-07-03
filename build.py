@@ -113,8 +113,8 @@ def _build_chunk_worker(args: tuple) -> tuple[str, int]:
 def unicode_range_str(start: int) -> str:
     end = start + CHUNK_SIZE - 1
     if end <= 0xFFFF:
-        return f"U+{start:04X}-U+{end:04X}"
-    return f"U+{start:05X}-U+{end:05X}"
+        return f"U+{start:04X}-{end:04X}"
+    return f"U+{start:05X}-{end:05X}"
 
 
 def in_ranges(cp: int, ranges: list[tuple[int, int]]) -> bool:

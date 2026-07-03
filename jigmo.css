@@ -176,7 +176,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-003000.woff2') format('woff2');
-  unicode-range: U+3000-U+30FF;
+  unicode-range: U+3000-30FF;
 }
 
 @font-face {
@@ -185,7 +185,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-004e00.woff2') format('woff2');
-  unicode-range: U+4E00-U+4EFF;
+  unicode-range: U+4E00-4EFF;
 }
 
 @font-face {
@@ -194,7 +194,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-004f00.woff2') format('woff2');
-  unicode-range: U+4F00-U+4FFF;
+  unicode-range: U+4F00-4FFF;
 }
 
 @font-face {
@@ -203,7 +203,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005000.woff2') format('woff2');
-  unicode-range: U+5000-U+50FF;
+  unicode-range: U+5000-50FF;
 }
 
 @font-face {
@@ -212,7 +212,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005100.woff2') format('woff2');
-  unicode-range: U+5100-U+51FF;
+  unicode-range: U+5100-51FF;
 }
 
 @font-face {
@@ -221,7 +221,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005200.woff2') format('woff2');
-  unicode-range: U+5200-U+52FF;
+  unicode-range: U+5200-52FF;
 }
 
 @font-face {
@@ -230,7 +230,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005300.woff2') format('woff2');
-  unicode-range: U+5300-U+53FF;
+  unicode-range: U+5300-53FF;
 }
 
 @font-face {
@@ -239,7 +239,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005400.woff2') format('woff2');
-  unicode-range: U+5400-U+54FF;
+  unicode-range: U+5400-54FF;
 }
 
 @font-face {
@@ -248,7 +248,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005500.woff2') format('woff2');
-  unicode-range: U+5500-U+55FF;
+  unicode-range: U+5500-55FF;
 }
 
 @font-face {
@@ -257,7 +257,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005600.woff2') format('woff2');
-  unicode-range: U+5600-U+56FF;
+  unicode-range: U+5600-56FF;
 }
 
 @font-face {
@@ -266,7 +266,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005700.woff2') format('woff2');
-  unicode-range: U+5700-U+57FF;
+  unicode-range: U+5700-57FF;
 }
 
 @font-face {
@@ -275,7 +275,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005800.woff2') format('woff2');
-  unicode-range: U+5800-U+58FF;
+  unicode-range: U+5800-58FF;
 }
 
 @font-face {
@@ -284,7 +284,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005900.woff2') format('woff2');
-  unicode-range: U+5900-U+59FF;
+  unicode-range: U+5900-59FF;
 }
 
 @font-face {
@@ -293,7 +293,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005a00.woff2') format('woff2');
-  unicode-range: U+5A00-U+5AFF;
+  unicode-range: U+5A00-5AFF;
 }
 
 @font-face {
@@ -302,7 +302,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005b00.woff2') format('woff2');
-  unicode-range: U+5B00-U+5BFF;
+  unicode-range: U+5B00-5BFF;
 }
 
 @font-face {
@@ -311,7 +311,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005c00.woff2') format('woff2');
-  unicode-range: U+5C00-U+5CFF;
+  unicode-range: U+5C00-5CFF;
 }
 
 @font-face {
@@ -320,7 +320,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005d00.woff2') format('woff2');
-  unicode-range: U+5D00-U+5DFF;
+  unicode-range: U+5D00-5DFF;
 }
 
 @font-face {
@@ -329,7 +329,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005e00.woff2') format('woff2');
-  unicode-range: U+5E00-U+5EFF;
+  unicode-range: U+5E00-5EFF;
 }
 
 @font-face {
@@ -338,7 +338,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-005f00.woff2') format('woff2');
-  unicode-range: U+5F00-U+5FFF;
+  unicode-range: U+5F00-5FFF;
 }
 
 @font-face {
@@ -347,7 +347,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006000.woff2') format('woff2');
-  unicode-range: U+6000-U+60FF;
+  unicode-range: U+6000-60FF;
 }
 
 @font-face {
@@ -356,7 +356,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006100.woff2') format('woff2');
-  unicode-range: U+6100-U+61FF;
+  unicode-range: U+6100-61FF;
 }
 
 @font-face {
@@ -365,7 +365,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006200.woff2') format('woff2');
-  unicode-range: U+6200-U+62FF;
+  unicode-range: U+6200-62FF;
 }
 
 @font-face {
@@ -374,7 +374,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006300.woff2') format('woff2');
-  unicode-range: U+6300-U+63FF;
+  unicode-range: U+6300-63FF;
 }
 
 @font-face {
@@ -383,7 +383,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006400.woff2') format('woff2');
-  unicode-range: U+6400-U+64FF;
+  unicode-range: U+6400-64FF;
 }
 
 @font-face {
@@ -392,7 +392,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006500.woff2') format('woff2');
-  unicode-range: U+6500-U+65FF;
+  unicode-range: U+6500-65FF;
 }
 
 @font-face {
@@ -401,7 +401,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006600.woff2') format('woff2');
-  unicode-range: U+6600-U+66FF;
+  unicode-range: U+6600-66FF;
 }
 
 @font-face {
@@ -410,7 +410,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006700.woff2') format('woff2');
-  unicode-range: U+6700-U+67FF;
+  unicode-range: U+6700-67FF;
 }
 
 @font-face {
@@ -419,7 +419,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006800.woff2') format('woff2');
-  unicode-range: U+6800-U+68FF;
+  unicode-range: U+6800-68FF;
 }
 
 @font-face {
@@ -428,7 +428,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006900.woff2') format('woff2');
-  unicode-range: U+6900-U+69FF;
+  unicode-range: U+6900-69FF;
 }
 
 @font-face {
@@ -437,7 +437,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006a00.woff2') format('woff2');
-  unicode-range: U+6A00-U+6AFF;
+  unicode-range: U+6A00-6AFF;
 }
 
 @font-face {
@@ -446,7 +446,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006b00.woff2') format('woff2');
-  unicode-range: U+6B00-U+6BFF;
+  unicode-range: U+6B00-6BFF;
 }
 
 @font-face {
@@ -455,7 +455,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006c00.woff2') format('woff2');
-  unicode-range: U+6C00-U+6CFF;
+  unicode-range: U+6C00-6CFF;
 }
 
 @font-face {
@@ -464,7 +464,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006d00.woff2') format('woff2');
-  unicode-range: U+6D00-U+6DFF;
+  unicode-range: U+6D00-6DFF;
 }
 
 @font-face {
@@ -473,7 +473,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006e00.woff2') format('woff2');
-  unicode-range: U+6E00-U+6EFF;
+  unicode-range: U+6E00-6EFF;
 }
 
 @font-face {
@@ -482,7 +482,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-006f00.woff2') format('woff2');
-  unicode-range: U+6F00-U+6FFF;
+  unicode-range: U+6F00-6FFF;
 }
 
 @font-face {
@@ -491,7 +491,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007000.woff2') format('woff2');
-  unicode-range: U+7000-U+70FF;
+  unicode-range: U+7000-70FF;
 }
 
 @font-face {
@@ -500,7 +500,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007100.woff2') format('woff2');
-  unicode-range: U+7100-U+71FF;
+  unicode-range: U+7100-71FF;
 }
 
 @font-face {
@@ -509,7 +509,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007200.woff2') format('woff2');
-  unicode-range: U+7200-U+72FF;
+  unicode-range: U+7200-72FF;
 }
 
 @font-face {
@@ -518,7 +518,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007300.woff2') format('woff2');
-  unicode-range: U+7300-U+73FF;
+  unicode-range: U+7300-73FF;
 }
 
 @font-face {
@@ -527,7 +527,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007400.woff2') format('woff2');
-  unicode-range: U+7400-U+74FF;
+  unicode-range: U+7400-74FF;
 }
 
 @font-face {
@@ -536,7 +536,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007500.woff2') format('woff2');
-  unicode-range: U+7500-U+75FF;
+  unicode-range: U+7500-75FF;
 }
 
 @font-face {
@@ -545,7 +545,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007600.woff2') format('woff2');
-  unicode-range: U+7600-U+76FF;
+  unicode-range: U+7600-76FF;
 }
 
 @font-face {
@@ -554,7 +554,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007700.woff2') format('woff2');
-  unicode-range: U+7700-U+77FF;
+  unicode-range: U+7700-77FF;
 }
 
 @font-face {
@@ -563,7 +563,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007800.woff2') format('woff2');
-  unicode-range: U+7800-U+78FF;
+  unicode-range: U+7800-78FF;
 }
 
 @font-face {
@@ -572,7 +572,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007900.woff2') format('woff2');
-  unicode-range: U+7900-U+79FF;
+  unicode-range: U+7900-79FF;
 }
 
 @font-face {
@@ -581,7 +581,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007a00.woff2') format('woff2');
-  unicode-range: U+7A00-U+7AFF;
+  unicode-range: U+7A00-7AFF;
 }
 
 @font-face {
@@ -590,7 +590,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007b00.woff2') format('woff2');
-  unicode-range: U+7B00-U+7BFF;
+  unicode-range: U+7B00-7BFF;
 }
 
 @font-face {
@@ -599,7 +599,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007c00.woff2') format('woff2');
-  unicode-range: U+7C00-U+7CFF;
+  unicode-range: U+7C00-7CFF;
 }
 
 @font-face {
@@ -608,7 +608,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007d00.woff2') format('woff2');
-  unicode-range: U+7D00-U+7DFF;
+  unicode-range: U+7D00-7DFF;
 }
 
 @font-face {
@@ -617,7 +617,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007e00.woff2') format('woff2');
-  unicode-range: U+7E00-U+7EFF;
+  unicode-range: U+7E00-7EFF;
 }
 
 @font-face {
@@ -626,7 +626,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-007f00.woff2') format('woff2');
-  unicode-range: U+7F00-U+7FFF;
+  unicode-range: U+7F00-7FFF;
 }
 
 @font-face {
@@ -635,7 +635,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008000.woff2') format('woff2');
-  unicode-range: U+8000-U+80FF;
+  unicode-range: U+8000-80FF;
 }
 
 @font-face {
@@ -644,7 +644,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008100.woff2') format('woff2');
-  unicode-range: U+8100-U+81FF;
+  unicode-range: U+8100-81FF;
 }
 
 @font-face {
@@ -653,7 +653,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008200.woff2') format('woff2');
-  unicode-range: U+8200-U+82FF;
+  unicode-range: U+8200-82FF;
 }
 
 @font-face {
@@ -662,7 +662,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008300.woff2') format('woff2');
-  unicode-range: U+8300-U+83FF;
+  unicode-range: U+8300-83FF;
 }
 
 @font-face {
@@ -671,7 +671,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008400.woff2') format('woff2');
-  unicode-range: U+8400-U+84FF;
+  unicode-range: U+8400-84FF;
 }
 
 @font-face {
@@ -680,7 +680,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008500.woff2') format('woff2');
-  unicode-range: U+8500-U+85FF;
+  unicode-range: U+8500-85FF;
 }
 
 @font-face {
@@ -689,7 +689,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008600.woff2') format('woff2');
-  unicode-range: U+8600-U+86FF;
+  unicode-range: U+8600-86FF;
 }
 
 @font-face {
@@ -698,7 +698,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008700.woff2') format('woff2');
-  unicode-range: U+8700-U+87FF;
+  unicode-range: U+8700-87FF;
 }
 
 @font-face {
@@ -707,7 +707,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008800.woff2') format('woff2');
-  unicode-range: U+8800-U+88FF;
+  unicode-range: U+8800-88FF;
 }
 
 @font-face {
@@ -716,7 +716,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008900.woff2') format('woff2');
-  unicode-range: U+8900-U+89FF;
+  unicode-range: U+8900-89FF;
 }
 
 @font-face {
@@ -725,7 +725,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008a00.woff2') format('woff2');
-  unicode-range: U+8A00-U+8AFF;
+  unicode-range: U+8A00-8AFF;
 }
 
 @font-face {
@@ -734,7 +734,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008b00.woff2') format('woff2');
-  unicode-range: U+8B00-U+8BFF;
+  unicode-range: U+8B00-8BFF;
 }
 
 @font-face {
@@ -743,7 +743,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008c00.woff2') format('woff2');
-  unicode-range: U+8C00-U+8CFF;
+  unicode-range: U+8C00-8CFF;
 }
 
 @font-face {
@@ -752,7 +752,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008d00.woff2') format('woff2');
-  unicode-range: U+8D00-U+8DFF;
+  unicode-range: U+8D00-8DFF;
 }
 
 @font-face {
@@ -761,7 +761,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008e00.woff2') format('woff2');
-  unicode-range: U+8E00-U+8EFF;
+  unicode-range: U+8E00-8EFF;
 }
 
 @font-face {
@@ -770,7 +770,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-008f00.woff2') format('woff2');
-  unicode-range: U+8F00-U+8FFF;
+  unicode-range: U+8F00-8FFF;
 }
 
 @font-face {
@@ -779,7 +779,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009000.woff2') format('woff2');
-  unicode-range: U+9000-U+90FF;
+  unicode-range: U+9000-90FF;
 }
 
 @font-face {
@@ -788,7 +788,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009100.woff2') format('woff2');
-  unicode-range: U+9100-U+91FF;
+  unicode-range: U+9100-91FF;
 }
 
 @font-face {
@@ -797,7 +797,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009200.woff2') format('woff2');
-  unicode-range: U+9200-U+92FF;
+  unicode-range: U+9200-92FF;
 }
 
 @font-face {
@@ -806,7 +806,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009300.woff2') format('woff2');
-  unicode-range: U+9300-U+93FF;
+  unicode-range: U+9300-93FF;
 }
 
 @font-face {
@@ -815,7 +815,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009400.woff2') format('woff2');
-  unicode-range: U+9400-U+94FF;
+  unicode-range: U+9400-94FF;
 }
 
 @font-face {
@@ -824,7 +824,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009500.woff2') format('woff2');
-  unicode-range: U+9500-U+95FF;
+  unicode-range: U+9500-95FF;
 }
 
 @font-face {
@@ -833,7 +833,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009600.woff2') format('woff2');
-  unicode-range: U+9600-U+96FF;
+  unicode-range: U+9600-96FF;
 }
 
 @font-face {
@@ -842,7 +842,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009700.woff2') format('woff2');
-  unicode-range: U+9700-U+97FF;
+  unicode-range: U+9700-97FF;
 }
 
 @font-face {
@@ -851,7 +851,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009800.woff2') format('woff2');
-  unicode-range: U+9800-U+98FF;
+  unicode-range: U+9800-98FF;
 }
 
 @font-face {
@@ -860,7 +860,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009900.woff2') format('woff2');
-  unicode-range: U+9900-U+99FF;
+  unicode-range: U+9900-99FF;
 }
 
 @font-face {
@@ -869,7 +869,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009a00.woff2') format('woff2');
-  unicode-range: U+9A00-U+9AFF;
+  unicode-range: U+9A00-9AFF;
 }
 
 @font-face {
@@ -878,7 +878,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009b00.woff2') format('woff2');
-  unicode-range: U+9B00-U+9BFF;
+  unicode-range: U+9B00-9BFF;
 }
 
 @font-face {
@@ -887,7 +887,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009c00.woff2') format('woff2');
-  unicode-range: U+9C00-U+9CFF;
+  unicode-range: U+9C00-9CFF;
 }
 
 @font-face {
@@ -896,7 +896,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009d00.woff2') format('woff2');
-  unicode-range: U+9D00-U+9DFF;
+  unicode-range: U+9D00-9DFF;
 }
 
 @font-face {
@@ -905,7 +905,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009e00.woff2') format('woff2');
-  unicode-range: U+9E00-U+9EFF;
+  unicode-range: U+9E00-9EFF;
 }
 
 @font-face {
@@ -914,7 +914,7 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Source Han Serif TC'), local('Source Han Serif'), url('fonts/sht-009f00.woff2') format('woff2');
-  unicode-range: U+9F00-U+9FFF;
+  unicode-range: U+9F00-9FFF;
 }
 
 @font-face {
@@ -923,7 +923,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-000000.woff2') format('woff2');
-  unicode-range: U+0000-U+00FF;
+  unicode-range: U+0000-00FF;
 }
 
 @font-face {
@@ -932,7 +932,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-001100.woff2') format('woff2');
-  unicode-range: U+1100-U+11FF;
+  unicode-range: U+1100-11FF;
 }
 
 @font-face {
@@ -941,7 +941,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-002e00.woff2') format('woff2');
-  unicode-range: U+2E00-U+2EFF;
+  unicode-range: U+2E00-2EFF;
 }
 
 @font-face {
@@ -950,7 +950,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-002f00.woff2') format('woff2');
-  unicode-range: U+2F00-U+2FFF;
+  unicode-range: U+2F00-2FFF;
 }
 
 @font-face {
@@ -959,7 +959,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003000.woff2') format('woff2');
-  unicode-range: U+3000-U+30FF;
+  unicode-range: U+3000-30FF;
 }
 
 @font-face {
@@ -968,7 +968,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003100.woff2') format('woff2');
-  unicode-range: U+3100-U+31FF;
+  unicode-range: U+3100-31FF;
 }
 
 @font-face {
@@ -977,7 +977,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003200.woff2') format('woff2');
-  unicode-range: U+3200-U+32FF;
+  unicode-range: U+3200-32FF;
 }
 
 @font-face {
@@ -986,7 +986,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003300.woff2') format('woff2');
-  unicode-range: U+3300-U+33FF;
+  unicode-range: U+3300-33FF;
 }
 
 @font-face {
@@ -995,7 +995,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003400.woff2') format('woff2');
-  unicode-range: U+3400-U+34FF;
+  unicode-range: U+3400-34FF;
 }
 
 @font-face {
@@ -1004,7 +1004,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003500.woff2') format('woff2');
-  unicode-range: U+3500-U+35FF;
+  unicode-range: U+3500-35FF;
 }
 
 @font-face {
@@ -1013,7 +1013,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003600.woff2') format('woff2');
-  unicode-range: U+3600-U+36FF;
+  unicode-range: U+3600-36FF;
 }
 
 @font-face {
@@ -1022,7 +1022,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003700.woff2') format('woff2');
-  unicode-range: U+3700-U+37FF;
+  unicode-range: U+3700-37FF;
 }
 
 @font-face {
@@ -1031,7 +1031,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003800.woff2') format('woff2');
-  unicode-range: U+3800-U+38FF;
+  unicode-range: U+3800-38FF;
 }
 
 @font-face {
@@ -1040,7 +1040,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003900.woff2') format('woff2');
-  unicode-range: U+3900-U+39FF;
+  unicode-range: U+3900-39FF;
 }
 
 @font-face {
@@ -1049,7 +1049,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003a00.woff2') format('woff2');
-  unicode-range: U+3A00-U+3AFF;
+  unicode-range: U+3A00-3AFF;
 }
 
 @font-face {
@@ -1058,7 +1058,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003b00.woff2') format('woff2');
-  unicode-range: U+3B00-U+3BFF;
+  unicode-range: U+3B00-3BFF;
 }
 
 @font-face {
@@ -1067,7 +1067,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003c00.woff2') format('woff2');
-  unicode-range: U+3C00-U+3CFF;
+  unicode-range: U+3C00-3CFF;
 }
 
 @font-face {
@@ -1076,7 +1076,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003d00.woff2') format('woff2');
-  unicode-range: U+3D00-U+3DFF;
+  unicode-range: U+3D00-3DFF;
 }
 
 @font-face {
@@ -1085,7 +1085,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003e00.woff2') format('woff2');
-  unicode-range: U+3E00-U+3EFF;
+  unicode-range: U+3E00-3EFF;
 }
 
 @font-face {
@@ -1094,7 +1094,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-003f00.woff2') format('woff2');
-  unicode-range: U+3F00-U+3FFF;
+  unicode-range: U+3F00-3FFF;
 }
 
 @font-face {
@@ -1103,7 +1103,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004000.woff2') format('woff2');
-  unicode-range: U+4000-U+40FF;
+  unicode-range: U+4000-40FF;
 }
 
 @font-face {
@@ -1112,7 +1112,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004100.woff2') format('woff2');
-  unicode-range: U+4100-U+41FF;
+  unicode-range: U+4100-41FF;
 }
 
 @font-face {
@@ -1121,7 +1121,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004200.woff2') format('woff2');
-  unicode-range: U+4200-U+42FF;
+  unicode-range: U+4200-42FF;
 }
 
 @font-face {
@@ -1130,7 +1130,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004300.woff2') format('woff2');
-  unicode-range: U+4300-U+43FF;
+  unicode-range: U+4300-43FF;
 }
 
 @font-face {
@@ -1139,7 +1139,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004400.woff2') format('woff2');
-  unicode-range: U+4400-U+44FF;
+  unicode-range: U+4400-44FF;
 }
 
 @font-face {
@@ -1148,7 +1148,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004500.woff2') format('woff2');
-  unicode-range: U+4500-U+45FF;
+  unicode-range: U+4500-45FF;
 }
 
 @font-face {
@@ -1157,7 +1157,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004600.woff2') format('woff2');
-  unicode-range: U+4600-U+46FF;
+  unicode-range: U+4600-46FF;
 }
 
 @font-face {
@@ -1166,7 +1166,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004700.woff2') format('woff2');
-  unicode-range: U+4700-U+47FF;
+  unicode-range: U+4700-47FF;
 }
 
 @font-face {
@@ -1175,7 +1175,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004800.woff2') format('woff2');
-  unicode-range: U+4800-U+48FF;
+  unicode-range: U+4800-48FF;
 }
 
 @font-face {
@@ -1184,7 +1184,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004900.woff2') format('woff2');
-  unicode-range: U+4900-U+49FF;
+  unicode-range: U+4900-49FF;
 }
 
 @font-face {
@@ -1193,7 +1193,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004a00.woff2') format('woff2');
-  unicode-range: U+4A00-U+4AFF;
+  unicode-range: U+4A00-4AFF;
 }
 
 @font-face {
@@ -1202,7 +1202,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004b00.woff2') format('woff2');
-  unicode-range: U+4B00-U+4BFF;
+  unicode-range: U+4B00-4BFF;
 }
 
 @font-face {
@@ -1211,7 +1211,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004c00.woff2') format('woff2');
-  unicode-range: U+4C00-U+4CFF;
+  unicode-range: U+4C00-4CFF;
 }
 
 @font-face {
@@ -1220,7 +1220,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004d00.woff2') format('woff2');
-  unicode-range: U+4D00-U+4DFF;
+  unicode-range: U+4D00-4DFF;
 }
 
 @font-face {
@@ -1229,7 +1229,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004e00.woff2') format('woff2');
-  unicode-range: U+4E00-U+4EFF;
+  unicode-range: U+4E00-4EFF;
 }
 
 @font-face {
@@ -1238,7 +1238,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-004f00.woff2') format('woff2');
-  unicode-range: U+4F00-U+4FFF;
+  unicode-range: U+4F00-4FFF;
 }
 
 @font-face {
@@ -1247,7 +1247,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005000.woff2') format('woff2');
-  unicode-range: U+5000-U+50FF;
+  unicode-range: U+5000-50FF;
 }
 
 @font-face {
@@ -1256,7 +1256,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005100.woff2') format('woff2');
-  unicode-range: U+5100-U+51FF;
+  unicode-range: U+5100-51FF;
 }
 
 @font-face {
@@ -1265,7 +1265,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005200.woff2') format('woff2');
-  unicode-range: U+5200-U+52FF;
+  unicode-range: U+5200-52FF;
 }
 
 @font-face {
@@ -1274,7 +1274,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005300.woff2') format('woff2');
-  unicode-range: U+5300-U+53FF;
+  unicode-range: U+5300-53FF;
 }
 
 @font-face {
@@ -1283,7 +1283,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005400.woff2') format('woff2');
-  unicode-range: U+5400-U+54FF;
+  unicode-range: U+5400-54FF;
 }
 
 @font-face {
@@ -1292,7 +1292,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005500.woff2') format('woff2');
-  unicode-range: U+5500-U+55FF;
+  unicode-range: U+5500-55FF;
 }
 
 @font-face {
@@ -1301,7 +1301,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005600.woff2') format('woff2');
-  unicode-range: U+5600-U+56FF;
+  unicode-range: U+5600-56FF;
 }
 
 @font-face {
@@ -1310,7 +1310,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005700.woff2') format('woff2');
-  unicode-range: U+5700-U+57FF;
+  unicode-range: U+5700-57FF;
 }
 
 @font-face {
@@ -1319,7 +1319,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005800.woff2') format('woff2');
-  unicode-range: U+5800-U+58FF;
+  unicode-range: U+5800-58FF;
 }
 
 @font-face {
@@ -1328,7 +1328,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005900.woff2') format('woff2');
-  unicode-range: U+5900-U+59FF;
+  unicode-range: U+5900-59FF;
 }
 
 @font-face {
@@ -1337,7 +1337,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005a00.woff2') format('woff2');
-  unicode-range: U+5A00-U+5AFF;
+  unicode-range: U+5A00-5AFF;
 }
 
 @font-face {
@@ -1346,7 +1346,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005b00.woff2') format('woff2');
-  unicode-range: U+5B00-U+5BFF;
+  unicode-range: U+5B00-5BFF;
 }
 
 @font-face {
@@ -1355,7 +1355,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005c00.woff2') format('woff2');
-  unicode-range: U+5C00-U+5CFF;
+  unicode-range: U+5C00-5CFF;
 }
 
 @font-face {
@@ -1364,7 +1364,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005d00.woff2') format('woff2');
-  unicode-range: U+5D00-U+5DFF;
+  unicode-range: U+5D00-5DFF;
 }
 
 @font-face {
@@ -1373,7 +1373,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005e00.woff2') format('woff2');
-  unicode-range: U+5E00-U+5EFF;
+  unicode-range: U+5E00-5EFF;
 }
 
 @font-face {
@@ -1382,7 +1382,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-005f00.woff2') format('woff2');
-  unicode-range: U+5F00-U+5FFF;
+  unicode-range: U+5F00-5FFF;
 }
 
 @font-face {
@@ -1391,7 +1391,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006000.woff2') format('woff2');
-  unicode-range: U+6000-U+60FF;
+  unicode-range: U+6000-60FF;
 }
 
 @font-face {
@@ -1400,7 +1400,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006100.woff2') format('woff2');
-  unicode-range: U+6100-U+61FF;
+  unicode-range: U+6100-61FF;
 }
 
 @font-face {
@@ -1409,7 +1409,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006200.woff2') format('woff2');
-  unicode-range: U+6200-U+62FF;
+  unicode-range: U+6200-62FF;
 }
 
 @font-face {
@@ -1418,7 +1418,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006300.woff2') format('woff2');
-  unicode-range: U+6300-U+63FF;
+  unicode-range: U+6300-63FF;
 }
 
 @font-face {
@@ -1427,7 +1427,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006400.woff2') format('woff2');
-  unicode-range: U+6400-U+64FF;
+  unicode-range: U+6400-64FF;
 }
 
 @font-face {
@@ -1436,7 +1436,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006500.woff2') format('woff2');
-  unicode-range: U+6500-U+65FF;
+  unicode-range: U+6500-65FF;
 }
 
 @font-face {
@@ -1445,7 +1445,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006600.woff2') format('woff2');
-  unicode-range: U+6600-U+66FF;
+  unicode-range: U+6600-66FF;
 }
 
 @font-face {
@@ -1454,7 +1454,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006700.woff2') format('woff2');
-  unicode-range: U+6700-U+67FF;
+  unicode-range: U+6700-67FF;
 }
 
 @font-face {
@@ -1463,7 +1463,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006800.woff2') format('woff2');
-  unicode-range: U+6800-U+68FF;
+  unicode-range: U+6800-68FF;
 }
 
 @font-face {
@@ -1472,7 +1472,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006900.woff2') format('woff2');
-  unicode-range: U+6900-U+69FF;
+  unicode-range: U+6900-69FF;
 }
 
 @font-face {
@@ -1481,7 +1481,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006a00.woff2') format('woff2');
-  unicode-range: U+6A00-U+6AFF;
+  unicode-range: U+6A00-6AFF;
 }
 
 @font-face {
@@ -1490,7 +1490,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006b00.woff2') format('woff2');
-  unicode-range: U+6B00-U+6BFF;
+  unicode-range: U+6B00-6BFF;
 }
 
 @font-face {
@@ -1499,7 +1499,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006c00.woff2') format('woff2');
-  unicode-range: U+6C00-U+6CFF;
+  unicode-range: U+6C00-6CFF;
 }
 
 @font-face {
@@ -1508,7 +1508,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006d00.woff2') format('woff2');
-  unicode-range: U+6D00-U+6DFF;
+  unicode-range: U+6D00-6DFF;
 }
 
 @font-face {
@@ -1517,7 +1517,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006e00.woff2') format('woff2');
-  unicode-range: U+6E00-U+6EFF;
+  unicode-range: U+6E00-6EFF;
 }
 
 @font-face {
@@ -1526,7 +1526,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-006f00.woff2') format('woff2');
-  unicode-range: U+6F00-U+6FFF;
+  unicode-range: U+6F00-6FFF;
 }
 
 @font-face {
@@ -1535,7 +1535,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007000.woff2') format('woff2');
-  unicode-range: U+7000-U+70FF;
+  unicode-range: U+7000-70FF;
 }
 
 @font-face {
@@ -1544,7 +1544,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007100.woff2') format('woff2');
-  unicode-range: U+7100-U+71FF;
+  unicode-range: U+7100-71FF;
 }
 
 @font-face {
@@ -1553,7 +1553,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007200.woff2') format('woff2');
-  unicode-range: U+7200-U+72FF;
+  unicode-range: U+7200-72FF;
 }
 
 @font-face {
@@ -1562,7 +1562,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007300.woff2') format('woff2');
-  unicode-range: U+7300-U+73FF;
+  unicode-range: U+7300-73FF;
 }
 
 @font-face {
@@ -1571,7 +1571,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007400.woff2') format('woff2');
-  unicode-range: U+7400-U+74FF;
+  unicode-range: U+7400-74FF;
 }
 
 @font-face {
@@ -1580,7 +1580,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007500.woff2') format('woff2');
-  unicode-range: U+7500-U+75FF;
+  unicode-range: U+7500-75FF;
 }
 
 @font-face {
@@ -1589,7 +1589,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007600.woff2') format('woff2');
-  unicode-range: U+7600-U+76FF;
+  unicode-range: U+7600-76FF;
 }
 
 @font-face {
@@ -1598,7 +1598,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007700.woff2') format('woff2');
-  unicode-range: U+7700-U+77FF;
+  unicode-range: U+7700-77FF;
 }
 
 @font-face {
@@ -1607,7 +1607,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007800.woff2') format('woff2');
-  unicode-range: U+7800-U+78FF;
+  unicode-range: U+7800-78FF;
 }
 
 @font-face {
@@ -1616,7 +1616,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007900.woff2') format('woff2');
-  unicode-range: U+7900-U+79FF;
+  unicode-range: U+7900-79FF;
 }
 
 @font-face {
@@ -1625,7 +1625,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007a00.woff2') format('woff2');
-  unicode-range: U+7A00-U+7AFF;
+  unicode-range: U+7A00-7AFF;
 }
 
 @font-face {
@@ -1634,7 +1634,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007b00.woff2') format('woff2');
-  unicode-range: U+7B00-U+7BFF;
+  unicode-range: U+7B00-7BFF;
 }
 
 @font-face {
@@ -1643,7 +1643,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007c00.woff2') format('woff2');
-  unicode-range: U+7C00-U+7CFF;
+  unicode-range: U+7C00-7CFF;
 }
 
 @font-face {
@@ -1652,7 +1652,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007d00.woff2') format('woff2');
-  unicode-range: U+7D00-U+7DFF;
+  unicode-range: U+7D00-7DFF;
 }
 
 @font-face {
@@ -1661,7 +1661,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007e00.woff2') format('woff2');
-  unicode-range: U+7E00-U+7EFF;
+  unicode-range: U+7E00-7EFF;
 }
 
 @font-face {
@@ -1670,7 +1670,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-007f00.woff2') format('woff2');
-  unicode-range: U+7F00-U+7FFF;
+  unicode-range: U+7F00-7FFF;
 }
 
 @font-face {
@@ -1679,7 +1679,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008000.woff2') format('woff2');
-  unicode-range: U+8000-U+80FF;
+  unicode-range: U+8000-80FF;
 }
 
 @font-face {
@@ -1688,7 +1688,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008100.woff2') format('woff2');
-  unicode-range: U+8100-U+81FF;
+  unicode-range: U+8100-81FF;
 }
 
 @font-face {
@@ -1697,7 +1697,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008200.woff2') format('woff2');
-  unicode-range: U+8200-U+82FF;
+  unicode-range: U+8200-82FF;
 }
 
 @font-face {
@@ -1706,7 +1706,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008300.woff2') format('woff2');
-  unicode-range: U+8300-U+83FF;
+  unicode-range: U+8300-83FF;
 }
 
 @font-face {
@@ -1715,7 +1715,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008400.woff2') format('woff2');
-  unicode-range: U+8400-U+84FF;
+  unicode-range: U+8400-84FF;
 }
 
 @font-face {
@@ -1724,7 +1724,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008500.woff2') format('woff2');
-  unicode-range: U+8500-U+85FF;
+  unicode-range: U+8500-85FF;
 }
 
 @font-face {
@@ -1733,7 +1733,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008600.woff2') format('woff2');
-  unicode-range: U+8600-U+86FF;
+  unicode-range: U+8600-86FF;
 }
 
 @font-face {
@@ -1742,7 +1742,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008700.woff2') format('woff2');
-  unicode-range: U+8700-U+87FF;
+  unicode-range: U+8700-87FF;
 }
 
 @font-face {
@@ -1751,7 +1751,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008800.woff2') format('woff2');
-  unicode-range: U+8800-U+88FF;
+  unicode-range: U+8800-88FF;
 }
 
 @font-face {
@@ -1760,7 +1760,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008900.woff2') format('woff2');
-  unicode-range: U+8900-U+89FF;
+  unicode-range: U+8900-89FF;
 }
 
 @font-face {
@@ -1769,7 +1769,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008a00.woff2') format('woff2');
-  unicode-range: U+8A00-U+8AFF;
+  unicode-range: U+8A00-8AFF;
 }
 
 @font-face {
@@ -1778,7 +1778,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008b00.woff2') format('woff2');
-  unicode-range: U+8B00-U+8BFF;
+  unicode-range: U+8B00-8BFF;
 }
 
 @font-face {
@@ -1787,7 +1787,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008c00.woff2') format('woff2');
-  unicode-range: U+8C00-U+8CFF;
+  unicode-range: U+8C00-8CFF;
 }
 
 @font-face {
@@ -1796,7 +1796,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008d00.woff2') format('woff2');
-  unicode-range: U+8D00-U+8DFF;
+  unicode-range: U+8D00-8DFF;
 }
 
 @font-face {
@@ -1805,7 +1805,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008e00.woff2') format('woff2');
-  unicode-range: U+8E00-U+8EFF;
+  unicode-range: U+8E00-8EFF;
 }
 
 @font-face {
@@ -1814,7 +1814,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-008f00.woff2') format('woff2');
-  unicode-range: U+8F00-U+8FFF;
+  unicode-range: U+8F00-8FFF;
 }
 
 @font-face {
@@ -1823,7 +1823,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009000.woff2') format('woff2');
-  unicode-range: U+9000-U+90FF;
+  unicode-range: U+9000-90FF;
 }
 
 @font-face {
@@ -1832,7 +1832,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009100.woff2') format('woff2');
-  unicode-range: U+9100-U+91FF;
+  unicode-range: U+9100-91FF;
 }
 
 @font-face {
@@ -1841,7 +1841,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009200.woff2') format('woff2');
-  unicode-range: U+9200-U+92FF;
+  unicode-range: U+9200-92FF;
 }
 
 @font-face {
@@ -1850,7 +1850,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009300.woff2') format('woff2');
-  unicode-range: U+9300-U+93FF;
+  unicode-range: U+9300-93FF;
 }
 
 @font-face {
@@ -1859,7 +1859,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009400.woff2') format('woff2');
-  unicode-range: U+9400-U+94FF;
+  unicode-range: U+9400-94FF;
 }
 
 @font-face {
@@ -1868,7 +1868,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009500.woff2') format('woff2');
-  unicode-range: U+9500-U+95FF;
+  unicode-range: U+9500-95FF;
 }
 
 @font-face {
@@ -1877,7 +1877,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009600.woff2') format('woff2');
-  unicode-range: U+9600-U+96FF;
+  unicode-range: U+9600-96FF;
 }
 
 @font-face {
@@ -1886,7 +1886,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009700.woff2') format('woff2');
-  unicode-range: U+9700-U+97FF;
+  unicode-range: U+9700-97FF;
 }
 
 @font-face {
@@ -1895,7 +1895,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009800.woff2') format('woff2');
-  unicode-range: U+9800-U+98FF;
+  unicode-range: U+9800-98FF;
 }
 
 @font-face {
@@ -1904,7 +1904,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009900.woff2') format('woff2');
-  unicode-range: U+9900-U+99FF;
+  unicode-range: U+9900-99FF;
 }
 
 @font-face {
@@ -1913,7 +1913,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009a00.woff2') format('woff2');
-  unicode-range: U+9A00-U+9AFF;
+  unicode-range: U+9A00-9AFF;
 }
 
 @font-face {
@@ -1922,7 +1922,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009b00.woff2') format('woff2');
-  unicode-range: U+9B00-U+9BFF;
+  unicode-range: U+9B00-9BFF;
 }
 
 @font-face {
@@ -1931,7 +1931,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009c00.woff2') format('woff2');
-  unicode-range: U+9C00-U+9CFF;
+  unicode-range: U+9C00-9CFF;
 }
 
 @font-face {
@@ -1940,7 +1940,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009d00.woff2') format('woff2');
-  unicode-range: U+9D00-U+9DFF;
+  unicode-range: U+9D00-9DFF;
 }
 
 @font-face {
@@ -1949,7 +1949,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009e00.woff2') format('woff2');
-  unicode-range: U+9E00-U+9EFF;
+  unicode-range: U+9E00-9EFF;
 }
 
 @font-face {
@@ -1958,7 +1958,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-009f00.woff2') format('woff2');
-  unicode-range: U+9F00-U+9FFF;
+  unicode-range: U+9F00-9FFF;
 }
 
 @font-face {
@@ -1967,7 +1967,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00a900.woff2') format('woff2');
-  unicode-range: U+A900-U+A9FF;
+  unicode-range: U+A900-A9FF;
 }
 
 @font-face {
@@ -1976,7 +1976,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00ac00.woff2') format('woff2');
-  unicode-range: U+AC00-U+ACFF;
+  unicode-range: U+AC00-ACFF;
 }
 
 @font-face {
@@ -1985,7 +1985,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00ad00.woff2') format('woff2');
-  unicode-range: U+AD00-U+ADFF;
+  unicode-range: U+AD00-ADFF;
 }
 
 @font-face {
@@ -1994,7 +1994,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00ae00.woff2') format('woff2');
-  unicode-range: U+AE00-U+AEFF;
+  unicode-range: U+AE00-AEFF;
 }
 
 @font-face {
@@ -2003,7 +2003,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00af00.woff2') format('woff2');
-  unicode-range: U+AF00-U+AFFF;
+  unicode-range: U+AF00-AFFF;
 }
 
 @font-face {
@@ -2012,7 +2012,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00b000.woff2') format('woff2');
-  unicode-range: U+B000-U+B0FF;
+  unicode-range: U+B000-B0FF;
 }
 
 @font-face {
@@ -2021,7 +2021,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00b100.woff2') format('woff2');
-  unicode-range: U+B100-U+B1FF;
+  unicode-range: U+B100-B1FF;
 }
 
 @font-face {
@@ -2030,7 +2030,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00b200.woff2') format('woff2');
-  unicode-range: U+B200-U+B2FF;
+  unicode-range: U+B200-B2FF;
 }
 
 @font-face {
@@ -2039,7 +2039,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00b300.woff2') format('woff2');
-  unicode-range: U+B300-U+B3FF;
+  unicode-range: U+B300-B3FF;
 }
 
 @font-face {
@@ -2048,7 +2048,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00b400.woff2') format('woff2');
-  unicode-range: U+B400-U+B4FF;
+  unicode-range: U+B400-B4FF;
 }
 
 @font-face {
@@ -2057,7 +2057,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00b500.woff2') format('woff2');
-  unicode-range: U+B500-U+B5FF;
+  unicode-range: U+B500-B5FF;
 }
 
 @font-face {
@@ -2066,7 +2066,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00b600.woff2') format('woff2');
-  unicode-range: U+B600-U+B6FF;
+  unicode-range: U+B600-B6FF;
 }
 
 @font-face {
@@ -2075,7 +2075,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00b700.woff2') format('woff2');
-  unicode-range: U+B700-U+B7FF;
+  unicode-range: U+B700-B7FF;
 }
 
 @font-face {
@@ -2084,7 +2084,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00b800.woff2') format('woff2');
-  unicode-range: U+B800-U+B8FF;
+  unicode-range: U+B800-B8FF;
 }
 
 @font-face {
@@ -2093,7 +2093,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00b900.woff2') format('woff2');
-  unicode-range: U+B900-U+B9FF;
+  unicode-range: U+B900-B9FF;
 }
 
 @font-face {
@@ -2102,7 +2102,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00ba00.woff2') format('woff2');
-  unicode-range: U+BA00-U+BAFF;
+  unicode-range: U+BA00-BAFF;
 }
 
 @font-face {
@@ -2111,7 +2111,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00bb00.woff2') format('woff2');
-  unicode-range: U+BB00-U+BBFF;
+  unicode-range: U+BB00-BBFF;
 }
 
 @font-face {
@@ -2120,7 +2120,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00bc00.woff2') format('woff2');
-  unicode-range: U+BC00-U+BCFF;
+  unicode-range: U+BC00-BCFF;
 }
 
 @font-face {
@@ -2129,7 +2129,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00bd00.woff2') format('woff2');
-  unicode-range: U+BD00-U+BDFF;
+  unicode-range: U+BD00-BDFF;
 }
 
 @font-face {
@@ -2138,7 +2138,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00be00.woff2') format('woff2');
-  unicode-range: U+BE00-U+BEFF;
+  unicode-range: U+BE00-BEFF;
 }
 
 @font-face {
@@ -2147,7 +2147,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00bf00.woff2') format('woff2');
-  unicode-range: U+BF00-U+BFFF;
+  unicode-range: U+BF00-BFFF;
 }
 
 @font-face {
@@ -2156,7 +2156,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00c000.woff2') format('woff2');
-  unicode-range: U+C000-U+C0FF;
+  unicode-range: U+C000-C0FF;
 }
 
 @font-face {
@@ -2165,7 +2165,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00c100.woff2') format('woff2');
-  unicode-range: U+C100-U+C1FF;
+  unicode-range: U+C100-C1FF;
 }
 
 @font-face {
@@ -2174,7 +2174,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00c200.woff2') format('woff2');
-  unicode-range: U+C200-U+C2FF;
+  unicode-range: U+C200-C2FF;
 }
 
 @font-face {
@@ -2183,7 +2183,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00c300.woff2') format('woff2');
-  unicode-range: U+C300-U+C3FF;
+  unicode-range: U+C300-C3FF;
 }
 
 @font-face {
@@ -2192,7 +2192,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00c400.woff2') format('woff2');
-  unicode-range: U+C400-U+C4FF;
+  unicode-range: U+C400-C4FF;
 }
 
 @font-face {
@@ -2201,7 +2201,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00c500.woff2') format('woff2');
-  unicode-range: U+C500-U+C5FF;
+  unicode-range: U+C500-C5FF;
 }
 
 @font-face {
@@ -2210,7 +2210,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00c600.woff2') format('woff2');
-  unicode-range: U+C600-U+C6FF;
+  unicode-range: U+C600-C6FF;
 }
 
 @font-face {
@@ -2219,7 +2219,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00c700.woff2') format('woff2');
-  unicode-range: U+C700-U+C7FF;
+  unicode-range: U+C700-C7FF;
 }
 
 @font-face {
@@ -2228,7 +2228,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00c800.woff2') format('woff2');
-  unicode-range: U+C800-U+C8FF;
+  unicode-range: U+C800-C8FF;
 }
 
 @font-face {
@@ -2237,7 +2237,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00c900.woff2') format('woff2');
-  unicode-range: U+C900-U+C9FF;
+  unicode-range: U+C900-C9FF;
 }
 
 @font-face {
@@ -2246,7 +2246,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00ca00.woff2') format('woff2');
-  unicode-range: U+CA00-U+CAFF;
+  unicode-range: U+CA00-CAFF;
 }
 
 @font-face {
@@ -2255,7 +2255,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00cb00.woff2') format('woff2');
-  unicode-range: U+CB00-U+CBFF;
+  unicode-range: U+CB00-CBFF;
 }
 
 @font-face {
@@ -2264,7 +2264,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00cc00.woff2') format('woff2');
-  unicode-range: U+CC00-U+CCFF;
+  unicode-range: U+CC00-CCFF;
 }
 
 @font-face {
@@ -2273,7 +2273,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00cd00.woff2') format('woff2');
-  unicode-range: U+CD00-U+CDFF;
+  unicode-range: U+CD00-CDFF;
 }
 
 @font-face {
@@ -2282,7 +2282,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00ce00.woff2') format('woff2');
-  unicode-range: U+CE00-U+CEFF;
+  unicode-range: U+CE00-CEFF;
 }
 
 @font-face {
@@ -2291,7 +2291,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00cf00.woff2') format('woff2');
-  unicode-range: U+CF00-U+CFFF;
+  unicode-range: U+CF00-CFFF;
 }
 
 @font-face {
@@ -2300,7 +2300,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00d000.woff2') format('woff2');
-  unicode-range: U+D000-U+D0FF;
+  unicode-range: U+D000-D0FF;
 }
 
 @font-face {
@@ -2309,7 +2309,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00d100.woff2') format('woff2');
-  unicode-range: U+D100-U+D1FF;
+  unicode-range: U+D100-D1FF;
 }
 
 @font-face {
@@ -2318,7 +2318,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00d200.woff2') format('woff2');
-  unicode-range: U+D200-U+D2FF;
+  unicode-range: U+D200-D2FF;
 }
 
 @font-face {
@@ -2327,7 +2327,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00d300.woff2') format('woff2');
-  unicode-range: U+D300-U+D3FF;
+  unicode-range: U+D300-D3FF;
 }
 
 @font-face {
@@ -2336,7 +2336,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00d400.woff2') format('woff2');
-  unicode-range: U+D400-U+D4FF;
+  unicode-range: U+D400-D4FF;
 }
 
 @font-face {
@@ -2345,7 +2345,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00d500.woff2') format('woff2');
-  unicode-range: U+D500-U+D5FF;
+  unicode-range: U+D500-D5FF;
 }
 
 @font-face {
@@ -2354,7 +2354,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00d600.woff2') format('woff2');
-  unicode-range: U+D600-U+D6FF;
+  unicode-range: U+D600-D6FF;
 }
 
 @font-face {
@@ -2363,7 +2363,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00d700.woff2') format('woff2');
-  unicode-range: U+D700-U+D7FF;
+  unicode-range: U+D700-D7FF;
 }
 
 @font-face {
@@ -2372,7 +2372,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00f900.woff2') format('woff2');
-  unicode-range: U+F900-U+F9FF;
+  unicode-range: U+F900-F9FF;
 }
 
 @font-face {
@@ -2381,7 +2381,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00fa00.woff2') format('woff2');
-  unicode-range: U+FA00-U+FAFF;
+  unicode-range: U+FA00-FAFF;
 }
 
 @font-face {
@@ -2390,7 +2390,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00fe00.woff2') format('woff2');
-  unicode-range: U+FE00-U+FEFF;
+  unicode-range: U+FE00-FEFF;
 }
 
 @font-face {
@@ -2399,7 +2399,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-00ff00.woff2') format('woff2');
-  unicode-range: U+FF00-U+FFFF;
+  unicode-range: U+FF00-FFFF;
 }
 
 @font-face {
@@ -2408,7 +2408,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-016f00.woff2') format('woff2');
-  unicode-range: U+16F00-U+16FFF;
+  unicode-range: U+16F00-16FFF;
 }
 
 @font-face {
@@ -2417,7 +2417,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-01af00.woff2') format('woff2');
-  unicode-range: U+1AF00-U+1AFFF;
+  unicode-range: U+1AF00-1AFFF;
 }
 
 @font-face {
@@ -2426,7 +2426,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-01b000.woff2') format('woff2');
-  unicode-range: U+1B000-U+1B0FF;
+  unicode-range: U+1B000-1B0FF;
 }
 
 @font-face {
@@ -2435,7 +2435,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-01b100.woff2') format('woff2');
-  unicode-range: U+1B100-U+1B1FF;
+  unicode-range: U+1B100-1B1FF;
 }
 
 @font-face {
@@ -2444,7 +2444,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-01d300.woff2') format('woff2');
-  unicode-range: U+1D300-U+1D3FF;
+  unicode-range: U+1D300-1D3FF;
 }
 
 @font-face {
@@ -2453,7 +2453,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-01f000.woff2') format('woff2');
-  unicode-range: U+1F000-U+1F0FF;
+  unicode-range: U+1F000-1F0FF;
 }
 
 @font-face {
@@ -2462,7 +2462,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-01f200.woff2') format('woff2');
-  unicode-range: U+1F200-U+1F2FF;
+  unicode-range: U+1F200-1F2FF;
 }
 
 @font-face {
@@ -2471,7 +2471,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-01fa00.woff2') format('woff2');
-  unicode-range: U+1FA00-U+1FAFF;
+  unicode-range: U+1FA00-1FAFF;
 }
 
 @font-face {
@@ -2480,7 +2480,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020000.woff2') format('woff2');
-  unicode-range: U+20000-U+200FF;
+  unicode-range: U+20000-200FF;
 }
 
 @font-face {
@@ -2489,7 +2489,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100000.woff2') format('woff2');
-  unicode-range: U+100000-U+1000FF;
+  unicode-range: U+100000-1000FF;
 }
 
 @font-face {
@@ -2498,7 +2498,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100100.woff2') format('woff2');
-  unicode-range: U+100100-U+1001FF;
+  unicode-range: U+100100-1001FF;
 }
 
 @font-face {
@@ -2507,7 +2507,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100200.woff2') format('woff2');
-  unicode-range: U+100200-U+1002FF;
+  unicode-range: U+100200-1002FF;
 }
 
 @font-face {
@@ -2516,7 +2516,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100300.woff2') format('woff2');
-  unicode-range: U+100300-U+1003FF;
+  unicode-range: U+100300-1003FF;
 }
 
 @font-face {
@@ -2525,7 +2525,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100400.woff2') format('woff2');
-  unicode-range: U+100400-U+1004FF;
+  unicode-range: U+100400-1004FF;
 }
 
 @font-face {
@@ -2534,7 +2534,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100500.woff2') format('woff2');
-  unicode-range: U+100500-U+1005FF;
+  unicode-range: U+100500-1005FF;
 }
 
 @font-face {
@@ -2543,7 +2543,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100600.woff2') format('woff2');
-  unicode-range: U+100600-U+1006FF;
+  unicode-range: U+100600-1006FF;
 }
 
 @font-face {
@@ -2552,7 +2552,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100700.woff2') format('woff2');
-  unicode-range: U+100700-U+1007FF;
+  unicode-range: U+100700-1007FF;
 }
 
 @font-face {
@@ -2561,7 +2561,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100800.woff2') format('woff2');
-  unicode-range: U+100800-U+1008FF;
+  unicode-range: U+100800-1008FF;
 }
 
 @font-face {
@@ -2570,7 +2570,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100900.woff2') format('woff2');
-  unicode-range: U+100900-U+1009FF;
+  unicode-range: U+100900-1009FF;
 }
 
 @font-face {
@@ -2579,7 +2579,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100a00.woff2') format('woff2');
-  unicode-range: U+100A00-U+100AFF;
+  unicode-range: U+100A00-100AFF;
 }
 
 @font-face {
@@ -2588,7 +2588,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100b00.woff2') format('woff2');
-  unicode-range: U+100B00-U+100BFF;
+  unicode-range: U+100B00-100BFF;
 }
 
 @font-face {
@@ -2597,7 +2597,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100c00.woff2') format('woff2');
-  unicode-range: U+100C00-U+100CFF;
+  unicode-range: U+100C00-100CFF;
 }
 
 @font-face {
@@ -2606,7 +2606,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100d00.woff2') format('woff2');
-  unicode-range: U+100D00-U+100DFF;
+  unicode-range: U+100D00-100DFF;
 }
 
 @font-face {
@@ -2615,7 +2615,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100e00.woff2') format('woff2');
-  unicode-range: U+100E00-U+100EFF;
+  unicode-range: U+100E00-100EFF;
 }
 
 @font-face {
@@ -2624,7 +2624,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-100f00.woff2') format('woff2');
-  unicode-range: U+100F00-U+100FFF;
+  unicode-range: U+100F00-100FFF;
 }
 
 @font-face {
@@ -2633,7 +2633,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101000.woff2') format('woff2');
-  unicode-range: U+101000-U+1010FF;
+  unicode-range: U+101000-1010FF;
 }
 
 @font-face {
@@ -2642,7 +2642,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101100.woff2') format('woff2');
-  unicode-range: U+101100-U+1011FF;
+  unicode-range: U+101100-1011FF;
 }
 
 @font-face {
@@ -2651,7 +2651,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101200.woff2') format('woff2');
-  unicode-range: U+101200-U+1012FF;
+  unicode-range: U+101200-1012FF;
 }
 
 @font-face {
@@ -2660,7 +2660,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101300.woff2') format('woff2');
-  unicode-range: U+101300-U+1013FF;
+  unicode-range: U+101300-1013FF;
 }
 
 @font-face {
@@ -2669,7 +2669,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101400.woff2') format('woff2');
-  unicode-range: U+101400-U+1014FF;
+  unicode-range: U+101400-1014FF;
 }
 
 @font-face {
@@ -2678,7 +2678,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101500.woff2') format('woff2');
-  unicode-range: U+101500-U+1015FF;
+  unicode-range: U+101500-1015FF;
 }
 
 @font-face {
@@ -2687,7 +2687,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101600.woff2') format('woff2');
-  unicode-range: U+101600-U+1016FF;
+  unicode-range: U+101600-1016FF;
 }
 
 @font-face {
@@ -2696,7 +2696,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101700.woff2') format('woff2');
-  unicode-range: U+101700-U+1017FF;
+  unicode-range: U+101700-1017FF;
 }
 
 @font-face {
@@ -2705,7 +2705,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101800.woff2') format('woff2');
-  unicode-range: U+101800-U+1018FF;
+  unicode-range: U+101800-1018FF;
 }
 
 @font-face {
@@ -2714,7 +2714,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101900.woff2') format('woff2');
-  unicode-range: U+101900-U+1019FF;
+  unicode-range: U+101900-1019FF;
 }
 
 @font-face {
@@ -2723,7 +2723,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101a00.woff2') format('woff2');
-  unicode-range: U+101A00-U+101AFF;
+  unicode-range: U+101A00-101AFF;
 }
 
 @font-face {
@@ -2732,7 +2732,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101b00.woff2') format('woff2');
-  unicode-range: U+101B00-U+101BFF;
+  unicode-range: U+101B00-101BFF;
 }
 
 @font-face {
@@ -2741,7 +2741,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101c00.woff2') format('woff2');
-  unicode-range: U+101C00-U+101CFF;
+  unicode-range: U+101C00-101CFF;
 }
 
 @font-face {
@@ -2750,7 +2750,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101d00.woff2') format('woff2');
-  unicode-range: U+101D00-U+101DFF;
+  unicode-range: U+101D00-101DFF;
 }
 
 @font-face {
@@ -2759,7 +2759,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101e00.woff2') format('woff2');
-  unicode-range: U+101E00-U+101EFF;
+  unicode-range: U+101E00-101EFF;
 }
 
 @font-face {
@@ -2768,7 +2768,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-101f00.woff2') format('woff2');
-  unicode-range: U+101F00-U+101FFF;
+  unicode-range: U+101F00-101FFF;
 }
 
 @font-face {
@@ -2777,7 +2777,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-102000.woff2') format('woff2');
-  unicode-range: U+102000-U+1020FF;
+  unicode-range: U+102000-1020FF;
 }
 
 @font-face {
@@ -2786,7 +2786,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-102100.woff2') format('woff2');
-  unicode-range: U+102100-U+1021FF;
+  unicode-range: U+102100-1021FF;
 }
 
 @font-face {
@@ -2795,7 +2795,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-102200.woff2') format('woff2');
-  unicode-range: U+102200-U+1022FF;
+  unicode-range: U+102200-1022FF;
 }
 
 @font-face {
@@ -2804,7 +2804,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-102300.woff2') format('woff2');
-  unicode-range: U+102300-U+1023FF;
+  unicode-range: U+102300-1023FF;
 }
 
 @font-face {
@@ -2813,7 +2813,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-102400.woff2') format('woff2');
-  unicode-range: U+102400-U+1024FF;
+  unicode-range: U+102400-1024FF;
 }
 
 @font-face {
@@ -2822,7 +2822,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020100.woff2') format('woff2');
-  unicode-range: U+20100-U+201FF;
+  unicode-range: U+20100-201FF;
 }
 
 @font-face {
@@ -2831,7 +2831,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020200.woff2') format('woff2');
-  unicode-range: U+20200-U+202FF;
+  unicode-range: U+20200-202FF;
 }
 
 @font-face {
@@ -2840,7 +2840,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020300.woff2') format('woff2');
-  unicode-range: U+20300-U+203FF;
+  unicode-range: U+20300-203FF;
 }
 
 @font-face {
@@ -2849,7 +2849,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020400.woff2') format('woff2');
-  unicode-range: U+20400-U+204FF;
+  unicode-range: U+20400-204FF;
 }
 
 @font-face {
@@ -2858,7 +2858,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020500.woff2') format('woff2');
-  unicode-range: U+20500-U+205FF;
+  unicode-range: U+20500-205FF;
 }
 
 @font-face {
@@ -2867,7 +2867,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020600.woff2') format('woff2');
-  unicode-range: U+20600-U+206FF;
+  unicode-range: U+20600-206FF;
 }
 
 @font-face {
@@ -2876,7 +2876,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020700.woff2') format('woff2');
-  unicode-range: U+20700-U+207FF;
+  unicode-range: U+20700-207FF;
 }
 
 @font-face {
@@ -2885,7 +2885,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020800.woff2') format('woff2');
-  unicode-range: U+20800-U+208FF;
+  unicode-range: U+20800-208FF;
 }
 
 @font-face {
@@ -2894,7 +2894,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020900.woff2') format('woff2');
-  unicode-range: U+20900-U+209FF;
+  unicode-range: U+20900-209FF;
 }
 
 @font-face {
@@ -2903,7 +2903,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020a00.woff2') format('woff2');
-  unicode-range: U+20A00-U+20AFF;
+  unicode-range: U+20A00-20AFF;
 }
 
 @font-face {
@@ -2912,7 +2912,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020b00.woff2') format('woff2');
-  unicode-range: U+20B00-U+20BFF;
+  unicode-range: U+20B00-20BFF;
 }
 
 @font-face {
@@ -2921,7 +2921,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020c00.woff2') format('woff2');
-  unicode-range: U+20C00-U+20CFF;
+  unicode-range: U+20C00-20CFF;
 }
 
 @font-face {
@@ -2930,7 +2930,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020d00.woff2') format('woff2');
-  unicode-range: U+20D00-U+20DFF;
+  unicode-range: U+20D00-20DFF;
 }
 
 @font-face {
@@ -2939,7 +2939,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020e00.woff2') format('woff2');
-  unicode-range: U+20E00-U+20EFF;
+  unicode-range: U+20E00-20EFF;
 }
 
 @font-face {
@@ -2948,7 +2948,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-020f00.woff2') format('woff2');
-  unicode-range: U+20F00-U+20FFF;
+  unicode-range: U+20F00-20FFF;
 }
 
 @font-face {
@@ -2957,7 +2957,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021000.woff2') format('woff2');
-  unicode-range: U+21000-U+210FF;
+  unicode-range: U+21000-210FF;
 }
 
 @font-face {
@@ -2966,7 +2966,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021100.woff2') format('woff2');
-  unicode-range: U+21100-U+211FF;
+  unicode-range: U+21100-211FF;
 }
 
 @font-face {
@@ -2975,7 +2975,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021200.woff2') format('woff2');
-  unicode-range: U+21200-U+212FF;
+  unicode-range: U+21200-212FF;
 }
 
 @font-face {
@@ -2984,7 +2984,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021300.woff2') format('woff2');
-  unicode-range: U+21300-U+213FF;
+  unicode-range: U+21300-213FF;
 }
 
 @font-face {
@@ -2993,7 +2993,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021400.woff2') format('woff2');
-  unicode-range: U+21400-U+214FF;
+  unicode-range: U+21400-214FF;
 }
 
 @font-face {
@@ -3002,7 +3002,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021500.woff2') format('woff2');
-  unicode-range: U+21500-U+215FF;
+  unicode-range: U+21500-215FF;
 }
 
 @font-face {
@@ -3011,7 +3011,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021600.woff2') format('woff2');
-  unicode-range: U+21600-U+216FF;
+  unicode-range: U+21600-216FF;
 }
 
 @font-face {
@@ -3020,7 +3020,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021700.woff2') format('woff2');
-  unicode-range: U+21700-U+217FF;
+  unicode-range: U+21700-217FF;
 }
 
 @font-face {
@@ -3029,7 +3029,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021800.woff2') format('woff2');
-  unicode-range: U+21800-U+218FF;
+  unicode-range: U+21800-218FF;
 }
 
 @font-face {
@@ -3038,7 +3038,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021900.woff2') format('woff2');
-  unicode-range: U+21900-U+219FF;
+  unicode-range: U+21900-219FF;
 }
 
 @font-face {
@@ -3047,7 +3047,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021a00.woff2') format('woff2');
-  unicode-range: U+21A00-U+21AFF;
+  unicode-range: U+21A00-21AFF;
 }
 
 @font-face {
@@ -3056,7 +3056,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021b00.woff2') format('woff2');
-  unicode-range: U+21B00-U+21BFF;
+  unicode-range: U+21B00-21BFF;
 }
 
 @font-face {
@@ -3065,7 +3065,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021c00.woff2') format('woff2');
-  unicode-range: U+21C00-U+21CFF;
+  unicode-range: U+21C00-21CFF;
 }
 
 @font-face {
@@ -3074,7 +3074,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021d00.woff2') format('woff2');
-  unicode-range: U+21D00-U+21DFF;
+  unicode-range: U+21D00-21DFF;
 }
 
 @font-face {
@@ -3083,7 +3083,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021e00.woff2') format('woff2');
-  unicode-range: U+21E00-U+21EFF;
+  unicode-range: U+21E00-21EFF;
 }
 
 @font-face {
@@ -3092,7 +3092,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-021f00.woff2') format('woff2');
-  unicode-range: U+21F00-U+21FFF;
+  unicode-range: U+21F00-21FFF;
 }
 
 @font-face {
@@ -3101,7 +3101,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022000.woff2') format('woff2');
-  unicode-range: U+22000-U+220FF;
+  unicode-range: U+22000-220FF;
 }
 
 @font-face {
@@ -3110,7 +3110,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022100.woff2') format('woff2');
-  unicode-range: U+22100-U+221FF;
+  unicode-range: U+22100-221FF;
 }
 
 @font-face {
@@ -3119,7 +3119,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022200.woff2') format('woff2');
-  unicode-range: U+22200-U+222FF;
+  unicode-range: U+22200-222FF;
 }
 
 @font-face {
@@ -3128,7 +3128,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022300.woff2') format('woff2');
-  unicode-range: U+22300-U+223FF;
+  unicode-range: U+22300-223FF;
 }
 
 @font-face {
@@ -3137,7 +3137,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022400.woff2') format('woff2');
-  unicode-range: U+22400-U+224FF;
+  unicode-range: U+22400-224FF;
 }
 
 @font-face {
@@ -3146,7 +3146,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022500.woff2') format('woff2');
-  unicode-range: U+22500-U+225FF;
+  unicode-range: U+22500-225FF;
 }
 
 @font-face {
@@ -3155,7 +3155,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022600.woff2') format('woff2');
-  unicode-range: U+22600-U+226FF;
+  unicode-range: U+22600-226FF;
 }
 
 @font-face {
@@ -3164,7 +3164,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022700.woff2') format('woff2');
-  unicode-range: U+22700-U+227FF;
+  unicode-range: U+22700-227FF;
 }
 
 @font-face {
@@ -3173,7 +3173,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022800.woff2') format('woff2');
-  unicode-range: U+22800-U+228FF;
+  unicode-range: U+22800-228FF;
 }
 
 @font-face {
@@ -3182,7 +3182,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022900.woff2') format('woff2');
-  unicode-range: U+22900-U+229FF;
+  unicode-range: U+22900-229FF;
 }
 
 @font-face {
@@ -3191,7 +3191,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022a00.woff2') format('woff2');
-  unicode-range: U+22A00-U+22AFF;
+  unicode-range: U+22A00-22AFF;
 }
 
 @font-face {
@@ -3200,7 +3200,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022b00.woff2') format('woff2');
-  unicode-range: U+22B00-U+22BFF;
+  unicode-range: U+22B00-22BFF;
 }
 
 @font-face {
@@ -3209,7 +3209,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022c00.woff2') format('woff2');
-  unicode-range: U+22C00-U+22CFF;
+  unicode-range: U+22C00-22CFF;
 }
 
 @font-face {
@@ -3218,7 +3218,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022d00.woff2') format('woff2');
-  unicode-range: U+22D00-U+22DFF;
+  unicode-range: U+22D00-22DFF;
 }
 
 @font-face {
@@ -3227,7 +3227,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022e00.woff2') format('woff2');
-  unicode-range: U+22E00-U+22EFF;
+  unicode-range: U+22E00-22EFF;
 }
 
 @font-face {
@@ -3236,7 +3236,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-022f00.woff2') format('woff2');
-  unicode-range: U+22F00-U+22FFF;
+  unicode-range: U+22F00-22FFF;
 }
 
 @font-face {
@@ -3245,7 +3245,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023000.woff2') format('woff2');
-  unicode-range: U+23000-U+230FF;
+  unicode-range: U+23000-230FF;
 }
 
 @font-face {
@@ -3254,7 +3254,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023100.woff2') format('woff2');
-  unicode-range: U+23100-U+231FF;
+  unicode-range: U+23100-231FF;
 }
 
 @font-face {
@@ -3263,7 +3263,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023200.woff2') format('woff2');
-  unicode-range: U+23200-U+232FF;
+  unicode-range: U+23200-232FF;
 }
 
 @font-face {
@@ -3272,7 +3272,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023300.woff2') format('woff2');
-  unicode-range: U+23300-U+233FF;
+  unicode-range: U+23300-233FF;
 }
 
 @font-face {
@@ -3281,7 +3281,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023400.woff2') format('woff2');
-  unicode-range: U+23400-U+234FF;
+  unicode-range: U+23400-234FF;
 }
 
 @font-face {
@@ -3290,7 +3290,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023500.woff2') format('woff2');
-  unicode-range: U+23500-U+235FF;
+  unicode-range: U+23500-235FF;
 }
 
 @font-face {
@@ -3299,7 +3299,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023600.woff2') format('woff2');
-  unicode-range: U+23600-U+236FF;
+  unicode-range: U+23600-236FF;
 }
 
 @font-face {
@@ -3308,7 +3308,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023700.woff2') format('woff2');
-  unicode-range: U+23700-U+237FF;
+  unicode-range: U+23700-237FF;
 }
 
 @font-face {
@@ -3317,7 +3317,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023800.woff2') format('woff2');
-  unicode-range: U+23800-U+238FF;
+  unicode-range: U+23800-238FF;
 }
 
 @font-face {
@@ -3326,7 +3326,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023900.woff2') format('woff2');
-  unicode-range: U+23900-U+239FF;
+  unicode-range: U+23900-239FF;
 }
 
 @font-face {
@@ -3335,7 +3335,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023a00.woff2') format('woff2');
-  unicode-range: U+23A00-U+23AFF;
+  unicode-range: U+23A00-23AFF;
 }
 
 @font-face {
@@ -3344,7 +3344,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023b00.woff2') format('woff2');
-  unicode-range: U+23B00-U+23BFF;
+  unicode-range: U+23B00-23BFF;
 }
 
 @font-face {
@@ -3353,7 +3353,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023c00.woff2') format('woff2');
-  unicode-range: U+23C00-U+23CFF;
+  unicode-range: U+23C00-23CFF;
 }
 
 @font-face {
@@ -3362,7 +3362,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023d00.woff2') format('woff2');
-  unicode-range: U+23D00-U+23DFF;
+  unicode-range: U+23D00-23DFF;
 }
 
 @font-face {
@@ -3371,7 +3371,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023e00.woff2') format('woff2');
-  unicode-range: U+23E00-U+23EFF;
+  unicode-range: U+23E00-23EFF;
 }
 
 @font-face {
@@ -3380,7 +3380,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-023f00.woff2') format('woff2');
-  unicode-range: U+23F00-U+23FFF;
+  unicode-range: U+23F00-23FFF;
 }
 
 @font-face {
@@ -3389,7 +3389,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024000.woff2') format('woff2');
-  unicode-range: U+24000-U+240FF;
+  unicode-range: U+24000-240FF;
 }
 
 @font-face {
@@ -3398,7 +3398,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024100.woff2') format('woff2');
-  unicode-range: U+24100-U+241FF;
+  unicode-range: U+24100-241FF;
 }
 
 @font-face {
@@ -3407,7 +3407,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024200.woff2') format('woff2');
-  unicode-range: U+24200-U+242FF;
+  unicode-range: U+24200-242FF;
 }
 
 @font-face {
@@ -3416,7 +3416,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024300.woff2') format('woff2');
-  unicode-range: U+24300-U+243FF;
+  unicode-range: U+24300-243FF;
 }
 
 @font-face {
@@ -3425,7 +3425,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024400.woff2') format('woff2');
-  unicode-range: U+24400-U+244FF;
+  unicode-range: U+24400-244FF;
 }
 
 @font-face {
@@ -3434,7 +3434,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024500.woff2') format('woff2');
-  unicode-range: U+24500-U+245FF;
+  unicode-range: U+24500-245FF;
 }
 
 @font-face {
@@ -3443,7 +3443,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024600.woff2') format('woff2');
-  unicode-range: U+24600-U+246FF;
+  unicode-range: U+24600-246FF;
 }
 
 @font-face {
@@ -3452,7 +3452,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024700.woff2') format('woff2');
-  unicode-range: U+24700-U+247FF;
+  unicode-range: U+24700-247FF;
 }
 
 @font-face {
@@ -3461,7 +3461,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024800.woff2') format('woff2');
-  unicode-range: U+24800-U+248FF;
+  unicode-range: U+24800-248FF;
 }
 
 @font-face {
@@ -3470,7 +3470,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024900.woff2') format('woff2');
-  unicode-range: U+24900-U+249FF;
+  unicode-range: U+24900-249FF;
 }
 
 @font-face {
@@ -3479,7 +3479,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024a00.woff2') format('woff2');
-  unicode-range: U+24A00-U+24AFF;
+  unicode-range: U+24A00-24AFF;
 }
 
 @font-face {
@@ -3488,7 +3488,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024b00.woff2') format('woff2');
-  unicode-range: U+24B00-U+24BFF;
+  unicode-range: U+24B00-24BFF;
 }
 
 @font-face {
@@ -3497,7 +3497,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024c00.woff2') format('woff2');
-  unicode-range: U+24C00-U+24CFF;
+  unicode-range: U+24C00-24CFF;
 }
 
 @font-face {
@@ -3506,7 +3506,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024d00.woff2') format('woff2');
-  unicode-range: U+24D00-U+24DFF;
+  unicode-range: U+24D00-24DFF;
 }
 
 @font-face {
@@ -3515,7 +3515,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024e00.woff2') format('woff2');
-  unicode-range: U+24E00-U+24EFF;
+  unicode-range: U+24E00-24EFF;
 }
 
 @font-face {
@@ -3524,7 +3524,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-024f00.woff2') format('woff2');
-  unicode-range: U+24F00-U+24FFF;
+  unicode-range: U+24F00-24FFF;
 }
 
 @font-face {
@@ -3533,7 +3533,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025000.woff2') format('woff2');
-  unicode-range: U+25000-U+250FF;
+  unicode-range: U+25000-250FF;
 }
 
 @font-face {
@@ -3542,7 +3542,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025100.woff2') format('woff2');
-  unicode-range: U+25100-U+251FF;
+  unicode-range: U+25100-251FF;
 }
 
 @font-face {
@@ -3551,7 +3551,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025200.woff2') format('woff2');
-  unicode-range: U+25200-U+252FF;
+  unicode-range: U+25200-252FF;
 }
 
 @font-face {
@@ -3560,7 +3560,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025300.woff2') format('woff2');
-  unicode-range: U+25300-U+253FF;
+  unicode-range: U+25300-253FF;
 }
 
 @font-face {
@@ -3569,7 +3569,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025400.woff2') format('woff2');
-  unicode-range: U+25400-U+254FF;
+  unicode-range: U+25400-254FF;
 }
 
 @font-face {
@@ -3578,7 +3578,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025500.woff2') format('woff2');
-  unicode-range: U+25500-U+255FF;
+  unicode-range: U+25500-255FF;
 }
 
 @font-face {
@@ -3587,7 +3587,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025600.woff2') format('woff2');
-  unicode-range: U+25600-U+256FF;
+  unicode-range: U+25600-256FF;
 }
 
 @font-face {
@@ -3596,7 +3596,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025700.woff2') format('woff2');
-  unicode-range: U+25700-U+257FF;
+  unicode-range: U+25700-257FF;
 }
 
 @font-face {
@@ -3605,7 +3605,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025800.woff2') format('woff2');
-  unicode-range: U+25800-U+258FF;
+  unicode-range: U+25800-258FF;
 }
 
 @font-face {
@@ -3614,7 +3614,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025900.woff2') format('woff2');
-  unicode-range: U+25900-U+259FF;
+  unicode-range: U+25900-259FF;
 }
 
 @font-face {
@@ -3623,7 +3623,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025a00.woff2') format('woff2');
-  unicode-range: U+25A00-U+25AFF;
+  unicode-range: U+25A00-25AFF;
 }
 
 @font-face {
@@ -3632,7 +3632,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025b00.woff2') format('woff2');
-  unicode-range: U+25B00-U+25BFF;
+  unicode-range: U+25B00-25BFF;
 }
 
 @font-face {
@@ -3641,7 +3641,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025c00.woff2') format('woff2');
-  unicode-range: U+25C00-U+25CFF;
+  unicode-range: U+25C00-25CFF;
 }
 
 @font-face {
@@ -3650,7 +3650,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025d00.woff2') format('woff2');
-  unicode-range: U+25D00-U+25DFF;
+  unicode-range: U+25D00-25DFF;
 }
 
 @font-face {
@@ -3659,7 +3659,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025e00.woff2') format('woff2');
-  unicode-range: U+25E00-U+25EFF;
+  unicode-range: U+25E00-25EFF;
 }
 
 @font-face {
@@ -3668,7 +3668,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-025f00.woff2') format('woff2');
-  unicode-range: U+25F00-U+25FFF;
+  unicode-range: U+25F00-25FFF;
 }
 
 @font-face {
@@ -3677,7 +3677,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026000.woff2') format('woff2');
-  unicode-range: U+26000-U+260FF;
+  unicode-range: U+26000-260FF;
 }
 
 @font-face {
@@ -3686,7 +3686,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026100.woff2') format('woff2');
-  unicode-range: U+26100-U+261FF;
+  unicode-range: U+26100-261FF;
 }
 
 @font-face {
@@ -3695,7 +3695,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026200.woff2') format('woff2');
-  unicode-range: U+26200-U+262FF;
+  unicode-range: U+26200-262FF;
 }
 
 @font-face {
@@ -3704,7 +3704,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026300.woff2') format('woff2');
-  unicode-range: U+26300-U+263FF;
+  unicode-range: U+26300-263FF;
 }
 
 @font-face {
@@ -3713,7 +3713,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026400.woff2') format('woff2');
-  unicode-range: U+26400-U+264FF;
+  unicode-range: U+26400-264FF;
 }
 
 @font-face {
@@ -3722,7 +3722,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026500.woff2') format('woff2');
-  unicode-range: U+26500-U+265FF;
+  unicode-range: U+26500-265FF;
 }
 
 @font-face {
@@ -3731,7 +3731,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026600.woff2') format('woff2');
-  unicode-range: U+26600-U+266FF;
+  unicode-range: U+26600-266FF;
 }
 
 @font-face {
@@ -3740,7 +3740,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026700.woff2') format('woff2');
-  unicode-range: U+26700-U+267FF;
+  unicode-range: U+26700-267FF;
 }
 
 @font-face {
@@ -3749,7 +3749,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026800.woff2') format('woff2');
-  unicode-range: U+26800-U+268FF;
+  unicode-range: U+26800-268FF;
 }
 
 @font-face {
@@ -3758,7 +3758,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026900.woff2') format('woff2');
-  unicode-range: U+26900-U+269FF;
+  unicode-range: U+26900-269FF;
 }
 
 @font-face {
@@ -3767,7 +3767,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026a00.woff2') format('woff2');
-  unicode-range: U+26A00-U+26AFF;
+  unicode-range: U+26A00-26AFF;
 }
 
 @font-face {
@@ -3776,7 +3776,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026b00.woff2') format('woff2');
-  unicode-range: U+26B00-U+26BFF;
+  unicode-range: U+26B00-26BFF;
 }
 
 @font-face {
@@ -3785,7 +3785,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026c00.woff2') format('woff2');
-  unicode-range: U+26C00-U+26CFF;
+  unicode-range: U+26C00-26CFF;
 }
 
 @font-face {
@@ -3794,7 +3794,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026d00.woff2') format('woff2');
-  unicode-range: U+26D00-U+26DFF;
+  unicode-range: U+26D00-26DFF;
 }
 
 @font-face {
@@ -3803,7 +3803,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026e00.woff2') format('woff2');
-  unicode-range: U+26E00-U+26EFF;
+  unicode-range: U+26E00-26EFF;
 }
 
 @font-face {
@@ -3812,7 +3812,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-026f00.woff2') format('woff2');
-  unicode-range: U+26F00-U+26FFF;
+  unicode-range: U+26F00-26FFF;
 }
 
 @font-face {
@@ -3821,7 +3821,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027000.woff2') format('woff2');
-  unicode-range: U+27000-U+270FF;
+  unicode-range: U+27000-270FF;
 }
 
 @font-face {
@@ -3830,7 +3830,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027100.woff2') format('woff2');
-  unicode-range: U+27100-U+271FF;
+  unicode-range: U+27100-271FF;
 }
 
 @font-face {
@@ -3839,7 +3839,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027200.woff2') format('woff2');
-  unicode-range: U+27200-U+272FF;
+  unicode-range: U+27200-272FF;
 }
 
 @font-face {
@@ -3848,7 +3848,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027300.woff2') format('woff2');
-  unicode-range: U+27300-U+273FF;
+  unicode-range: U+27300-273FF;
 }
 
 @font-face {
@@ -3857,7 +3857,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027400.woff2') format('woff2');
-  unicode-range: U+27400-U+274FF;
+  unicode-range: U+27400-274FF;
 }
 
 @font-face {
@@ -3866,7 +3866,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027500.woff2') format('woff2');
-  unicode-range: U+27500-U+275FF;
+  unicode-range: U+27500-275FF;
 }
 
 @font-face {
@@ -3875,7 +3875,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027600.woff2') format('woff2');
-  unicode-range: U+27600-U+276FF;
+  unicode-range: U+27600-276FF;
 }
 
 @font-face {
@@ -3884,7 +3884,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027700.woff2') format('woff2');
-  unicode-range: U+27700-U+277FF;
+  unicode-range: U+27700-277FF;
 }
 
 @font-face {
@@ -3893,7 +3893,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027800.woff2') format('woff2');
-  unicode-range: U+27800-U+278FF;
+  unicode-range: U+27800-278FF;
 }
 
 @font-face {
@@ -3902,7 +3902,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027900.woff2') format('woff2');
-  unicode-range: U+27900-U+279FF;
+  unicode-range: U+27900-279FF;
 }
 
 @font-face {
@@ -3911,7 +3911,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027a00.woff2') format('woff2');
-  unicode-range: U+27A00-U+27AFF;
+  unicode-range: U+27A00-27AFF;
 }
 
 @font-face {
@@ -3920,7 +3920,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027b00.woff2') format('woff2');
-  unicode-range: U+27B00-U+27BFF;
+  unicode-range: U+27B00-27BFF;
 }
 
 @font-face {
@@ -3929,7 +3929,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027c00.woff2') format('woff2');
-  unicode-range: U+27C00-U+27CFF;
+  unicode-range: U+27C00-27CFF;
 }
 
 @font-face {
@@ -3938,7 +3938,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027d00.woff2') format('woff2');
-  unicode-range: U+27D00-U+27DFF;
+  unicode-range: U+27D00-27DFF;
 }
 
 @font-face {
@@ -3947,7 +3947,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027e00.woff2') format('woff2');
-  unicode-range: U+27E00-U+27EFF;
+  unicode-range: U+27E00-27EFF;
 }
 
 @font-face {
@@ -3956,7 +3956,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-027f00.woff2') format('woff2');
-  unicode-range: U+27F00-U+27FFF;
+  unicode-range: U+27F00-27FFF;
 }
 
 @font-face {
@@ -3965,7 +3965,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028000.woff2') format('woff2');
-  unicode-range: U+28000-U+280FF;
+  unicode-range: U+28000-280FF;
 }
 
 @font-face {
@@ -3974,7 +3974,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028100.woff2') format('woff2');
-  unicode-range: U+28100-U+281FF;
+  unicode-range: U+28100-281FF;
 }
 
 @font-face {
@@ -3983,7 +3983,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028200.woff2') format('woff2');
-  unicode-range: U+28200-U+282FF;
+  unicode-range: U+28200-282FF;
 }
 
 @font-face {
@@ -3992,7 +3992,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028300.woff2') format('woff2');
-  unicode-range: U+28300-U+283FF;
+  unicode-range: U+28300-283FF;
 }
 
 @font-face {
@@ -4001,7 +4001,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028400.woff2') format('woff2');
-  unicode-range: U+28400-U+284FF;
+  unicode-range: U+28400-284FF;
 }
 
 @font-face {
@@ -4010,7 +4010,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028500.woff2') format('woff2');
-  unicode-range: U+28500-U+285FF;
+  unicode-range: U+28500-285FF;
 }
 
 @font-face {
@@ -4019,7 +4019,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028600.woff2') format('woff2');
-  unicode-range: U+28600-U+286FF;
+  unicode-range: U+28600-286FF;
 }
 
 @font-face {
@@ -4028,7 +4028,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028700.woff2') format('woff2');
-  unicode-range: U+28700-U+287FF;
+  unicode-range: U+28700-287FF;
 }
 
 @font-face {
@@ -4037,7 +4037,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028800.woff2') format('woff2');
-  unicode-range: U+28800-U+288FF;
+  unicode-range: U+28800-288FF;
 }
 
 @font-face {
@@ -4046,7 +4046,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028900.woff2') format('woff2');
-  unicode-range: U+28900-U+289FF;
+  unicode-range: U+28900-289FF;
 }
 
 @font-face {
@@ -4055,7 +4055,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028a00.woff2') format('woff2');
-  unicode-range: U+28A00-U+28AFF;
+  unicode-range: U+28A00-28AFF;
 }
 
 @font-face {
@@ -4064,7 +4064,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028b00.woff2') format('woff2');
-  unicode-range: U+28B00-U+28BFF;
+  unicode-range: U+28B00-28BFF;
 }
 
 @font-face {
@@ -4073,7 +4073,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028c00.woff2') format('woff2');
-  unicode-range: U+28C00-U+28CFF;
+  unicode-range: U+28C00-28CFF;
 }
 
 @font-face {
@@ -4082,7 +4082,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028d00.woff2') format('woff2');
-  unicode-range: U+28D00-U+28DFF;
+  unicode-range: U+28D00-28DFF;
 }
 
 @font-face {
@@ -4091,7 +4091,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028e00.woff2') format('woff2');
-  unicode-range: U+28E00-U+28EFF;
+  unicode-range: U+28E00-28EFF;
 }
 
 @font-face {
@@ -4100,7 +4100,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-028f00.woff2') format('woff2');
-  unicode-range: U+28F00-U+28FFF;
+  unicode-range: U+28F00-28FFF;
 }
 
 @font-face {
@@ -4109,7 +4109,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029000.woff2') format('woff2');
-  unicode-range: U+29000-U+290FF;
+  unicode-range: U+29000-290FF;
 }
 
 @font-face {
@@ -4118,7 +4118,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029100.woff2') format('woff2');
-  unicode-range: U+29100-U+291FF;
+  unicode-range: U+29100-291FF;
 }
 
 @font-face {
@@ -4127,7 +4127,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029200.woff2') format('woff2');
-  unicode-range: U+29200-U+292FF;
+  unicode-range: U+29200-292FF;
 }
 
 @font-face {
@@ -4136,7 +4136,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029300.woff2') format('woff2');
-  unicode-range: U+29300-U+293FF;
+  unicode-range: U+29300-293FF;
 }
 
 @font-face {
@@ -4145,7 +4145,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029400.woff2') format('woff2');
-  unicode-range: U+29400-U+294FF;
+  unicode-range: U+29400-294FF;
 }
 
 @font-face {
@@ -4154,7 +4154,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029500.woff2') format('woff2');
-  unicode-range: U+29500-U+295FF;
+  unicode-range: U+29500-295FF;
 }
 
 @font-face {
@@ -4163,7 +4163,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029600.woff2') format('woff2');
-  unicode-range: U+29600-U+296FF;
+  unicode-range: U+29600-296FF;
 }
 
 @font-face {
@@ -4172,7 +4172,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029700.woff2') format('woff2');
-  unicode-range: U+29700-U+297FF;
+  unicode-range: U+29700-297FF;
 }
 
 @font-face {
@@ -4181,7 +4181,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029800.woff2') format('woff2');
-  unicode-range: U+29800-U+298FF;
+  unicode-range: U+29800-298FF;
 }
 
 @font-face {
@@ -4190,7 +4190,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029900.woff2') format('woff2');
-  unicode-range: U+29900-U+299FF;
+  unicode-range: U+29900-299FF;
 }
 
 @font-face {
@@ -4199,7 +4199,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029a00.woff2') format('woff2');
-  unicode-range: U+29A00-U+29AFF;
+  unicode-range: U+29A00-29AFF;
 }
 
 @font-face {
@@ -4208,7 +4208,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029b00.woff2') format('woff2');
-  unicode-range: U+29B00-U+29BFF;
+  unicode-range: U+29B00-29BFF;
 }
 
 @font-face {
@@ -4217,7 +4217,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029c00.woff2') format('woff2');
-  unicode-range: U+29C00-U+29CFF;
+  unicode-range: U+29C00-29CFF;
 }
 
 @font-face {
@@ -4226,7 +4226,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029d00.woff2') format('woff2');
-  unicode-range: U+29D00-U+29DFF;
+  unicode-range: U+29D00-29DFF;
 }
 
 @font-face {
@@ -4235,7 +4235,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029e00.woff2') format('woff2');
-  unicode-range: U+29E00-U+29EFF;
+  unicode-range: U+29E00-29EFF;
 }
 
 @font-face {
@@ -4244,7 +4244,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-029f00.woff2') format('woff2');
-  unicode-range: U+29F00-U+29FFF;
+  unicode-range: U+29F00-29FFF;
 }
 
 @font-face {
@@ -4253,7 +4253,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02a000.woff2') format('woff2');
-  unicode-range: U+2A000-U+2A0FF;
+  unicode-range: U+2A000-2A0FF;
 }
 
 @font-face {
@@ -4262,7 +4262,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02a100.woff2') format('woff2');
-  unicode-range: U+2A100-U+2A1FF;
+  unicode-range: U+2A100-2A1FF;
 }
 
 @font-face {
@@ -4271,7 +4271,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02a200.woff2') format('woff2');
-  unicode-range: U+2A200-U+2A2FF;
+  unicode-range: U+2A200-2A2FF;
 }
 
 @font-face {
@@ -4280,7 +4280,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02a300.woff2') format('woff2');
-  unicode-range: U+2A300-U+2A3FF;
+  unicode-range: U+2A300-2A3FF;
 }
 
 @font-face {
@@ -4289,7 +4289,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02a400.woff2') format('woff2');
-  unicode-range: U+2A400-U+2A4FF;
+  unicode-range: U+2A400-2A4FF;
 }
 
 @font-face {
@@ -4298,7 +4298,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02a500.woff2') format('woff2');
-  unicode-range: U+2A500-U+2A5FF;
+  unicode-range: U+2A500-2A5FF;
 }
 
 @font-face {
@@ -4307,7 +4307,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02a600.woff2') format('woff2');
-  unicode-range: U+2A600-U+2A6FF;
+  unicode-range: U+2A600-2A6FF;
 }
 
 @font-face {
@@ -4316,7 +4316,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02a700.woff2') format('woff2');
-  unicode-range: U+2A700-U+2A7FF;
+  unicode-range: U+2A700-2A7FF;
 }
 
 @font-face {
@@ -4325,7 +4325,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02a800.woff2') format('woff2');
-  unicode-range: U+2A800-U+2A8FF;
+  unicode-range: U+2A800-2A8FF;
 }
 
 @font-face {
@@ -4334,7 +4334,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02a900.woff2') format('woff2');
-  unicode-range: U+2A900-U+2A9FF;
+  unicode-range: U+2A900-2A9FF;
 }
 
 @font-face {
@@ -4343,7 +4343,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02aa00.woff2') format('woff2');
-  unicode-range: U+2AA00-U+2AAFF;
+  unicode-range: U+2AA00-2AAFF;
 }
 
 @font-face {
@@ -4352,7 +4352,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02ab00.woff2') format('woff2');
-  unicode-range: U+2AB00-U+2ABFF;
+  unicode-range: U+2AB00-2ABFF;
 }
 
 @font-face {
@@ -4361,7 +4361,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02ac00.woff2') format('woff2');
-  unicode-range: U+2AC00-U+2ACFF;
+  unicode-range: U+2AC00-2ACFF;
 }
 
 @font-face {
@@ -4370,7 +4370,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02ad00.woff2') format('woff2');
-  unicode-range: U+2AD00-U+2ADFF;
+  unicode-range: U+2AD00-2ADFF;
 }
 
 @font-face {
@@ -4379,7 +4379,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02ae00.woff2') format('woff2');
-  unicode-range: U+2AE00-U+2AEFF;
+  unicode-range: U+2AE00-2AEFF;
 }
 
 @font-face {
@@ -4388,7 +4388,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02af00.woff2') format('woff2');
-  unicode-range: U+2AF00-U+2AFFF;
+  unicode-range: U+2AF00-2AFFF;
 }
 
 @font-face {
@@ -4397,7 +4397,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02b000.woff2') format('woff2');
-  unicode-range: U+2B000-U+2B0FF;
+  unicode-range: U+2B000-2B0FF;
 }
 
 @font-face {
@@ -4406,7 +4406,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02b100.woff2') format('woff2');
-  unicode-range: U+2B100-U+2B1FF;
+  unicode-range: U+2B100-2B1FF;
 }
 
 @font-face {
@@ -4415,7 +4415,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02b200.woff2') format('woff2');
-  unicode-range: U+2B200-U+2B2FF;
+  unicode-range: U+2B200-2B2FF;
 }
 
 @font-face {
@@ -4424,7 +4424,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02b300.woff2') format('woff2');
-  unicode-range: U+2B300-U+2B3FF;
+  unicode-range: U+2B300-2B3FF;
 }
 
 @font-face {
@@ -4433,7 +4433,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02b400.woff2') format('woff2');
-  unicode-range: U+2B400-U+2B4FF;
+  unicode-range: U+2B400-2B4FF;
 }
 
 @font-face {
@@ -4442,7 +4442,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02b500.woff2') format('woff2');
-  unicode-range: U+2B500-U+2B5FF;
+  unicode-range: U+2B500-2B5FF;
 }
 
 @font-face {
@@ -4451,7 +4451,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02b600.woff2') format('woff2');
-  unicode-range: U+2B600-U+2B6FF;
+  unicode-range: U+2B600-2B6FF;
 }
 
 @font-face {
@@ -4460,7 +4460,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02b700.woff2') format('woff2');
-  unicode-range: U+2B700-U+2B7FF;
+  unicode-range: U+2B700-2B7FF;
 }
 
 @font-face {
@@ -4469,7 +4469,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02b800.woff2') format('woff2');
-  unicode-range: U+2B800-U+2B8FF;
+  unicode-range: U+2B800-2B8FF;
 }
 
 @font-face {
@@ -4478,7 +4478,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02b900.woff2') format('woff2');
-  unicode-range: U+2B900-U+2B9FF;
+  unicode-range: U+2B900-2B9FF;
 }
 
 @font-face {
@@ -4487,7 +4487,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02ba00.woff2') format('woff2');
-  unicode-range: U+2BA00-U+2BAFF;
+  unicode-range: U+2BA00-2BAFF;
 }
 
 @font-face {
@@ -4496,7 +4496,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02bb00.woff2') format('woff2');
-  unicode-range: U+2BB00-U+2BBFF;
+  unicode-range: U+2BB00-2BBFF;
 }
 
 @font-face {
@@ -4505,7 +4505,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02bc00.woff2') format('woff2');
-  unicode-range: U+2BC00-U+2BCFF;
+  unicode-range: U+2BC00-2BCFF;
 }
 
 @font-face {
@@ -4514,7 +4514,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02bd00.woff2') format('woff2');
-  unicode-range: U+2BD00-U+2BDFF;
+  unicode-range: U+2BD00-2BDFF;
 }
 
 @font-face {
@@ -4523,7 +4523,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02be00.woff2') format('woff2');
-  unicode-range: U+2BE00-U+2BEFF;
+  unicode-range: U+2BE00-2BEFF;
 }
 
 @font-face {
@@ -4532,7 +4532,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02bf00.woff2') format('woff2');
-  unicode-range: U+2BF00-U+2BFFF;
+  unicode-range: U+2BF00-2BFFF;
 }
 
 @font-face {
@@ -4541,7 +4541,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02c000.woff2') format('woff2');
-  unicode-range: U+2C000-U+2C0FF;
+  unicode-range: U+2C000-2C0FF;
 }
 
 @font-face {
@@ -4550,7 +4550,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02c100.woff2') format('woff2');
-  unicode-range: U+2C100-U+2C1FF;
+  unicode-range: U+2C100-2C1FF;
 }
 
 @font-face {
@@ -4559,7 +4559,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02c200.woff2') format('woff2');
-  unicode-range: U+2C200-U+2C2FF;
+  unicode-range: U+2C200-2C2FF;
 }
 
 @font-face {
@@ -4568,7 +4568,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02c300.woff2') format('woff2');
-  unicode-range: U+2C300-U+2C3FF;
+  unicode-range: U+2C300-2C3FF;
 }
 
 @font-face {
@@ -4577,7 +4577,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02c400.woff2') format('woff2');
-  unicode-range: U+2C400-U+2C4FF;
+  unicode-range: U+2C400-2C4FF;
 }
 
 @font-face {
@@ -4586,7 +4586,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02c500.woff2') format('woff2');
-  unicode-range: U+2C500-U+2C5FF;
+  unicode-range: U+2C500-2C5FF;
 }
 
 @font-face {
@@ -4595,7 +4595,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02c600.woff2') format('woff2');
-  unicode-range: U+2C600-U+2C6FF;
+  unicode-range: U+2C600-2C6FF;
 }
 
 @font-face {
@@ -4604,7 +4604,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02c700.woff2') format('woff2');
-  unicode-range: U+2C700-U+2C7FF;
+  unicode-range: U+2C700-2C7FF;
 }
 
 @font-face {
@@ -4613,7 +4613,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02c800.woff2') format('woff2');
-  unicode-range: U+2C800-U+2C8FF;
+  unicode-range: U+2C800-2C8FF;
 }
 
 @font-face {
@@ -4622,7 +4622,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02c900.woff2') format('woff2');
-  unicode-range: U+2C900-U+2C9FF;
+  unicode-range: U+2C900-2C9FF;
 }
 
 @font-face {
@@ -4631,7 +4631,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02ca00.woff2') format('woff2');
-  unicode-range: U+2CA00-U+2CAFF;
+  unicode-range: U+2CA00-2CAFF;
 }
 
 @font-face {
@@ -4640,7 +4640,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02cb00.woff2') format('woff2');
-  unicode-range: U+2CB00-U+2CBFF;
+  unicode-range: U+2CB00-2CBFF;
 }
 
 @font-face {
@@ -4649,7 +4649,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02cc00.woff2') format('woff2');
-  unicode-range: U+2CC00-U+2CCFF;
+  unicode-range: U+2CC00-2CCFF;
 }
 
 @font-face {
@@ -4658,7 +4658,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02cd00.woff2') format('woff2');
-  unicode-range: U+2CD00-U+2CDFF;
+  unicode-range: U+2CD00-2CDFF;
 }
 
 @font-face {
@@ -4667,7 +4667,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02ce00.woff2') format('woff2');
-  unicode-range: U+2CE00-U+2CEFF;
+  unicode-range: U+2CE00-2CEFF;
 }
 
 @font-face {
@@ -4676,7 +4676,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02cf00.woff2') format('woff2');
-  unicode-range: U+2CF00-U+2CFFF;
+  unicode-range: U+2CF00-2CFFF;
 }
 
 @font-face {
@@ -4685,7 +4685,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02d000.woff2') format('woff2');
-  unicode-range: U+2D000-U+2D0FF;
+  unicode-range: U+2D000-2D0FF;
 }
 
 @font-face {
@@ -4694,7 +4694,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02d100.woff2') format('woff2');
-  unicode-range: U+2D100-U+2D1FF;
+  unicode-range: U+2D100-2D1FF;
 }
 
 @font-face {
@@ -4703,7 +4703,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02d200.woff2') format('woff2');
-  unicode-range: U+2D200-U+2D2FF;
+  unicode-range: U+2D200-2D2FF;
 }
 
 @font-face {
@@ -4712,7 +4712,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02d300.woff2') format('woff2');
-  unicode-range: U+2D300-U+2D3FF;
+  unicode-range: U+2D300-2D3FF;
 }
 
 @font-face {
@@ -4721,7 +4721,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02d400.woff2') format('woff2');
-  unicode-range: U+2D400-U+2D4FF;
+  unicode-range: U+2D400-2D4FF;
 }
 
 @font-face {
@@ -4730,7 +4730,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02d500.woff2') format('woff2');
-  unicode-range: U+2D500-U+2D5FF;
+  unicode-range: U+2D500-2D5FF;
 }
 
 @font-face {
@@ -4739,7 +4739,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02d600.woff2') format('woff2');
-  unicode-range: U+2D600-U+2D6FF;
+  unicode-range: U+2D600-2D6FF;
 }
 
 @font-face {
@@ -4748,7 +4748,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02d700.woff2') format('woff2');
-  unicode-range: U+2D700-U+2D7FF;
+  unicode-range: U+2D700-2D7FF;
 }
 
 @font-face {
@@ -4757,7 +4757,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02d800.woff2') format('woff2');
-  unicode-range: U+2D800-U+2D8FF;
+  unicode-range: U+2D800-2D8FF;
 }
 
 @font-face {
@@ -4766,7 +4766,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02d900.woff2') format('woff2');
-  unicode-range: U+2D900-U+2D9FF;
+  unicode-range: U+2D900-2D9FF;
 }
 
 @font-face {
@@ -4775,7 +4775,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02da00.woff2') format('woff2');
-  unicode-range: U+2DA00-U+2DAFF;
+  unicode-range: U+2DA00-2DAFF;
 }
 
 @font-face {
@@ -4784,7 +4784,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02db00.woff2') format('woff2');
-  unicode-range: U+2DB00-U+2DBFF;
+  unicode-range: U+2DB00-2DBFF;
 }
 
 @font-face {
@@ -4793,7 +4793,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02dc00.woff2') format('woff2');
-  unicode-range: U+2DC00-U+2DCFF;
+  unicode-range: U+2DC00-2DCFF;
 }
 
 @font-face {
@@ -4802,7 +4802,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02dd00.woff2') format('woff2');
-  unicode-range: U+2DD00-U+2DDFF;
+  unicode-range: U+2DD00-2DDFF;
 }
 
 @font-face {
@@ -4811,7 +4811,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02de00.woff2') format('woff2');
-  unicode-range: U+2DE00-U+2DEFF;
+  unicode-range: U+2DE00-2DEFF;
 }
 
 @font-face {
@@ -4820,7 +4820,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02df00.woff2') format('woff2');
-  unicode-range: U+2DF00-U+2DFFF;
+  unicode-range: U+2DF00-2DFFF;
 }
 
 @font-face {
@@ -4829,7 +4829,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02e000.woff2') format('woff2');
-  unicode-range: U+2E000-U+2E0FF;
+  unicode-range: U+2E000-2E0FF;
 }
 
 @font-face {
@@ -4838,7 +4838,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02e100.woff2') format('woff2');
-  unicode-range: U+2E100-U+2E1FF;
+  unicode-range: U+2E100-2E1FF;
 }
 
 @font-face {
@@ -4847,7 +4847,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02e200.woff2') format('woff2');
-  unicode-range: U+2E200-U+2E2FF;
+  unicode-range: U+2E200-2E2FF;
 }
 
 @font-face {
@@ -4856,7 +4856,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02e300.woff2') format('woff2');
-  unicode-range: U+2E300-U+2E3FF;
+  unicode-range: U+2E300-2E3FF;
 }
 
 @font-face {
@@ -4865,7 +4865,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02e400.woff2') format('woff2');
-  unicode-range: U+2E400-U+2E4FF;
+  unicode-range: U+2E400-2E4FF;
 }
 
 @font-face {
@@ -4874,7 +4874,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02e500.woff2') format('woff2');
-  unicode-range: U+2E500-U+2E5FF;
+  unicode-range: U+2E500-2E5FF;
 }
 
 @font-face {
@@ -4883,7 +4883,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02e600.woff2') format('woff2');
-  unicode-range: U+2E600-U+2E6FF;
+  unicode-range: U+2E600-2E6FF;
 }
 
 @font-face {
@@ -4892,7 +4892,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02e700.woff2') format('woff2');
-  unicode-range: U+2E700-U+2E7FF;
+  unicode-range: U+2E700-2E7FF;
 }
 
 @font-face {
@@ -4901,7 +4901,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02e800.woff2') format('woff2');
-  unicode-range: U+2E800-U+2E8FF;
+  unicode-range: U+2E800-2E8FF;
 }
 
 @font-face {
@@ -4910,7 +4910,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02e900.woff2') format('woff2');
-  unicode-range: U+2E900-U+2E9FF;
+  unicode-range: U+2E900-2E9FF;
 }
 
 @font-face {
@@ -4919,7 +4919,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02ea00.woff2') format('woff2');
-  unicode-range: U+2EA00-U+2EAFF;
+  unicode-range: U+2EA00-2EAFF;
 }
 
 @font-face {
@@ -4928,7 +4928,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02eb00.woff2') format('woff2');
-  unicode-range: U+2EB00-U+2EBFF;
+  unicode-range: U+2EB00-2EBFF;
 }
 
 @font-face {
@@ -4937,7 +4937,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02ec00.woff2') format('woff2');
-  unicode-range: U+2EC00-U+2ECFF;
+  unicode-range: U+2EC00-2ECFF;
 }
 
 @font-face {
@@ -4946,7 +4946,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02ed00.woff2') format('woff2');
-  unicode-range: U+2ED00-U+2EDFF;
+  unicode-range: U+2ED00-2EDFF;
 }
 
 @font-face {
@@ -4955,7 +4955,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02ee00.woff2') format('woff2');
-  unicode-range: U+2EE00-U+2EEFF;
+  unicode-range: U+2EE00-2EEFF;
 }
 
 @font-face {
@@ -4964,7 +4964,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02f800.woff2') format('woff2');
-  unicode-range: U+2F800-U+2F8FF;
+  unicode-range: U+2F800-2F8FF;
 }
 
 @font-face {
@@ -4973,7 +4973,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02f900.woff2') format('woff2');
-  unicode-range: U+2F900-U+2F9FF;
+  unicode-range: U+2F900-2F9FF;
 }
 
 @font-face {
@@ -4982,7 +4982,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-02fa00.woff2') format('woff2');
-  unicode-range: U+2FA00-U+2FAFF;
+  unicode-range: U+2FA00-2FAFF;
 }
 
 @font-face {
@@ -4991,7 +4991,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030000.woff2') format('woff2');
-  unicode-range: U+30000-U+300FF;
+  unicode-range: U+30000-300FF;
 }
 
 @font-face {
@@ -5000,7 +5000,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030100.woff2') format('woff2');
-  unicode-range: U+30100-U+301FF;
+  unicode-range: U+30100-301FF;
 }
 
 @font-face {
@@ -5009,7 +5009,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030200.woff2') format('woff2');
-  unicode-range: U+30200-U+302FF;
+  unicode-range: U+30200-302FF;
 }
 
 @font-face {
@@ -5018,7 +5018,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030300.woff2') format('woff2');
-  unicode-range: U+30300-U+303FF;
+  unicode-range: U+30300-303FF;
 }
 
 @font-face {
@@ -5027,7 +5027,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030400.woff2') format('woff2');
-  unicode-range: U+30400-U+304FF;
+  unicode-range: U+30400-304FF;
 }
 
 @font-face {
@@ -5036,7 +5036,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030500.woff2') format('woff2');
-  unicode-range: U+30500-U+305FF;
+  unicode-range: U+30500-305FF;
 }
 
 @font-face {
@@ -5045,7 +5045,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030600.woff2') format('woff2');
-  unicode-range: U+30600-U+306FF;
+  unicode-range: U+30600-306FF;
 }
 
 @font-face {
@@ -5054,7 +5054,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030700.woff2') format('woff2');
-  unicode-range: U+30700-U+307FF;
+  unicode-range: U+30700-307FF;
 }
 
 @font-face {
@@ -5063,7 +5063,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030800.woff2') format('woff2');
-  unicode-range: U+30800-U+308FF;
+  unicode-range: U+30800-308FF;
 }
 
 @font-face {
@@ -5072,7 +5072,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030900.woff2') format('woff2');
-  unicode-range: U+30900-U+309FF;
+  unicode-range: U+30900-309FF;
 }
 
 @font-face {
@@ -5081,7 +5081,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030a00.woff2') format('woff2');
-  unicode-range: U+30A00-U+30AFF;
+  unicode-range: U+30A00-30AFF;
 }
 
 @font-face {
@@ -5090,7 +5090,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030b00.woff2') format('woff2');
-  unicode-range: U+30B00-U+30BFF;
+  unicode-range: U+30B00-30BFF;
 }
 
 @font-face {
@@ -5099,7 +5099,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030c00.woff2') format('woff2');
-  unicode-range: U+30C00-U+30CFF;
+  unicode-range: U+30C00-30CFF;
 }
 
 @font-face {
@@ -5108,7 +5108,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030d00.woff2') format('woff2');
-  unicode-range: U+30D00-U+30DFF;
+  unicode-range: U+30D00-30DFF;
 }
 
 @font-face {
@@ -5117,7 +5117,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030e00.woff2') format('woff2');
-  unicode-range: U+30E00-U+30EFF;
+  unicode-range: U+30E00-30EFF;
 }
 
 @font-face {
@@ -5126,7 +5126,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-030f00.woff2') format('woff2');
-  unicode-range: U+30F00-U+30FFF;
+  unicode-range: U+30F00-30FFF;
 }
 
 @font-face {
@@ -5135,7 +5135,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031000.woff2') format('woff2');
-  unicode-range: U+31000-U+310FF;
+  unicode-range: U+31000-310FF;
 }
 
 @font-face {
@@ -5144,7 +5144,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031100.woff2') format('woff2');
-  unicode-range: U+31100-U+311FF;
+  unicode-range: U+31100-311FF;
 }
 
 @font-face {
@@ -5153,7 +5153,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031200.woff2') format('woff2');
-  unicode-range: U+31200-U+312FF;
+  unicode-range: U+31200-312FF;
 }
 
 @font-face {
@@ -5162,7 +5162,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031300.woff2') format('woff2');
-  unicode-range: U+31300-U+313FF;
+  unicode-range: U+31300-313FF;
 }
 
 @font-face {
@@ -5171,7 +5171,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031400.woff2') format('woff2');
-  unicode-range: U+31400-U+314FF;
+  unicode-range: U+31400-314FF;
 }
 
 @font-face {
@@ -5180,7 +5180,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031500.woff2') format('woff2');
-  unicode-range: U+31500-U+315FF;
+  unicode-range: U+31500-315FF;
 }
 
 @font-face {
@@ -5189,7 +5189,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031600.woff2') format('woff2');
-  unicode-range: U+31600-U+316FF;
+  unicode-range: U+31600-316FF;
 }
 
 @font-face {
@@ -5198,7 +5198,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031700.woff2') format('woff2');
-  unicode-range: U+31700-U+317FF;
+  unicode-range: U+31700-317FF;
 }
 
 @font-face {
@@ -5207,7 +5207,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031800.woff2') format('woff2');
-  unicode-range: U+31800-U+318FF;
+  unicode-range: U+31800-318FF;
 }
 
 @font-face {
@@ -5216,7 +5216,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031900.woff2') format('woff2');
-  unicode-range: U+31900-U+319FF;
+  unicode-range: U+31900-319FF;
 }
 
 @font-face {
@@ -5225,7 +5225,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031a00.woff2') format('woff2');
-  unicode-range: U+31A00-U+31AFF;
+  unicode-range: U+31A00-31AFF;
 }
 
 @font-face {
@@ -5234,7 +5234,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031b00.woff2') format('woff2');
-  unicode-range: U+31B00-U+31BFF;
+  unicode-range: U+31B00-31BFF;
 }
 
 @font-face {
@@ -5243,7 +5243,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031c00.woff2') format('woff2');
-  unicode-range: U+31C00-U+31CFF;
+  unicode-range: U+31C00-31CFF;
 }
 
 @font-face {
@@ -5252,7 +5252,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031d00.woff2') format('woff2');
-  unicode-range: U+31D00-U+31DFF;
+  unicode-range: U+31D00-31DFF;
 }
 
 @font-face {
@@ -5261,7 +5261,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031e00.woff2') format('woff2');
-  unicode-range: U+31E00-U+31EFF;
+  unicode-range: U+31E00-31EFF;
 }
 
 @font-face {
@@ -5270,7 +5270,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-031f00.woff2') format('woff2');
-  unicode-range: U+31F00-U+31FFF;
+  unicode-range: U+31F00-31FFF;
 }
 
 @font-face {
@@ -5279,7 +5279,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032000.woff2') format('woff2');
-  unicode-range: U+32000-U+320FF;
+  unicode-range: U+32000-320FF;
 }
 
 @font-face {
@@ -5288,7 +5288,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032100.woff2') format('woff2');
-  unicode-range: U+32100-U+321FF;
+  unicode-range: U+32100-321FF;
 }
 
 @font-face {
@@ -5297,7 +5297,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032200.woff2') format('woff2');
-  unicode-range: U+32200-U+322FF;
+  unicode-range: U+32200-322FF;
 }
 
 @font-face {
@@ -5306,7 +5306,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032300.woff2') format('woff2');
-  unicode-range: U+32300-U+323FF;
+  unicode-range: U+32300-323FF;
 }
 
 @font-face {
@@ -5315,7 +5315,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032400.woff2') format('woff2');
-  unicode-range: U+32400-U+324FF;
+  unicode-range: U+32400-324FF;
 }
 
 @font-face {
@@ -5324,7 +5324,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032500.woff2') format('woff2');
-  unicode-range: U+32500-U+325FF;
+  unicode-range: U+32500-325FF;
 }
 
 @font-face {
@@ -5333,7 +5333,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032600.woff2') format('woff2');
-  unicode-range: U+32600-U+326FF;
+  unicode-range: U+32600-326FF;
 }
 
 @font-face {
@@ -5342,7 +5342,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032700.woff2') format('woff2');
-  unicode-range: U+32700-U+327FF;
+  unicode-range: U+32700-327FF;
 }
 
 @font-face {
@@ -5351,7 +5351,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032800.woff2') format('woff2');
-  unicode-range: U+32800-U+328FF;
+  unicode-range: U+32800-328FF;
 }
 
 @font-face {
@@ -5360,7 +5360,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032900.woff2') format('woff2');
-  unicode-range: U+32900-U+329FF;
+  unicode-range: U+32900-329FF;
 }
 
 @font-face {
@@ -5369,7 +5369,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032a00.woff2') format('woff2');
-  unicode-range: U+32A00-U+32AFF;
+  unicode-range: U+32A00-32AFF;
 }
 
 @font-face {
@@ -5378,7 +5378,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032b00.woff2') format('woff2');
-  unicode-range: U+32B00-U+32BFF;
+  unicode-range: U+32B00-32BFF;
 }
 
 @font-face {
@@ -5387,7 +5387,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032c00.woff2') format('woff2');
-  unicode-range: U+32C00-U+32CFF;
+  unicode-range: U+32C00-32CFF;
 }
 
 @font-face {
@@ -5396,7 +5396,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032d00.woff2') format('woff2');
-  unicode-range: U+32D00-U+32DFF;
+  unicode-range: U+32D00-32DFF;
 }
 
 @font-face {
@@ -5405,7 +5405,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032e00.woff2') format('woff2');
-  unicode-range: U+32E00-U+32EFF;
+  unicode-range: U+32E00-32EFF;
 }
 
 @font-face {
@@ -5414,7 +5414,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-032f00.woff2') format('woff2');
-  unicode-range: U+32F00-U+32FFF;
+  unicode-range: U+32F00-32FFF;
 }
 
 @font-face {
@@ -5423,7 +5423,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-033000.woff2') format('woff2');
-  unicode-range: U+33000-U+330FF;
+  unicode-range: U+33000-330FF;
 }
 
 @font-face {
@@ -5432,7 +5432,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-033100.woff2') format('woff2');
-  unicode-range: U+33100-U+331FF;
+  unicode-range: U+33100-331FF;
 }
 
 @font-face {
@@ -5441,7 +5441,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-033200.woff2') format('woff2');
-  unicode-range: U+33200-U+332FF;
+  unicode-range: U+33200-332FF;
 }
 
 @font-face {
@@ -5450,7 +5450,7 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-033300.woff2') format('woff2');
-  unicode-range: U+33300-U+333FF;
+  unicode-range: U+33300-333FF;
 }
 
 @font-face {
@@ -5459,5 +5459,5 @@
   font-weight: 400;
   font-display: fallback;
   src: url('fonts/jigmo-033400.woff2') format('woff2');
-  unicode-range: U+33400-U+334FF;
+  unicode-range: U+33400-334FF;
 }
