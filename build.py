@@ -128,10 +128,12 @@ def build_font(
     force: bool,
     jobs: int,
     ranges: list[tuple[int, int]] | None = None,
+    local_names: list[str] | None = None,
 ) -> list[tuple[str, str]]:
     """Chunk a TTF/OTF into woff2 files and return (chunk_name, css_rule) pairs.
 
     ranges: optional list of (lo, hi) codepoint pairs to restrict coverage.
+    local_names: if given, prepend local() hints so installed system fonts are used first.
     """
     if not ttf_path.exists():
         print(f"  WARNING: {ttf_path.name} not found, skipping.")
@@ -170,6 +172,7 @@ def build_font(
                 if i % 50 == 0 or i == len(tasks):
                     print(f"  [{i:4d}/{len(tasks)}] {chunk_name}  {size // 1024} KB")
 
+    local_src = "".join(f"local('{n}'), " for n in (local_names or []))
     result = []
     for chunk_start in sorted(chunk_map):
         chunk_name = f"{prefix}-{chunk_start:06x}.woff2"
@@ -179,7 +182,7 @@ def build_font(
             "  font-style: normal;\n"
             "  font-weight: 400;\n"
             "  font-display: swap;\n"
-            f"  src: url('fonts/{chunk_name}') format('woff2');\n"
+            f"  src: {local_src}url('fonts/{chunk_name}') format('woff2');\n"
             f"  unicode-range: {unicode_range_str(chunk_start)};\n"
             "}"
         )
@@ -212,7 +215,7 @@ def download_source_serif_4() -> str:
                 print(f"  Downloading {fname} …")
                 urllib.request.urlretrieve(url, dest)
             url_to_fname[url] = fname
-        return f"url('fonts/{url_to_fname[url]}')"
+        return f"local('Source Serif 4'), url('fonts/{url_to_fname[url]}')"
 
     local_css = re.sub(r"url\(([^)]+)\)", _rewrite, css)
     n = counter[0]
@@ -265,6 +268,7 @@ def build_all(force: bool, jobs: int, no_ss4: bool = False, no_sht: bool = False
         for chunk_name, rule in build_font(
             sht_path, prefix="sht", family="Source Han Serif TC",
             force=force, jobs=jobs, ranges=SHT_RANGES,
+            local_names=["Source Han Serif TC", "Source Han Serif"],
         ):
             if chunk_name not in seen:
                 seen.add(chunk_name)
