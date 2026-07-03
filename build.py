@@ -14,6 +14,7 @@ Usage:
 """
 
 import argparse
+import logging
 import sys
 import urllib.request
 import zipfile
@@ -22,6 +23,9 @@ from pathlib import Path
 
 from fontTools import subset as ft_subset
 from fontTools.ttLib import TTFont
+
+# Suppress fontTools chatter about unrecognised tables (e.g. FFTM from FontForge)
+logging.getLogger("fontTools").setLevel(logging.ERROR)
 
 # ── Config ─────────────────────────────────────────────────────────────────────
 
@@ -136,11 +140,11 @@ def build_font(ttf_name: str, force: bool, jobs: int) -> list[str]:
                 if i % 50 == 0 or i == len(tasks):
                     print(f"  [{i:4d}/{len(tasks)}] {chunk_name}  {size // 1024} KB")
 
-    # Generate CSS rules for all chunks in this font (built or skipped)
-    css_rules = []
+    # Generate (chunk_name, css_rule) pairs for all chunks in this font
+    result = []
     for chunk_start in sorted(chunk_map):
         chunk_name = f"jigmo-{chunk_start:06x}.woff2"
-        css_rules.append(
+        rule = (
             "@font-face {\n"
             "  font-family: 'Jigmo';\n"
             "  font-style: normal;\n"
@@ -150,13 +154,18 @@ def build_font(ttf_name: str, force: bool, jobs: int) -> list[str]:
             f"  unicode-range: {unicode_range_str(chunk_start)};\n"
             "}"
         )
-    return css_rules
+        result.append((chunk_name, rule))
+    return result
 
 
 def build_all(force: bool, jobs: int):
+    seen: set[str] = set()   # deduplicate by chunk name (first TTF wins)
     all_rules: list[str] = []
     for ttf_name in FONT_FILES:
-        all_rules.extend(build_font(ttf_name, force=force, jobs=jobs))
+        for chunk_name, rule in build_font(ttf_name, force=force, jobs=jobs):
+            if chunk_name not in seen:
+                seen.add(chunk_name)
+                all_rules.append(rule)
 
     header = (
         "/* Jigmo Webfonts — chunked woff2 for CJK ideograph display\n"
