@@ -51,6 +51,13 @@ wrangler pages deploy dist/jigmo --project-name jigmo --branch main
 - `split.py` 的 URL 改寫邏輯會把 `ss4-` 開頭的 URL 保持相對路徑（不加主站前綴）。
 - `index.html` **不應** 有 Google Fonts `<link>` 標籤；SS4 已透過 `jigmo.css` 自托管載入。
 
+## Jigmo SC/TC 與 GlyphWiki KAGE
+
+- GlyphWiki dump 內是 KAGE data，不是 SVG。SC/TC 變體的可重現主流程應使用 `python build_jigmo_variants.py --render-kage-svg --download-kage-engine`，先從 dump 本地 render 缺少的 SVG cache，再用 FontForge 匯入 SVG 生成 TTF。
+- `--download-kage-engine` 會把 GPL-3.0 kage-engine 下載到 ignored 的 `src/glyphwiki/kage-engine/`，作為 build-time external tool；不要把 kage-engine 源碼 vendoring 到 MIT repo。
+- `--allow-remote-svg` 只作為 fallback，且必須明確 opt-in。它只補本機 cache 缺少的 SVG，中斷後重跑會續補。
+- `--kage-cross-check-limit N` 只做 byte-level cross-check；GlyphWiki endpoint 可能會把輪廓合併成不同 SVG 序列化，`byte_different` 不必然代表字形不同。
+
 ## 已知坑
 
 ### Cloudflare Pages 大小限制

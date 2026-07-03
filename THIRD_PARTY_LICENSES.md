@@ -20,7 +20,7 @@
 ## GlyphWiki data（Jigmo SC/TC 生成用）
 
 - **來源**：<https://glyphwiki.org/>；dump：<https://glyphwiki.org/dump.tar.gz>
-- **用途**：`build_jigmo_variants.py` 讀取 GlyphWiki dump 的 KAGE data 判定 `uXXXXX-g` / `uXXXXX-t` 的可用性；生成字型時需 SVG outlines，若本機 cache 不齊，需以 `--allow-remote-svg` 明確允許從 GlyphWiki SVG endpoint 補下載。
+- **用途**：`build_jigmo_variants.py` 讀取 GlyphWiki dump 的 KAGE data 判定 `uXXXXX-g` / `uXXXXX-t` 的可用性；生成字型時先用本地 kage-engine 將 KAGE data render 成 SVG outlines，必要時也可用 `--allow-remote-svg` 明確允許從 GlyphWiki SVG endpoint 補下載。
 - **授權**：GlyphWiki data license
 
 GlyphWiki dump 的授權文字聲明：
@@ -36,6 +36,16 @@ License of this document is the same as the data files.
 
 Copyright 2009 GlyphWiki Project.
 ```
+
+---
+
+## kage-engine（本地 SVG 生成工具）
+
+- **來源**：<https://github.com/kamichikoichi/kage-engine>
+- **用途**：可由 `build_jigmo_variants.py --render-kage-svg --download-kage-engine` 下載到 ignored 的 `src/glyphwiki/kage-engine/`，作為 build-time tool 將 GlyphWiki KAGE data render 成 SVG cache。
+- **授權**：GPL-3.0
+
+`kage-engine` 源碼不 vendoring 到本 repo；本 repo 只保留調用外部 renderer 的 MIT glue code。生成的 SVG cache / 字型輸出主要基於 GlyphWiki data 與 Jigmo 字型本身的授權。
 
 ---
 

@@ -11,11 +11,11 @@ glyphs when GlyphWiki has a preferred source glyph:
 Usage:
     python build_jigmo_variants.py --prepare-only
     python build_jigmo_variants.py --limit 10
-    python build_jigmo_variants.py --allow-remote-svg --jobs 8
+    python build_jigmo_variants.py --render-kage-svg --download-kage-engine
 
 The GlyphWiki dump contains KAGE data, not SVG outlines. The full build can
-reuse an existing local SVG cache, but downloading missing SVG files from
-glyphwiki.org requires explicit --allow-remote-svg.
+render missing SVGs locally through kage-engine, reuse an existing SVG cache,
+or download missing SVG files from glyphwiki.org with explicit --allow-remote-svg.
 """
 
 from __future__ import annotations
@@ -41,8 +41,23 @@ WORK_DIR = SRC_DIR / "glyphwiki"
 LEGACY_WORK_DIR = SRC_DIR / "jigmo-cn"
 GLYPH_DIR = WORK_DIR / "glyph"
 FONT_DIR = WORK_DIR / "font"
+KAGE_ENGINE_DIR = WORK_DIR / "kage-engine"
+KAGE_DATA_PATH = WORK_DIR / "kage-data.tsv"
+KAGE_RENDERER = ROOT / "render_glyphwiki_svgs.js"
 
 GLYPHWIKI_DUMP_URL = "https://glyphwiki.org/dump.tar.gz"
+KAGE_ENGINE_RAW_BASE = "https://raw.githubusercontent.com/kamichikoichi/kage-engine/master"
+KAGE_ENGINE_FILES = (
+    "2d.js",
+    "buhin.js",
+    "curve.js",
+    "kage.js",
+    "kagecd.js",
+    "kagedf.js",
+    "polygon.js",
+    "polygons.js",
+    "COPYING",
+)
 HTTP_HEADERS = {
     "User-Agent": "jigmo-webfonts/1.0 (+https://github.com/frankslin/jigmo-webfonts)",
 }
@@ -194,6 +209,34 @@ def load_glyphwiki_names(dump_path: Path) -> set[str]:
     return names
 
 
+def write_kage_data_cache(dump_path: Path) -> Path:
+    if KAGE_DATA_PATH.exists() and KAGE_DATA_PATH.stat().st_mtime >= dump_path.stat().st_mtime:
+        return KAGE_DATA_PATH
+
+    KAGE_DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
+    tmp = KAGE_DATA_PATH.with_suffix(".tsv.tmp")
+    count = 0
+    with tarfile.open(dump_path, "r:gz") as tar, tmp.open("w", encoding="utf-8") as out:
+        fp = tar.extractfile("dump_newest_only.txt")
+        if fp is None:
+            raise RuntimeError("dump_newest_only.txt not found in GlyphWiki dump")
+        wrapper = io.TextIOWrapper(fp, encoding="utf-8", errors="replace")
+        for line in wrapper:
+            if "|" not in line:
+                continue
+            parts = line.rstrip("\n").split("|", 2)
+            if len(parts) < 3:
+                continue
+            name = parts[0].strip()
+            data = parts[2].strip()
+            if name and data and name != "name" and not set(name) <= {"-"}:
+                out.write(f"{name}\t{data}\n")
+                count += 1
+    tmp.replace(KAGE_DATA_PATH)
+    print(f"KAGE data cache -> {KAGE_DATA_PATH} ({count:,} glyphs)")
+    return KAGE_DATA_PATH
+
+
 def choose_replacement(cp: int, names: set[str], priority: tuple[str, str]) -> tuple[str, str] | None:
     if not is_cjk(cp):
         return None
@@ -301,6 +344,12 @@ def missing_svg_names(names: list[str]) -> list[str]:
     return [name for name in names if not glyph_path(name).exists()]
 
 
+def write_name_list(path: Path, names: list[str]) -> Path:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(names) + ("\n" if names else ""), encoding="utf-8")
+    return path
+
+
 def download_svgs(replacements_by_font: dict[str, list[Replacement]], jobs: int, force: bool) -> None:
     names = replacement_svg_names(replacements_by_font)
     targets = names if force else missing_svg_names(names)
@@ -328,6 +377,67 @@ def download_svgs(replacements_by_font: dict[str, list[Replacement]], jobs: int,
         raise RuntimeError(f"{len(failures)} SVG downloads failed; see {report}")
 
 
+def ensure_kage_engine(engine_dir: Path, download_missing: bool) -> None:
+    missing = [name for name in KAGE_ENGINE_FILES if not (engine_dir / name).exists()]
+    if not missing:
+        return
+    if not download_missing:
+        raise SystemExit(
+            "Missing kage-engine files in "
+            f"{engine_dir}: {', '.join(missing)}. "
+            "Re-run with --download-kage-engine, or pass --kage-engine-dir to an existing checkout."
+        )
+    engine_dir.mkdir(parents=True, exist_ok=True)
+    for name in missing:
+        download(f"{KAGE_ENGINE_RAW_BASE}/{name}", engine_dir / name)
+
+
+def render_svgs_from_kage(
+    replacements_by_font: dict[str, list[Replacement]],
+    dump_path: Path,
+    engine_dir: Path,
+    download_engine: bool,
+    force: bool,
+    cross_check_limit: int,
+) -> None:
+    node = shutil.which("node")
+    if not node:
+        raise RuntimeError("node is required to render SVGs with kage-engine")
+    ensure_kage_engine(engine_dir, download_engine)
+
+    names = replacement_svg_names(replacements_by_font)
+    missing = missing_svg_names(names)
+    targets = names if force or cross_check_limit else missing
+    print(f"KAGE SVGs: {len(names):,} unique replacement glyphs; missing={len(missing):,}")
+    if not targets:
+        return
+
+    data_path = write_kage_data_cache(dump_path)
+    target_path = write_name_list(WORK_DIR / "kage-render-targets.txt", targets)
+    check_report = WORK_DIR / "kage-svg-cross-check.tsv"
+    cmd = [
+        node,
+        str(KAGE_RENDERER),
+        "--engine-dir",
+        str(engine_dir),
+        "--data",
+        str(data_path),
+        "--targets",
+        str(target_path),
+        "--out-dir",
+        str(GLYPH_DIR),
+        "--check-existing-limit",
+        str(cross_check_limit),
+        "--check-report",
+        str(check_report),
+    ]
+    if force:
+        cmd.append("--force")
+    subprocess.run(cmd, check=True)
+    if cross_check_limit:
+        print(f"KAGE cross-check -> {check_report}")
+
+
 def check_svg_cache(replacements_by_font: dict[str, list[Replacement]]) -> None:
     names = replacement_svg_names(replacements_by_font)
     missing = missing_svg_names(names)
@@ -340,7 +450,8 @@ def check_svg_cache(replacements_by_font: dict[str, list[Replacement]]) -> None:
         "GlyphWiki dump contains KAGE data, not SVG outlines. "
         f"The local SVG cache is missing {len(missing):,} of {len(names):,} replacement glyphs "
         f"(for example: {sample}). "
-        "Re-run with --allow-remote-svg to fetch missing SVGs from glyphwiki.org, "
+        "Re-run with --render-kage-svg to generate missing SVGs locally, "
+        "or --allow-remote-svg to fetch missing SVGs from glyphwiki.org, "
         "or run --prepare-only if you only need the replacement map."
     )
 
@@ -441,6 +552,23 @@ def main() -> None:
         action="store_true",
         help="Download missing SVG outlines from glyphwiki.org/glyph/*.svg",
     )
+    ap.add_argument(
+        "--render-kage-svg",
+        action="store_true",
+        help="Render missing SVG outlines locally from GlyphWiki KAGE data",
+    )
+    ap.add_argument("--kage-engine-dir", type=Path, default=KAGE_ENGINE_DIR, help="External kage-engine directory")
+    ap.add_argument(
+        "--download-kage-engine",
+        action="store_true",
+        help="Download kage-engine into src/glyphwiki/kage-engine if missing",
+    )
+    ap.add_argument(
+        "--kage-cross-check-limit",
+        type=int,
+        default=0,
+        help="Compare this many existing cached SVGs against local KAGE output; use -1 for all",
+    )
     ap.add_argument("--force", action="store_true", help="Re-download SVGs and rebuild existing TTFs")
     ap.add_argument("--prepare-only", action="store_true", help="Only write replacement map files")
     ap.add_argument("--download-only", action="store_true", help="Stop after SVG downloads")
@@ -456,7 +584,16 @@ def main() -> None:
     if args.prepare_only:
         return
 
-    if args.allow_remote_svg:
+    if args.render_kage_svg:
+        render_svgs_from_kage(
+            replacements_by_font,
+            args.dump,
+            args.kage_engine_dir,
+            args.download_kage_engine,
+            args.force,
+            args.kage_cross_check_limit,
+        )
+    elif args.allow_remote_svg:
         download_svgs(replacements_by_font, jobs=args.jobs, force=args.force)
     else:
         check_svg_cache(replacements_by_font)

@@ -104,8 +104,14 @@ python build.py --no-ss4 --no-sht
 # 2. 從 GlyphWiki dump 建立替換 mapping；dump 內是 KAGE data，不是 SVG
 python build_jigmo_variants.py --prepare-only
 
-# 3. 生成 src/JigmoSC*.ttf / src/JigmoTC*.ttf
-#    若本機 SVG cache 不齊，需明確允許從 glyphwiki.org/glyph/*.svg 補下載
+# 3. 從 KAGE data 本地生成缺少的 SVG outlines，然後生成 src/JigmoSC*.ttf / src/JigmoTC*.ttf
+#    第一次會把 GPL-3.0 kage-engine 下載到 ignored 的 src/glyphwiki/kage-engine/
+python build_jigmo_variants.py --render-kage-svg --download-kage-engine
+
+#    若需要對既有 SVG cache 做 byte-level cross-check，可加：
+python build_jigmo_variants.py --render-kage-svg --kage-cross-check-limit 500
+
+#    備用：若要從 glyphwiki.org/glyph/*.svg 補下載缺口，需明確 opt-in
 #    下載只會補缺的 SVG；中斷後重跑同一命令即可續補
 python build_jigmo_variants.py --allow-remote-svg --jobs 8
 
@@ -117,11 +123,13 @@ python build.py --variant tc --no-dl
 除錯/預覽可先跑小樣本：
 
 ```bash
+python build_jigmo_variants.py --limit 1 --render-kage-svg --download-kage-engine
 python build_jigmo_variants.py --limit 1 --allow-remote-svg
 python build_jigmo_variants.py --prepare-only
 ```
 
 生成過程會在 `src/glyphwiki/variant-glyph-map.tsv` 記錄每個 Unicode codepoint 實際替換用的 GlyphWiki glyph name；未列入的 codepoint 保留原始 Jigmo glyph。
+本地 KAGE 生成會讀取 dump 的 KAGE data 並寫入 `src/glyphwiki/glyph/` SVG cache；kage-engine 只作為 build-time tool 使用，不 vendoring 到本 repo。
 
 也可以生成 G/T/J 來源覆蓋查詢表：
 
