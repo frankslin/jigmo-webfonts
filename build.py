@@ -181,7 +181,7 @@ def build_font(
             f"  font-family: '{family}';\n"
             "  font-style: normal;\n"
             "  font-weight: 400;\n"
-            "  font-display: swap;\n"
+            "  font-display: fallback;\n"
             f"  src: {local_src}url('fonts/{chunk_name}') format('woff2');\n"
             f"  unicode-range: {unicode_range_str(chunk_start)};\n"
             "}"
@@ -218,6 +218,7 @@ def download_source_serif_4() -> str:
         return f"local('Source Serif 4'), url('fonts/{url_to_fname[url]}')"
 
     local_css = re.sub(r"url\(([^)]+)\)", _rewrite, css)
+    local_css = local_css.replace("font-display: swap;", "font-display: fallback;")
     n = counter[0]
     print(f"  Source Serif 4: {n} woff2 file(s) cached in fonts/")
     header = "/* Source Serif 4 — self-hosted (OFL-1.1), fetched from Google Fonts API */\n\n"

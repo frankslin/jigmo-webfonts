@@ -56,6 +56,12 @@ def build(clean: bool):
         shutil.copy2(html_src, DIST / "index.html")
         print("dist/jigmo/index.html")
 
+    # Copy Cloudflare Pages headers config
+    headers_src = ROOT / "_headers"
+    if headers_src.exists():
+        shutil.copy2(headers_src, DIST / "_headers")
+        print("dist/jigmo/_headers")
+
     print(f"\nDeploy with:")
     print(f"  wrangler pages deploy dist/jigmo --project-name jigmo --branch main")
     print(f"\nThen reference in your site:")
