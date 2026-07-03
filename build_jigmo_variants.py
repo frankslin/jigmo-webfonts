@@ -293,14 +293,26 @@ def fetch_one(name: str, force: bool = False) -> tuple[str, bool, str | None]:
     return name, False, last_error or "unknown error"
 
 
+def replacement_svg_names(replacements_by_font: dict[str, list[Replacement]]) -> list[str]:
+    return sorted({entry.source_name for entries in replacements_by_font.values() for entry in entries})
+
+
+def missing_svg_names(names: list[str]) -> list[str]:
+    return [name for name in names if not glyph_path(name).exists()]
+
+
 def download_svgs(replacements_by_font: dict[str, list[Replacement]], jobs: int, force: bool) -> None:
-    names = sorted({entry.source_name for entries in replacements_by_font.values() for entry in entries})
-    print(f"SVGs: {len(names):,} unique replacement glyphs")
+    names = replacement_svg_names(replacements_by_font)
+    targets = names if force else missing_svg_names(names)
+    print(f"SVGs: {len(names):,} unique replacement glyphs; missing={len(targets):,}")
+    if not targets:
+        return
+
     failures: list[tuple[str, str]] = []
     done = 0
     downloaded = 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as executor:
-        future_map = {executor.submit(fetch_one, name, force): name for name in names}
+        future_map = {executor.submit(fetch_one, name, force): name for name in targets}
         for future in concurrent.futures.as_completed(future_map):
             name, did_download, error = future.result()
             done += 1
@@ -308,8 +320,8 @@ def download_svgs(replacements_by_font: dict[str, list[Replacement]], jobs: int,
                 downloaded += 1
             if error:
                 failures.append((name, error))
-            if done % 1000 == 0 or done == len(names):
-                print(f"  [{done:6d}/{len(names)}] downloaded={downloaded:,} failures={len(failures):,}")
+            if done % 1000 == 0 or done == len(targets):
+                print(f"  [{done:6d}/{len(targets)}] downloaded={downloaded:,} failures={len(failures):,}")
     if failures:
         report = WORK_DIR / "svg-failures.tsv"
         report.write_text("\n".join(f"{name}\t{error}" for name, error in failures) + "\n", encoding="utf-8")
@@ -317,8 +329,8 @@ def download_svgs(replacements_by_font: dict[str, list[Replacement]], jobs: int,
 
 
 def check_svg_cache(replacements_by_font: dict[str, list[Replacement]]) -> None:
-    names = sorted({entry.source_name for entries in replacements_by_font.values() for entry in entries})
-    missing = [name for name in names if not glyph_path(name).exists()]
+    names = replacement_svg_names(replacements_by_font)
+    missing = missing_svg_names(names)
     if not missing:
         print(f"SVG cache complete: {len(names):,} replacement glyphs")
         return

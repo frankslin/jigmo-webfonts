@@ -106,6 +106,7 @@ python build_jigmo_variants.py --prepare-only
 
 # 3. 生成 src/JigmoSC*.ttf / src/JigmoTC*.ttf
 #    若本機 SVG cache 不齊，需明確允許從 glyphwiki.org/glyph/*.svg 補下載
+#    下載只會補缺的 SVG；中斷後重跑同一命令即可續補
 python build_jigmo_variants.py --allow-remote-svg --jobs 8
 
 # 4. 切成 woff2，CSS family 會是 'Jigmo SC' 或 'Jigmo TC'
