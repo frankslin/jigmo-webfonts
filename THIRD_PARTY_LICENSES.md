@@ -20,7 +20,7 @@
 ## GlyphWiki data（Jigmo SC/TC 生成用）
 
 - **來源**：<https://glyphwiki.org/>；dump：<https://glyphwiki.org/dump.tar.gz>
-- **用途**：`build_jigmo_variants.py` 讀取 GlyphWiki dump 判定 `uXXXXX-g` / `uXXXXX-t` 的可用性，並下載對應 SVG 替換原始 Jigmo 的局部 glyph，生成 `JigmoSC*.ttf` 與 `JigmoTC*.ttf`。
+- **用途**：`build_jigmo_variants.py` 讀取 GlyphWiki dump 的 KAGE data 判定 `uXXXXX-g` / `uXXXXX-t` 的可用性；生成字型時需 SVG outlines，若本機 cache 不齊，需以 `--allow-remote-svg` 明確允許從 GlyphWiki SVG endpoint 補下載。
 - **授權**：GlyphWiki data license
 
 GlyphWiki dump 的授權文字聲明：

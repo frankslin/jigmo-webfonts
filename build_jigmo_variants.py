@@ -11,9 +11,11 @@ glyphs when GlyphWiki has a preferred source glyph:
 Usage:
     python build_jigmo_variants.py --prepare-only
     python build_jigmo_variants.py --limit 10
-    python build_jigmo_variants.py --jobs 8
+    python build_jigmo_variants.py --allow-remote-svg --jobs 8
 
-The full build downloads many SVG files and can take a long time.
+The GlyphWiki dump contains KAGE data, not SVG outlines. The full build can
+reuse an existing local SVG cache, but downloading missing SVG files from
+glyphwiki.org requires explicit --allow-remote-svg.
 """
 
 from __future__ import annotations
@@ -32,9 +34,6 @@ import urllib.error
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
-
-from fontTools.ttLib import TTFont
-
 
 ROOT = Path(__file__).parent
 SRC_DIR = ROOT / "src"
@@ -164,6 +163,8 @@ def ensure_dump(dump_path: Path) -> None:
 
 
 def load_repertoire(ttf_path: Path) -> set[int]:
+    from fontTools.ttLib import TTFont
+
     font = TTFont(str(ttf_path), lazy=True)
     try:
         cmap = font.getBestCmap() or {}
@@ -315,6 +316,23 @@ def download_svgs(replacements_by_font: dict[str, list[Replacement]], jobs: int,
         raise RuntimeError(f"{len(failures)} SVG downloads failed; see {report}")
 
 
+def check_svg_cache(replacements_by_font: dict[str, list[Replacement]]) -> None:
+    names = sorted({entry.source_name for entries in replacements_by_font.values() for entry in entries})
+    missing = [name for name in names if not glyph_path(name).exists()]
+    if not missing:
+        print(f"SVG cache complete: {len(names):,} replacement glyphs")
+        return
+
+    sample = ", ".join(missing[:5])
+    raise SystemExit(
+        "GlyphWiki dump contains KAGE data, not SVG outlines. "
+        f"The local SVG cache is missing {len(missing):,} of {len(names):,} replacement glyphs "
+        f"(for example: {sample}). "
+        "Re-run with --allow-remote-svg to fetch missing SVGs from glyphwiki.org, "
+        "or run --prepare-only if you only need the replacement map."
+    )
+
+
 def source_font_for_output(font_name: str) -> Path:
     if font_name.endswith("2"):
         return SRC_DIR / "Jigmo2.ttf"
@@ -406,6 +424,11 @@ def main() -> None:
     ap.add_argument("--dump", type=Path, default=WORK_DIR / "dump.tar.gz", help="GlyphWiki dump path")
     ap.add_argument("--variants", default="all", help="Comma-separated variants to build: sc,tc,all")
     ap.add_argument("--jobs", type=int, default=min(16, (os.cpu_count() or 4) * 2), help="SVG download workers")
+    ap.add_argument(
+        "--allow-remote-svg",
+        action="store_true",
+        help="Download missing SVG outlines from glyphwiki.org/glyph/*.svg",
+    )
     ap.add_argument("--force", action="store_true", help="Re-download SVGs and rebuild existing TTFs")
     ap.add_argument("--prepare-only", action="store_true", help="Only write replacement map files")
     ap.add_argument("--download-only", action="store_true", help="Stop after SVG downloads")
@@ -421,7 +444,10 @@ def main() -> None:
     if args.prepare_only:
         return
 
-    download_svgs(replacements_by_font, jobs=args.jobs, force=args.force)
+    if args.allow_remote_svg:
+        download_svgs(replacements_by_font, jobs=args.jobs, force=args.force)
+    else:
+        check_svg_cache(replacements_by_font)
     if args.download_only:
         return
 

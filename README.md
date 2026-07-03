@@ -101,10 +101,14 @@ GlyphWiki 同一 Unicode 字常有不同來源字形，例如 `u21a05-g`、`u21a
 # 1. 先確保 src/Jigmo.ttf / Jigmo2.ttf / Jigmo3.ttf 存在
 python build.py --no-ss4 --no-sht
 
-# 2. 從 GlyphWiki dump 建立替換 mapping、下載 SVG、生成 src/JigmoSC*.ttf / src/JigmoTC*.ttf
-python build_jigmo_variants.py --jobs 8
+# 2. 從 GlyphWiki dump 建立替換 mapping；dump 內是 KAGE data，不是 SVG
+python build_jigmo_variants.py --prepare-only
 
-# 3. 切成 woff2，CSS family 會是 'Jigmo SC' 或 'Jigmo TC'
+# 3. 生成 src/JigmoSC*.ttf / src/JigmoTC*.ttf
+#    若本機 SVG cache 不齊，需明確允許從 glyphwiki.org/glyph/*.svg 補下載
+python build_jigmo_variants.py --allow-remote-svg --jobs 8
+
+# 4. 切成 woff2，CSS family 會是 'Jigmo SC' 或 'Jigmo TC'
 python build.py --variant sc --no-dl
 python build.py --variant tc --no-dl
 ```
@@ -112,7 +116,7 @@ python build.py --variant tc --no-dl
 除錯/預覽可先跑小樣本：
 
 ```bash
-python build_jigmo_variants.py --limit 1
+python build_jigmo_variants.py --limit 1 --allow-remote-svg
 python build_jigmo_variants.py --prepare-only
 ```
 
