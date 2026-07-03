@@ -44,9 +44,13 @@ def split(base_jigmo: str, base_jigmo2: str):
             # Source Serif 4: only needed by jigmo (primary, has the landing page)
             shutil.copy2(woff2, dist1 / woff2.name)
             continue
+        if woff2.stem.startswith("sht-"):
+            # Source Han Serif TC: plane 0-1 only → jigmo2
+            shutil.copy2(woff2, dist2 / woff2.name)
+            continue
         chunk_start = int(woff2.stem.split("-")[1], 16)
-        # plane 2-3 (U+20000+): rare chars not covered by Source Han → jigmo (primary)
-        # plane 0-1 (U+00000–U+1FFFF): common CJK covered by Source Han → jigmo2 (secondary)
+        # plane 2-3 (U+20000+): rare chars → jigmo (primary)
+        # plane 0-1 (U+00000–U+1FFFF): common CJK → jigmo2 (secondary)
         dest = dist1 if chunk_start >= 0x020000 else dist2
         shutil.copy2(woff2, dest / woff2.name)
 
@@ -68,8 +72,11 @@ def split(base_jigmo: str, base_jigmo2: str):
     def rewrite_url(m: re.Match) -> str:
         chunk_name = m.group(1)
         if chunk_name.startswith("ss4-"):
-            # SS4 fonts are served from jigmo (primary); keep relative URL
+            # SS4: served from jigmo (primary); keep relative URL
             return f"url('fonts/{chunk_name}')"
+        if chunk_name.startswith("sht-"):
+            # Source Han Serif TC: plane 0-1, served from jigmo2
+            return f"url('{base_jigmo2}/fonts/{chunk_name}')"
         chunk_start = int(chunk_name.split("-")[1].replace(".woff2", ""), 16)
         base = base_jigmo if chunk_start >= 0x020000 else base_jigmo2
         return f"url('{base}/fonts/{chunk_name}')"
