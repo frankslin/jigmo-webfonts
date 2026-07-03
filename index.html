@@ -169,6 +169,74 @@
       color: var(--muted);
     }
 
+    /* ── Font controls ── */
+    .font-controls {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: .75rem;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .toggle-track {
+      position: absolute;
+      inset: 0;
+      background: #ccc;
+      border-radius: 11px;
+      transition: background .18s;
+      cursor: pointer;
+    }
+    .toggle-switch input:checked ~ .toggle-track { background: var(--accent); }
+    .toggle-thumb {
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 16px; height: 16px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,.25);
+      transition: transform .18s;
+      pointer-events: none;
+    }
+    .toggle-switch input:checked ~ .toggle-track .toggle-thumb { transform: translateX(18px); }
+
+    .font-checks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .35rem .5rem;
+      margin-top: .85rem;
+      padding-top: .75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .font-check {
+      display: flex;
+      align-items: baseline;
+      gap: .4rem;
+      font-size: .825rem;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .font-check input[type=checkbox] { cursor: pointer; margin-top: .15em; flex-shrink: 0; }
+    .font-check-name { font-family: ui-monospace, monospace; font-size: .78rem; }
+    .font-check-desc { color: var(--muted); font-size: .72rem; }
+    .font-check:has(input:disabled) { opacity: .4; pointer-events: none; }
+
     /* ── Sandbox ── */
     #sandbox-input {
       font-family: system-ui, sans-serif;
@@ -242,6 +310,38 @@
   <!-- ── Demo ────────────────────────────────────────────────────────── -->
   <section>
     <h2>Demo</h2>
+
+    <div class="font-controls">
+      <label class="toggle-row">
+        <span class="toggle-switch">
+          <input type="checkbox" id="webfonts-on" checked>
+          <span class="toggle-track"><span class="toggle-thumb"></span></span>
+        </span>
+        Use Jigmo Webfonts
+      </label>
+      <div class="font-checks">
+        <label class="font-check">
+          <input type="checkbox" class="font-cb" value="Source Serif 4" checked>
+          <span><span class="font-check-name">Source Serif 4</span><br>
+          <span class="font-check-desc">Latin — pairs with Source Han Serif</span></span>
+        </label>
+        <label class="font-check">
+          <input type="checkbox" class="font-cb" value="Source Han Serif TC" checked>
+          <span><span class="font-check-name">Source Han Serif TC</span><br>
+          <span class="font-check-desc">Common CJK (system, macOS / Adobe)</span></span>
+        </label>
+        <label class="font-check">
+          <input type="checkbox" class="font-cb" value="Noto Serif CJK TC" checked>
+          <span><span class="font-check-name">Noto Serif CJK TC</span><br>
+          <span class="font-check-desc">Common CJK fallback (Google / Linux)</span></span>
+        </label>
+        <label class="font-check">
+          <input type="checkbox" class="font-cb" value="Jigmo" checked>
+          <span><span class="font-check-name">Jigmo</span><br>
+          <span class="font-check-desc">Rare ideographs — this service</span></span>
+        </label>
+      </div>
+    </div>
 
     <div class="demo-block">
       <div class="demo-label">Try it — type any text</div>
@@ -409,9 +509,28 @@ python build.py --jobs 8   # parallel workers (default: CPU count)</pre>
 </footer>
 
 <script>
-  const input = document.getElementById('sandbox-input');
-  const output = document.getElementById('sandbox-output');
-  input.addEventListener('input', () => { output.textContent = input.value; });
+  const sandboxInput = document.getElementById('sandbox-input');
+  const sandboxOutput = document.getElementById('sandbox-output');
+  sandboxInput.addEventListener('input', () => { sandboxOutput.textContent = sandboxInput.value; });
+
+  const FALLBACK = "'STSong', 'SimSun', serif";
+  const toggle   = document.getElementById('webfonts-on');
+  const cbs      = () => [...document.querySelectorAll('.font-cb')];
+  const demos    = () => [...document.querySelectorAll('.jigmo, #sandbox-output')];
+
+  function applyFonts() {
+    const on = toggle.checked;
+    cbs().forEach(cb => cb.disabled = !on);
+
+    const family = on
+      ? [...cbs().filter(cb => cb.checked).map(cb => `'${cb.value}'`), FALLBACK].join(', ')
+      : 'serif';
+
+    demos().forEach(el => el.style.fontFamily = family);
+  }
+
+  toggle.addEventListener('change', applyFonts);
+  document.querySelectorAll('.font-cb').forEach(cb => cb.addEventListener('change', applyFonts));
 </script>
 </body>
 </html>
