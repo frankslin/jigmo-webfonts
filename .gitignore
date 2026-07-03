@@ -1,4 +1,6 @@
 src/
+dist/
+.wrangler/
 __pycache__/
 *.pyc
 .DS_Store
