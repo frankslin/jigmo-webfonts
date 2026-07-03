@@ -485,9 +485,8 @@ python build.py
 
 # 3. 將整個目錄部署至任意靜態主機（GitHub Pages、Cloudflare Pages、S3 等）
 #    Deploy to any static host — only index.html, jigmo.css, and fonts/ are needed
-python split.py   # 拆分為兩個 Cloudflare Pages 專案 / split for two CF Pages projects
-wrangler pages deploy dist/jigmo  --project-name jigmo  --branch main
-wrangler pages deploy dist/jigmo2 --project-name jigmo2 --branch main</pre>
+python split.py   # 準備部署目錄 / prepare deployment directory
+wrangler pages deploy dist/jigmo --project-name jigmo --branch main</pre>
 
     <p class="bi">
       <span class="zh">升級 Jigmo 新版本：修改 <code>build.py</code> 頂部的 <code>JIGMO_URL</code>，刪除 <code>src/</code> 與 <code>fonts/</code> 後重新執行。</span>

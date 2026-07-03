@@ -69,13 +69,12 @@ body {
 # 1. 安裝 Python 依賴
 pip install -r requirements.txt
 
-# 2. 建置：下載 Jigmo zip、切片為 woff2、生成 jigmo.css
+# 2. 建置：下載所有字型、切片為 woff2、生成 jigmo.css
 python build.py
 
 # 3. 部署
 python split.py --clean
-wrangler pages deploy dist/jigmo  --project-name jigmo  --branch main
-wrangler pages deploy dist/jigmo2 --project-name jigmo2 --branch main
+wrangler pages deploy dist/jigmo --project-name jigmo --branch main
 ```
 
 常用選項：
@@ -91,14 +90,7 @@ python build.py --jobs 8   # 指定平行 worker 數（預設：CPU 核心數）
 
 ### 部署架構
 
-服務拆為兩個 Cloudflare Pages 專案（各自低於 25 MB 限制）：
-
-| 專案 | 域名 | 內容 |
-|------|------|------|
-| `jigmo` | jigmo.digitalhumanities.dev | Plane 2–3（Ext B–J）+ Source Serif 4 + 主頁 |
-| `jigmo2` | jigmo2.digitalhumanities.dev | Plane 0–1（URO + Ext A） |
-
-CSS 統一由 `jigmo.digitalhumanities.dev/jigmo.css` 提供，已包含兩個部署的絕對 URL。
+單一 Cloudflare Pages 專案。Cloudflare Pages 限制為 **25 MB per file**（不是總大小），所有分片個別最大 ~128 KB，全部字型（~36 MB）可放入同一個專案。
 
 ---
 

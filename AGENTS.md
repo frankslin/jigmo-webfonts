@@ -8,35 +8,34 @@
 
 ## 部署架構
 
-兩個 Cloudflare Pages 專案，各自低於 25 MB 限制：
+單一 Cloudflare Pages 專案：
 
 | 專案 | 域名 | 內容 | 大小 |
 |------|------|------|------|
-| `jigmo` | `jigmo.digitalhumanities.dev` | Plane 2–3（Extension B–J，≥U+20000）+ Source Serif 4 + 主頁 | ~21 MB |
-| `jigmo2` | `jigmo2.digitalhumanities.dev` | Plane 0–1（URO + Extension A，<U+20000） | ~7 MB |
+| `jigmo` | `jigmo.digitalhumanities.dev` | 全部字型分片 + 主頁 | ~36 MB |
 
-`jigmo` 是主站（有 `index.html` landing page）；`jigmo2` 只有字型檔與一個自動跳轉到 `jigmo` 的 stub `index.html`。
+Cloudflare Pages 限制是 **25 MB per file**，不是總部署大小；所有分片個別最大約 128 KB，單一專案完全可容納。
 
-CSS 從 `jigmo.digitalhumanities.dev/jigmo.css` 統一引用，包含兩個部署的絕對 URL，以及 Source Serif 4 的相對 URL。
+`jigmo.css` 所有 URL 均為相對路徑（`fonts/xxx.woff2`），不依賴絕對域名。
 
 ## 工作流程
 
 ```bash
 # 第一次或字型版本升級時
-python build.py                  # 下載 Jigmo zip、生成 woff2 chunks、下載 SS4、輸出 jigmo.css
+python build.py                  # 下載所有字型、生成 woff2 chunks、輸出 jigmo.css
 
 # 只重建 CSS（字型檔已存在）
 python build.py --no-dl
 
-# 跳過 SS4 下載（純 Jigmo 用途）
-python build.py --no-dl --no-ss4
+# 跳過個別字型下載
+python build.py --no-dl --no-ss4   # 跳過 Source Serif 4
+python build.py --no-dl --no-sht   # 跳過 Source Han Serif TC
 
-# 分割並準備部署目錄
+# 準備部署目錄
 python split.py --clean
 
 # 部署（需先 wrangler login）
-wrangler pages deploy dist/jigmo  --project-name jigmo  --branch main
-wrangler pages deploy dist/jigmo2 --project-name jigmo2 --branch main
+wrangler pages deploy dist/jigmo --project-name jigmo --branch main
 ```
 
 ## 分塊策略
@@ -54,8 +53,8 @@ wrangler pages deploy dist/jigmo2 --project-name jigmo2 --branch main
 
 ## 已知坑
 
-### Cloudflare Pages 25 MB 限制
-直接部署整個 `fonts/` 會超過限制（原始約 28 MB）。解法是 `split.py` 拆成兩個部署。
+### Cloudflare Pages 大小限制
+限制為 **25 MB per file**，不是整個 deployment 的總大小。所有分片個別遠低於此值，單一專案可容納全部字型（~36 MB 總量）。早期誤以為是總大小限制而拆成兩個專案，現已合併回單一 `jigmo` 專案。
 
 ### jigmo2 顯示為 Preview 而非 Production
 無 git 連線的 Pages 專案，即使加 `--branch main`，wrangler 直接上傳仍被視為 Preview。  
