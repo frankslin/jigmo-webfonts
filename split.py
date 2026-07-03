@@ -11,8 +11,8 @@ Split the built fonts/ directory into two Cloudflare Pages deployments:
 Both stay well under the 25 MiB Cloudflare Pages limit.
 
 Usage:
-    python split.py --jigmo  https://jigmo.pages.dev \
-                   --jigmo2 https://jigmo2.pages.dev
+    python split.py --jigmo  https://jigmo.digitalhumanities.dev \
+                   --jigmo2 https://jigmo2.digitalhumanities.dev
 
 Then deploy:
     wrangler pages deploy dist/jigmo  --project-name jigmo
@@ -97,9 +97,9 @@ def split(base_jigmo: str, base_jigmo2: str):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--jigmo",  default="https://jigmo.pages.dev",  metavar="URL",
+    ap.add_argument("--jigmo",  default="https://jigmo.digitalhumanities.dev",  metavar="URL",
                     help="Base URL of the jigmo Pages project (plane 0-1)")
-    ap.add_argument("--jigmo2", default="https://jigmo2.pages.dev", metavar="URL",
+    ap.add_argument("--jigmo2", default="https://jigmo2.digitalhumanities.dev", metavar="URL",
                     help="Base URL of the jigmo2 Pages project (plane 2-3)")
     ap.add_argument("--clean", action="store_true", help="Delete dist/ before splitting")
     args = ap.parse_args()
