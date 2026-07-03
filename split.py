@@ -62,25 +62,32 @@ def split(base_jigmo: str, base_jigmo2: str):
     original = css_src.read_text(encoding="utf-8")
 
     def rewrite_url(m: re.Match) -> str:
-        chunk_name = m.group(1)          # e.g. jigmo-004e00.woff2
+        chunk_name = m.group(1)
         chunk_start = int(chunk_name.split("-")[1].replace(".woff2", ""), 16)
         base = base_jigmo if chunk_start >= 0x020000 else base_jigmo2
         return f"url('{base}/fonts/{chunk_name}')"
 
     rewritten = re.sub(r"url\('fonts/(jigmo-[0-9a-f]+\.woff2)'\)", rewrite_url, original)
 
-    header_note = (
-        f"/* Split deployment:\n"
-        f" *   Plane 2-3 (Ext B–J, rare)   → {base_jigmo}\n"
-        f" *   Plane 0-1 (URO+ExtA, common) → {base_jigmo2}\n"
-        f" */\n\n"
+    # Strip the generated-by block comment
+    rewritten = re.sub(r"/\* Jigmo Webfonts.*?\*/\n\n", "", rewritten, flags=re.DOTALL)
+
+    # Minify: collapse each @font-face block to one line
+    rewritten = re.sub(r"\n  ", " ", rewritten)   # indent → space
+    rewritten = re.sub(r"\n\}", "}", rewritten)    # closing brace
+    rewritten = re.sub(r"\n\n+", "\n", rewritten)  # blank lines
+
+    banner = (
+        f"/* Jigmo Webfonts | jigmo.digitalhumanities.dev | CC0 1.0 | "
+        f"Plane 2-3 (Ext B-J): {base_jigmo} | "
+        f"Plane 0-1 (URO+ExtA): {base_jigmo2} */\n"
     )
-    # Replace the generated-by header comment
-    rewritten = re.sub(r"/\* Jigmo Webfonts.*?\*/\n\n", header_note, rewritten, flags=re.DOTALL)
+    rewritten = banner + rewritten.lstrip()
 
     css_out = DIST / "jigmo" / "jigmo.css"
     css_out.write_text(rewritten, encoding="utf-8")
-    print(f"dist/jigmo/jigmo.css  ({rewritten.count('@font-face')} rules, absolute URLs)")
+    size_kb = css_out.stat().st_size // 1024
+    print(f"dist/jigmo/jigmo.css  ({rewritten.count('@font-face')} rules, minified, {size_kb} KB)")
 
     # ── Copy landing page (update CSS href to self-relative) ─────────────
     html_src = ROOT / "index.html"
