@@ -287,7 +287,8 @@ def build_all(force: bool, jobs: int, no_ss4: bool = False, no_sht: bool = False
         )
     content = header + ss4_css + sht_css + "\n\n".join(all_rules) + "\n"
     CSS_PATH.write_text(content, encoding="utf-8")
-    total = len(all_rules) + len(sht_rules)
+    ss4_count = ss4_css.count("@font-face") if ss4_css else 0
+    total = len(all_rules) + len(sht_rules) + ss4_count
     print(f"\nCSS → {CSS_PATH}  ({total} @font-face rules)")
 
 
