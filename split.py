@@ -98,8 +98,9 @@ def split(base_jigmo: str, base_jigmo2: str):
     # jigmo2 is fonts-only; Cloudflare Pages requires at least one HTML file
     stub = (
         f'<!doctype html><meta charset="utf-8">'
-        f'<title>Jigmo2 Webfonts (plane 0-1)</title>'
-        f'<p>Font CDN — see <a href="{base_jigmo}">{base_jigmo}</a></p>'
+        f'<meta http-equiv="refresh" content="0;url={base_jigmo}">'
+        f'<title>Jigmo Webfonts</title>'
+        f'<p>Redirecting to <a href="{base_jigmo}">{base_jigmo}</a>…</p>'
     )
     (DIST / "jigmo2" / "index.html").write_text(stub, encoding="utf-8")
     print("dist/jigmo2/index.html  (stub)")

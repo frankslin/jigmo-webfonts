@@ -169,6 +169,19 @@
       color: var(--muted);
     }
 
+    /* ── Bilingual ── */
+    h2 .en-sub {
+      font-weight: 400;
+      font-size: .8em;
+      letter-spacing: .04em;
+      color: var(--muted);
+      margin-left: .4em;
+    }
+
+    .bi { margin-bottom: .75rem; }
+    .bi .zh { display: block; }
+    .bi .en { display: block; color: var(--muted); font-size: .875em; margin-top: .15em; }
+
     /* ── Font controls ── */
     .font-controls {
       background: white;
@@ -270,10 +283,9 @@
 
 <header>
   <h1>Jigmo Webfonts</h1>
-  <p>
-    Chunked woff2 webfonts for CJK rare ideograph display — covering
-    Unicode Extensions A through J (U+3400–U+323AF).
-    Based on <a href="https://kamichikoichi.github.io/jigmo/">Jigmo</a> (CC0).
+  <p class="bi">
+    <span class="zh">基於 <a href="https://kamichikoichi.github.io/jigmo/">Jigmo</a>（CC0）的 CJK 生僻字 woff2 分片字型服務，涵蓋 Unicode Extension A–J（U+3400–U+323AF）。</span>
+    <span class="en">Chunked woff2 webfonts for CJK rare ideograph display — covering Unicode Extensions A through J (U+3400–U+323AF). Based on <a href="https://kamichikoichi.github.io/jigmo/">Jigmo</a> (CC0).</span>
   </p>
 </header>
 
@@ -281,35 +293,36 @@
 
   <!-- ── Quick start ─────────────────────────────────────────────────── -->
   <section>
-    <h2>Quick Start</h2>
+    <h2>快速上手 <span class="en-sub">Quick Start</span></h2>
 
-    <p>Add one stylesheet to your <code>&lt;head&gt;</code>:</p>
+    <p class="bi">
+      <span class="zh">在 <code>&lt;head&gt;</code> 加入一個樣式表：</span>
+      <span class="en">Add one stylesheet to your <code>&lt;head&gt;</code>:</span>
+    </p>
     <pre>&lt;link rel="stylesheet" href="https://jigmo.digitalhumanities.dev/jigmo.css"&gt;</pre>
 
-    <p>
-      Then use <code>Jigmo</code> as a fallback in your font stack.
-      Place it <em>after</em> your primary font so browsers only fetch
-      the chunks they actually need:
+    <p class="bi">
+      <span class="zh">將 <code>Jigmo</code> 放在 font stack 的末段作為備援——瀏覽器只會下載頁面實際出現字符所在的分片：</span>
+      <span class="en">Use <code>Jigmo</code> as a fallback in your font stack, after your primary font — browsers only fetch the chunks they actually need:</span>
     </p>
     <pre>body {
   font-family:
-    'Source Serif 4',        /* Latin — pairs with Source Han Serif */
-    'Source Han Serif TC',   /* common CJK */
-    'Noto Serif CJK TC',     /* common CJK fallback */
-    'Jigmo',                 /* rare ideographs (Ext A–J) */
+    'Source Serif 4',        /* 拉丁文 / Latin — pairs with Source Han Serif */
+    'Source Han Serif TC',   /* 常用漢字 / common CJK */
+    'Noto Serif CJK TC',     /* 常用漢字備援 / common CJK fallback */
+    'Jigmo',                 /* 生僻字 / rare ideographs (Ext A–J) */
     serif;
 }</pre>
 
-    <p>
-      That is all. Browsers download only the 256-codepoint chunks that
-      contain characters present on each page, typically adding
-      <strong>a few KB per page</strong> for pages with rare characters.
+    <p class="bi">
+      <span class="zh">就這樣。瀏覽器只下載包含頁面字符的 256-碼位分片，含生僻字的頁面通常只增加<strong>數 KB</strong> 的流量。</span>
+      <span class="en">That is all. Browsers download only the 256-codepoint chunks containing characters on each page, typically adding <strong>a few KB</strong> for pages with rare characters.</span>
     </p>
   </section>
 
   <!-- ── Demo ────────────────────────────────────────────────────────── -->
   <section>
-    <h2>Demo</h2>
+    <h2>字型示範 <span class="en-sub">Demo</span></h2>
 
     <div class="font-controls">
       <label class="toggle-row">
@@ -317,40 +330,44 @@
           <input type="checkbox" id="webfonts-on" checked>
           <span class="toggle-track"><span class="toggle-thumb"></span></span>
         </span>
-        Use Jigmo Webfonts
+        <span class="bi" style="margin:0">
+          <span class="zh">啟用 Jigmo 網頁字型</span>
+          <span class="en">Use Jigmo Webfonts</span>
+        </span>
       </label>
       <div class="font-checks">
         <label class="font-check">
           <input type="checkbox" class="font-cb" value="Source Serif 4" checked>
           <span><span class="font-check-name">Source Serif 4</span><br>
-          <span class="font-check-desc">Latin — pairs with Source Han Serif</span></span>
+          <span class="font-check-desc">拉丁文配套字型 / Latin companion</span></span>
         </label>
         <label class="font-check">
           <input type="checkbox" class="font-cb" value="Source Han Serif TC" checked>
           <span><span class="font-check-name">Source Han Serif TC</span><br>
-          <span class="font-check-desc">Common CJK (system, macOS / Adobe)</span></span>
+          <span class="font-check-desc">常用漢字（系統）/ Common CJK (system)</span></span>
         </label>
         <label class="font-check">
           <input type="checkbox" class="font-cb" value="Noto Serif CJK TC" checked>
           <span><span class="font-check-name">Noto Serif CJK TC</span><br>
-          <span class="font-check-desc">Common CJK fallback (Google / Linux)</span></span>
+          <span class="font-check-desc">常用漢字備援 / Common CJK fallback</span></span>
         </label>
         <label class="font-check">
           <input type="checkbox" class="font-cb" value="Jigmo" checked>
           <span><span class="font-check-name">Jigmo</span><br>
-          <span class="font-check-desc">Rare ideographs — this service</span></span>
+          <span class="font-check-desc">生僻字（本服務）/ Rare ideographs</span></span>
         </label>
       </div>
     </div>
 
     <div class="demo-block">
-      <div class="demo-label">Try it — type any text</div>
-      <textarea id="sandbox-input" spellcheck="false" placeholder="輸入任意文字，例如：趙克𪘏　石𡼖　㙊"></textarea>
+      <div class="demo-label">試試看 — 輸入任意文字 &nbsp;/&nbsp; Try it — type any text</div>
+      <textarea id="sandbox-input" spellcheck="false">10945 · 趙士𦑌 (Zhao Shihuo) · 宋
+25941 · 趙不𡨅 (Zhao Buju) · 宋</textarea>
       <div id="sandbox-output" class="jigmo sandbox-text"></div>
     </div>
 
     <div class="demo-block">
-      <div class="demo-label">CJK Extension B — historical person names (CBDB)</div>
+      <div class="demo-label">CJK Extension B — 歷史人名（CBDB）/ Historical person names</div>
       <div class="demo-chars jigmo">𪘏 𢘍 𥲅 𣔳 𤎖 𡼖 𢍰 𩕊 𡸕 𤩪 𤥻 𦒎 𤇸</div>
       <div class="demo-names jigmo">
         趙克𪘏　趙叔𢘍　趙與𥲅　石𡼖　齊𤇸<br>
@@ -369,7 +386,7 @@
     </div>
 
     <div class="demo-block">
-      <div class="demo-label">Mixed — regular + rare in context</div>
+      <div class="demo-label">常用字與生僻字混排 / Mixed — regular + rare in context</div>
       <div class="demo-passage jigmo">
         宋史載，趙克𪘏官至朝奉郎，趙𣔳夫以文學見稱。<br>
         石𡼖任提舉，齊𤇸累官至通判。
@@ -379,72 +396,75 @@
 
   <!-- ── How it works ─────────────────────────────────────────────────── -->
   <section>
-    <h2>How It Works</h2>
+    <h2>原理 <span class="en-sub">How It Works</span></h2>
 
-    <p>
-      <code>jigmo.css</code> declares hundreds of <code>@font-face</code> rules,
-      each covering a 256-codepoint block:
+    <p class="bi">
+      <span class="zh"><code>jigmo.css</code> 包含數百條 <code>@font-face</code> 規則，每條對應一個 256 碼位的分片：</span>
+      <span class="en"><code>jigmo.css</code> declares hundreds of <code>@font-face</code> rules, each covering a 256-codepoint block:</span>
     </p>
 
     <pre>@font-face {
   font-family: 'Jigmo';
   font-display: swap;
   src: url('fonts/jigmo-02a600.woff2') format('woff2');
-  unicode-range: U+2A600-U+2A6FF;  /* Ext-B block ending */
+  unicode-range: U+2A600-U+2A6FF;  /* Ext-B 末段 / Ext-B block ending */
 }</pre>
 
-    <p>
-      The browser reads the <code>unicode-range</code> descriptor and
-      <strong>only downloads a chunk if that page contains a character
-      in that range</strong>. A page with no rare characters downloads
-      zero font bytes. A page with one Ext-B character downloads one
-      chunk (~10–40 KB).
+    <p class="bi">
+      <span class="zh">瀏覽器讀取 <code>unicode-range</code> 描述符，<strong>只在頁面包含該範圍字符時才下載對應分片</strong>。沒有生僻字的頁面下載零位元組；含一個 Ext-B 字符的頁面只下載一個分片（約 10–40 KB）。</span>
+      <span class="en">The browser reads the <code>unicode-range</code> descriptor and <strong>only downloads a chunk if that page contains a character in that range</strong>. A page with no rare characters downloads zero font bytes. A page with one Ext-B character downloads one chunk (~10–40 KB).</span>
     </p>
 
-    <p>
-      This is the same technique Google uses to serve Noto CJK at scale.
+    <p class="bi">
+      <span class="zh">此技術與 Google 大規模提供 Noto CJK 時所用的方式相同。</span>
+      <span class="en">This is the same technique Google uses to serve Noto CJK at scale.</span>
     </p>
   </section>
 
   <!-- ── Coverage ─────────────────────────────────────────────────────── -->
   <section>
-    <h2>Coverage</h2>
+    <h2>覆蓋範圍 <span class="en-sub">Coverage</span></h2>
 
     <table>
-      <tr><th>Block</th><th>Unicode Range</th><th>Source TTF</th><th>Status</th></tr>
       <tr>
-        <td>CJK URO + Compatibility</td>
+        <th>字符區塊 / Block</th>
+        <th>Unicode 範圍 / Range</th>
+        <th>來源字型 / Source TTF</th>
+        <th>狀態 / Status</th>
+      </tr>
+      <tr>
+        <td>CJK URO + 相容表意文字<br><small>CJK URO + Compatibility</small></td>
         <td>U+3000–U+9FFF, U+F900–U+FAFF</td>
         <td>Jigmo.ttf</td>
         <td><span class="tag">included</span></td>
       </tr>
       <tr>
-        <td>CJK Extension A</td>
+        <td>CJK 擴充 A<br><small>CJK Extension A</small></td>
         <td>U+3400–U+4DBF</td>
         <td>Jigmo.ttf</td>
         <td><span class="tag">included</span></td>
       </tr>
       <tr>
-        <td>CJK Extension B</td>
+        <td>CJK 擴充 B<br><small>CJK Extension B</small></td>
         <td>U+20000–U+2A6DF</td>
         <td>Jigmo2.ttf</td>
         <td><span class="tag">included</span></td>
       </tr>
       <tr>
-        <td>CJK Extension C–F, I</td>
+        <td>CJK 擴充 C–F, I<br><small>CJK Extension C–F, I</small></td>
         <td>U+2A700–U+2EE5F</td>
         <td>Jigmo2.ttf</td>
         <td><span class="tag">included</span></td>
       </tr>
       <tr>
-        <td>CJK Extension G–J</td>
+        <td>CJK 擴充 G–J<br><small>CJK Extension G–J</small></td>
         <td>U+30000–U+323AF</td>
         <td>Jigmo3.ttf</td>
         <td><span class="tag">included</span></td>
       </tr>
       <tr>
-        <td>Total</td>
-        <td colspan="2">~145,975 characters (Unicode 17.0)</td>
+        <td>合計 / Total</td>
+        <td colspan="2">約 145,975 字符（Unicode 17.0）<br><small>~145,975 characters (Unicode 17.0)</small></td>
         <td></td>
       </tr>
     </table>
@@ -452,66 +472,71 @@
 
   <!-- ── Build ────────────────────────────────────────────────────────── -->
   <section>
-    <h2>Self-Hosting / Build</h2>
+    <h2>自架與建置 <span class="en-sub">Self-Hosting / Build</span></h2>
 
-    <p>
-      To host your own instance or regenerate the chunks from an updated
-      Jigmo release:
+    <p class="bi">
+      <span class="zh">如需自架或從新版 Jigmo 重新生成分片：</span>
+      <span class="en">To host your own instance or regenerate the chunks from an updated Jigmo release:</span>
     </p>
 
-    <pre># 1. Install Python dependencies
+    <pre># 1. 安裝 Python 依賴 / Install Python dependencies
 pip install -r requirements.txt
 
-# 2. Build — downloads Jigmo zip, chunks into woff2, writes jigmo.css
+# 2. 建置：下載 Jigmo zip、切片為 woff2、生成 jigmo.css
+#    Build: download Jigmo zip, chunk into woff2, write jigmo.css
 python build.py
 
-# 3. Deploy the whole directory to any static host
-#    (GitHub Pages, Cloudflare Pages, S3, etc.)
-#    Only index.html, jigmo.css, and fonts/ are needed.</pre>
+# 3. 將整個目錄部署至任意靜態主機（GitHub Pages、Cloudflare Pages、S3 等）
+#    Deploy to any static host — only index.html, jigmo.css, and fonts/ are needed
+python split.py   # 拆分為兩個 Cloudflare Pages 專案 / split for two CF Pages projects
+wrangler pages deploy dist/jigmo  --project-name jigmo  --branch main
+wrangler pages deploy dist/jigmo2 --project-name jigmo2 --branch main</pre>
 
-    <p>
-      To update to a newer Jigmo release, edit <code>JIGMO_URL</code>
-      at the top of <code>build.py</code>, delete <code>src/</code> and
-      <code>fonts/</code>, and re-run.
+    <p class="bi">
+      <span class="zh">升級 Jigmo 新版本：修改 <code>build.py</code> 頂部的 <code>JIGMO_URL</code>，刪除 <code>src/</code> 與 <code>fonts/</code> 後重新執行。</span>
+      <span class="en">To update to a newer Jigmo release, edit <code>JIGMO_URL</code> at the top of <code>build.py</code>, delete <code>src/</code> and <code>fonts/</code>, and re-run.</span>
     </p>
 
-    <pre># Force rebuild of all chunks from a new Jigmo release
+    <pre># 強制重建所有分片 / Force rebuild of all chunks
 rm -rf src/ fonts/
 python build.py --force</pre>
 
-    <p>Options:</p>
-    <pre>python build.py --no-dl    # skip download (src/*.ttf already present)
-python build.py --force    # rebuild existing chunk files
-python build.py --jobs 8   # parallel workers (default: CPU count)</pre>
+    <p class="bi">
+      <span class="zh">選項：</span>
+      <span class="en">Options:</span>
+    </p>
+    <pre>python build.py --no-dl    # 跳過下載（src/*.ttf 已存在）/ skip download
+python build.py --force    # 重建已有分片 / rebuild existing chunks
+python build.py --jobs 8   # 平行 worker 數（預設：CPU 核心數）/ parallel workers</pre>
   </section>
 
   <!-- ── License ──────────────────────────────────────────────────────── -->
   <section>
-    <h2>License</h2>
-    <p>
-      Jigmo is released under
-      <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Public Domain</a>
-      by Kamichi Koichi and the GlyphWiki community.
-      The chunking scripts in this repository are also CC0.
+    <h2>授權 <span class="en-sub">License</span></h2>
+    <p class="bi">
+      <span class="zh">Jigmo 由 Kamichi Koichi 與 GlyphWiki 社群以 <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 公共領域</a>授權發布。本 repo 的切片腳本同樣採用 CC0。</span>
+      <span class="en">Jigmo is released under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Public Domain</a> by Kamichi Koichi and the GlyphWiki community. The chunking scripts in this repository are also CC0.</span>
     </p>
     <p>
-      Source: <a href="https://kamichikoichi.github.io/jigmo/">https://kamichikoichi.github.io/jigmo/</a>
+      <a href="https://kamichikoichi.github.io/jigmo/">https://kamichikoichi.github.io/jigmo/</a>
     </p>
   </section>
 
 </main>
 
 <footer>
-  <p>
-    Jigmo Webfonts — static font hosting for CJK ideograph fallback.
-    Built with <a href="https://github.com/fonttools/fonttools">fonttools</a>.
+  <p class="bi">
+    <span class="zh">Jigmo Webfonts — 面向 CJK 生僻字備援的靜態字型服務。使用 <a href="https://github.com/fonttools/fonttools">fonttools</a> 構建。</span>
+    <span class="en">Jigmo Webfonts — static font hosting for CJK ideograph fallback. Built with <a href="https://github.com/fonttools/fonttools">fonttools</a>.</span>
   </p>
 </footer>
 
 <script>
   const sandboxInput = document.getElementById('sandbox-input');
   const sandboxOutput = document.getElementById('sandbox-output');
-  sandboxInput.addEventListener('input', () => { sandboxOutput.textContent = sandboxInput.value; });
+  function syncSandbox() { sandboxOutput.textContent = sandboxInput.value; }
+  sandboxInput.addEventListener('input', syncSandbox);
+  syncSandbox();
 
   const FALLBACK = "'STSong', 'SimSun', serif";
   const toggle   = document.getElementById('webfonts-on');
