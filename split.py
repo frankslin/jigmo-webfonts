@@ -95,9 +95,18 @@ def split(base_jigmo: str, base_jigmo2: str):
         shutil.copy2(html_src, DIST / "jigmo" / "index.html")
         print("dist/jigmo/index.html")
 
+    # jigmo2 is fonts-only; Cloudflare Pages requires at least one HTML file
+    stub = (
+        f'<!doctype html><meta charset="utf-8">'
+        f'<title>Jigmo2 Webfonts (plane 0-1)</title>'
+        f'<p>Font CDN — see <a href="{base_jigmo}">{base_jigmo}</a></p>'
+    )
+    (DIST / "jigmo2" / "index.html").write_text(stub, encoding="utf-8")
+    print("dist/jigmo2/index.html  (stub)")
+
     print(f"\nDeploy with:")
-    print(f"  wrangler pages deploy dist/jigmo  --project-name jigmo")
-    print(f"  wrangler pages deploy dist/jigmo2 --project-name jigmo2")
+    print(f"  wrangler pages deploy dist/jigmo  --project-name jigmo  --branch main")
+    print(f"  wrangler pages deploy dist/jigmo2 --project-name jigmo2 --branch main")
     print(f"\nThen reference in your site:")
     print(f"  <link rel=\"stylesheet\" href=\"{base_jigmo}/jigmo.css\">")
 
