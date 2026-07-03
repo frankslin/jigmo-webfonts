@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jigmo Webfonts — CJK rare character webfont CDN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="jigmo.css">
   <style>
     :root {
@@ -85,8 +88,13 @@
 
     /* ── Demo text ── */
     .jigmo {
-      font-family: 'Jigmo', 'Source Han Serif TC', 'Noto Serif CJK TC',
-                   'STSong', 'SimSun', serif;
+      font-family:
+        'Source Serif 4',        /* Latin — designed to pair with Source Han Serif */
+        'Source Han Serif TC',   /* common CJK — macOS / Adobe CC */
+        'Noto Serif CJK TC',     /* common CJK — Google fallback */
+        'Jigmo',                 /* rare CJK ideographs */
+        'STSong', 'SimSun',      /* Windows/older system fallback */
+        serif;
     }
 
     .demo-block {
@@ -217,8 +225,10 @@
     </p>
     <pre>body {
   font-family:
-    'Source Han Serif TC',   /* primary — common CJK */
-    'Jigmo',                 /* fallback — rare ideographs */
+    'Source Serif 4',        /* Latin — pairs with Source Han Serif */
+    'Source Han Serif TC',   /* common CJK */
+    'Noto Serif CJK TC',     /* common CJK fallback */
+    'Jigmo',                 /* rare ideographs (Ext A–J) */
     serif;
 }</pre>
 
