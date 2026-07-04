@@ -1,0 +1,13 @@
+{
+  "name": "jigmo-webfonts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Self-hosted chunked woff2 webfonts for CJK rare ideograph display.",
+  "scripts": {
+    "build": "python3 split.py --clean",
+    "build:fonts": "python3 build.py --no-dl",
+    "build:fonts:all": "python3 build.py --no-dl && python3 build.py --no-dl --variant tc && python3 build.py --no-dl --variant sc",
+    "build:variants": "python3 split_variants.py --clean",
+    "deploy": "wrangler pages deploy dist --project-name jigmo --branch main"
+  }
+}

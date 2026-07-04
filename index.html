@@ -9,13 +9,15 @@
   <link rel="stylesheet" href="jigmo-sc.css">
   <style>
     :root {
-      --bg: #faf9f7;
-      --fg: #1a1a1a;
-      --muted: #666;
-      --accent: #b5451b;
-      --border: #e0ddd8;
-      --code-bg: #f0ede8;
-      --max: 780px;
+      --bg: #f9fafb;
+      --panel: #ffffff;
+      --fg: #111827;
+      --muted: #6b7280;
+      --subtle: #9ca3af;
+      --accent: #2563eb;
+      --border: #e5e7eb;
+      --code-bg: #f3f4f6;
+      --max: 960px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,41 +27,43 @@
       background: var(--bg);
       color: var(--fg);
       line-height: 1.65;
-      padding: 0 1.25rem;
     }
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     /* ── Layout ── */
-    header, main, footer { max-width: var(--max); margin: 0 auto; }
+    header, main, footer { max-width: var(--max); margin: 0 auto; padding-inline: 1.25rem; }
 
     header {
-      padding: 3.5rem 0 2rem;
-      border-bottom: 1px solid var(--border);
+      padding: 1.6rem 1.25rem 1.1rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: end;
     }
 
     header h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: -.02em;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0;
     }
 
     header p {
-      margin-top: .5rem;
+      margin-top: .25rem;
       color: var(--muted);
       font-size: .95rem;
+      max-width: 720px;
     }
 
-    main { padding: 2.5rem 0 3rem; }
+    main { padding: 0 1.25rem 3rem; }
 
-    section { margin-bottom: 2.75rem; }
+    section { margin-bottom: 2.5rem; }
 
     h2 {
       font-size: 1.05rem;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .06em;
+      letter-spacing: 0;
       color: var(--muted);
       margin-bottom: 1rem;
       padding-bottom: .35rem;
@@ -88,26 +92,91 @@
     /* ── Demo text ── */
     .jigmo {
       font-family:
-        'Source Serif 4',        /* Latin — designed to pair with Source Han Serif */
-        'Source Han Serif TC',   /* common CJK — macOS / Adobe CC */
-        'Noto Serif CJK TC',     /* common CJK — Google fallback */
+        'Source Han Serif TC',   /* common CJK — self-hosted */
         'Jigmo',                 /* rare CJK ideographs */
-        'STSong', 'SimSun',      /* Windows/older system fallback */
         serif;
+    }
+
+    .demo-hero {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+    }
+
+    .demo-hero-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+      min-height: 410px;
+    }
+
+    .demo-stage {
+      padding: 1.4rem 1.5rem 1.5rem;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .specimen {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.18;
+      font-weight: 400;
+      letter-spacing: 0;
+      word-break: keep-all;
+    }
+
+    .specimen-line {
+      display: block;
+    }
+
+    .specimen-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .75rem;
+      margin-top: auto;
+    }
+
+    .metric {
+      border-top: 1px solid var(--border);
+      padding-top: .55rem;
+      color: var(--muted);
+      font-size: .8rem;
+      line-height: 1.45;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--fg);
+      font-size: .95rem;
+      font-weight: 500;
+    }
+
+    .demo-panel {
+      padding: 1.2rem;
+      background: #fbfbf8;
     }
 
     .demo-block {
       background: white;
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 6px;
       padding: 1.25rem 1.5rem;
       margin: .75rem 0;
     }
 
     .demo-label {
       font-size: .75rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
+      letter-spacing: 0;
       color: var(--muted);
       margin-bottom: .5rem;
     }
@@ -183,11 +252,10 @@
 
     /* ── Font controls ── */
     .font-controls {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem 1.5rem;
-      margin-bottom: .75rem;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      margin-bottom: 1rem;
     }
 
     .toggle-row {
@@ -229,7 +297,7 @@
 
     .font-checks {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: .35rem .5rem;
       margin-top: .85rem;
       padding-top: .75rem;
@@ -248,6 +316,55 @@
     .font-check-name { font-family: ui-monospace, monospace; font-size: .78rem; }
     .font-check-desc { color: var(--muted); font-size: .72rem; }
     .font-check:has(input:disabled) { opacity: .4; pointer-events: none; }
+
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .45rem;
+      margin-top: 1rem;
+    }
+
+    .mode-option {
+      display: block;
+      cursor: pointer;
+    }
+
+    .mode-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .mode-card {
+      display: block;
+      min-height: 70px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: white;
+      padding: .55rem .65rem;
+      color: var(--muted);
+      transition: border-color .16s, background .16s, color .16s;
+    }
+
+    .mode-card strong {
+      display: block;
+      color: var(--fg);
+      font-size: .9rem;
+      line-height: 1.2;
+    }
+
+    .mode-card span {
+      display: block;
+      margin-top: .25rem;
+      font-size: .72rem;
+      line-height: 1.35;
+    }
+
+    .mode-option input:checked + .mode-card {
+      border-color: var(--accent);
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
 
     /* ── Sandbox ── */
     #sandbox-input {
@@ -276,6 +393,33 @@
       white-space: pre-wrap;
       color: var(--fg);
     }
+
+    .hero-sandbox {
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.5rem 1.35rem;
+      background: white;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        grid-template-columns: 1fr;
+        padding-top: 1.25rem;
+      }
+
+      .demo-hero-top {
+        grid-template-columns: 1fr;
+      }
+
+      .demo-stage {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .specimen-meta,
+      .mode-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -289,6 +433,79 @@
 </header>
 
 <main>
+
+  <!-- ── Demo ────────────────────────────────────────────────────────── -->
+  <section class="demo-hero" aria-labelledby="demo-title">
+    <div class="demo-hero-top">
+      <div class="demo-stage">
+        <div class="eyebrow" id="demo-title">Live specimen</div>
+        <div class="specimen jigmo" id="specimen-text">
+          <span class="specimen-line">趙士𦑌　齊𤇸</span>
+          <span class="specimen-line">張𦒎　趙時𤎖</span>
+          <span class="specimen-line">石𡼖　呂𡌳</span>
+        </div>
+        <div class="specimen-meta">
+          <div class="metric"><strong id="cjk-family-label">Source Han Serif TC</strong>Common CJK</div>
+          <div class="metric"><strong id="jigmo-family-label">Jigmo</strong>Rare ideographs</div>
+          <div class="metric"><strong>unicode-range</strong>256-codepoint chunks</div>
+        </div>
+      </div>
+
+      <div class="demo-panel">
+        <div class="font-controls">
+          <label class="toggle-row">
+            <span class="toggle-switch">
+              <input type="checkbox" id="webfonts-on" checked>
+              <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            </span>
+            <span class="bi" style="margin:0">
+              <span class="zh">啟用自托管 webfont</span>
+              <span class="en">Use hosted webfonts</span>
+            </span>
+          </label>
+
+          <div class="mode-grid" role="radiogroup" aria-label="CJK region">
+            <label class="mode-option">
+              <input type="radio" name="cjk-mode" value="tc" checked>
+              <span class="mode-card">
+                <strong>TC 繁體</strong>
+                <span>Source Han Serif TC + Jigmo TC</span>
+              </span>
+            </label>
+            <label class="mode-option">
+              <input type="radio" name="cjk-mode" value="sc">
+              <span class="mode-card">
+                <strong>SC 简体</strong>
+                <span>Source Han Serif SC + Jigmo SC</span>
+              </span>
+            </label>
+            <label class="mode-option">
+              <input type="radio" name="cjk-mode" value="jp">
+              <span class="mode-card">
+                <strong>JP 日本語</strong>
+                <span>Source Han Serif JP + Jigmo</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="demo-block" style="margin:0">
+          <div class="demo-label">歷史人名 / Historical person names</div>
+          <div class="demo-names jigmo">
+            趙克𪘏　趙叔𢘍　趙與𥲅<br>
+            趙𣔳夫　石𡼖　齊𤇸
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-sandbox">
+      <div class="demo-label">試試看 — 輸入任意文字 / Try it — type any text</div>
+      <textarea id="sandbox-input" spellcheck="false">10945 · 趙士𦑌 (Zhao Shihuo) · 宋
+25941 · 趙不𡨅 (Zhao Buju) · 宋</textarea>
+      <div id="sandbox-output" class="jigmo sandbox-text"></div>
+    </div>
+  </section>
 
   <!-- ── Quick start ─────────────────────────────────────────────────── -->
   <section>
@@ -313,10 +530,9 @@
     </p>
     <pre>body {
   font-family:
-    'Source Serif 4',        /* 拉丁文 / Latin — pairs with Source Han Serif */
-    'Source Han Serif TC',   /* 常用漢字 / common CJK */
-    'Noto Serif CJK TC',     /* 常用漢字備援 / common CJK fallback */
-    'Jigmo',                 /* 生僻字 / rare (可改用 'Jigmo TC' 或 'Jigmo SC') */
+    'Source Serif 4',        /* 拉丁文 / Latin */
+    'Source Han Serif TC',   /* 常用漢字，可改 SC / JP */
+    'Jigmo TC',              /* 生僻字，可改 Jigmo SC；日文用 Jigmo */
     serif;
 }</pre>
 
@@ -324,93 +540,6 @@
       <span class="zh">就這樣。瀏覽器只下載包含頁面字符的 256-碼位分片，含生僻字的頁面通常只增加<strong>數 KB</strong> 的流量。</span>
       <span class="en">That is all. Browsers download only the 256-codepoint chunks containing characters on each page, typically adding <strong>a few KB</strong> for pages with rare characters.</span>
     </p>
-  </section>
-
-  <!-- ── Demo ────────────────────────────────────────────────────────── -->
-  <section>
-    <h2>字型示範 <span class="en-sub">Demo</span></h2>
-
-    <div class="font-controls">
-      <label class="toggle-row">
-        <span class="toggle-switch">
-          <input type="checkbox" id="webfonts-on" checked>
-          <span class="toggle-track"><span class="toggle-thumb"></span></span>
-        </span>
-        <span class="bi" style="margin:0">
-          <span class="zh">啟用 Jigmo 網頁字型</span>
-          <span class="en">Use Jigmo Webfonts</span>
-        </span>
-      </label>
-      <div class="font-checks">
-        <label class="font-check">
-          <input type="checkbox" class="font-cb" value="Source Serif 4" checked>
-          <span><span class="font-check-name">Source Serif 4</span><br>
-          <span class="font-check-desc">拉丁文配套字型 / Latin companion</span></span>
-        </label>
-        <label class="font-check">
-          <input type="checkbox" class="font-cb" value="Source Han Serif TC" checked>
-          <span><span class="font-check-name">Source Han Serif TC</span><br>
-          <span class="font-check-desc">常用漢字（系統）/ Common CJK (system)</span></span>
-        </label>
-        <label class="font-check">
-          <input type="checkbox" class="font-cb" value="Noto Serif CJK TC" checked>
-          <span><span class="font-check-name">Noto Serif CJK TC</span><br>
-          <span class="font-check-desc">常用漢字備援 / Common CJK fallback</span></span>
-        </label>
-        <div class="font-check-group" style="grid-column: span 2; border-top: 1px dashed var(--border); margin-top: .5rem; padding-top: .5rem;">
-          <label class="font-check" style="display: inline-flex;">
-            <input type="checkbox" id="jigmo-enable" checked>
-            <span><span class="font-check-name">Jigmo Webfont</span><br>
-            <span class="font-check-desc">生僻字（本服務）/ Rare ideographs</span></span>
-          </label>
-          <div id="jigmo-variant-select" style="display: flex; gap: 1rem; margin-top: .5rem; margin-left: 1.25rem; font-size: .8rem;">
-            <label style="cursor: pointer; display: flex; align-items: center; gap: .25rem;">
-              <input type="radio" name="jigmo-variant" value="Jigmo" checked> Original
-            </label>
-            <label style="cursor: pointer; display: flex; align-items: center; gap: .25rem;">
-              <input type="radio" name="jigmo-variant" value="Jigmo TC"> TC (繁體)
-            </label>
-            <label style="cursor: pointer; display: flex; align-items: center; gap: .25rem;">
-              <input type="radio" name="jigmo-variant" value="Jigmo SC"> SC (简体)
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="demo-block">
-      <div class="demo-label">試試看 — 輸入任意文字 &nbsp;/&nbsp; Try it — type any text</div>
-      <textarea id="sandbox-input" spellcheck="false">10945 · 趙士𦑌 (Zhao Shihuo) · 宋
-25941 · 趙不𡨅 (Zhao Buju) · 宋</textarea>
-      <div id="sandbox-output" class="jigmo sandbox-text"></div>
-    </div>
-
-    <div class="demo-block">
-      <div class="demo-label">CJK Extension B — 歷史人名（CBDB）/ Historical person names</div>
-      <div class="demo-chars jigmo">𪘏 𢘍 𥲅 𣔳 𤎖 𡼖 𢍰 𩕊 𡸕 𤩪 𤥻 𦒎 𤇸</div>
-      <div class="demo-names jigmo">
-        趙克𪘏　趙叔𢘍　趙與𥲅　石𡼖　齊𤇸<br>
-        趙𣔳夫　趙時𤎖　趙師𢍰　陳𩕊文
-      </div>
-    </div>
-
-    <div class="demo-block">
-      <div class="demo-label">CJK Extension A (U+3400–U+4DBF)</div>
-      <div class="demo-chars jigmo">㐅 㐌 㑂 㑞 㒜 㔠 㔶 㙉 㙊 㙋 㙏 㙐 㙑 㙓 㙔 㙖</div>
-    </div>
-
-    <div class="demo-block">
-      <div class="demo-label">CJK Extension G / H (U+30000+) — Jigmo3</div>
-      <div class="demo-chars jigmo">𰀀 𰀁 𰀂 𰀃 𰀄 𰀅 𰀆 𰀇 𰀈 𰀉 𰀊 𰀋 𰀌 𰀍 𰀎 𰀏</div>
-    </div>
-
-    <div class="demo-block">
-      <div class="demo-label">常用字與生僻字混排 / Mixed — regular + rare in context</div>
-      <div class="demo-passage jigmo">
-        宋史載，趙克𪘏官至朝奉郎，趙𣔳夫以文學見稱。<br>
-        石𡼖任提舉，齊𤇸累官至通判。
-      </div>
-    </div>
   </section>
 
   <!-- ── How it works ─────────────────────────────────────────────────── -->
@@ -435,8 +564,8 @@
     </p>
 
     <p class="bi">
-      <span class="zh">此技術與 Google 大規模提供 Noto CJK 時所用的方式相同。</span>
-      <span class="en">This is the same technique Google uses to serve Noto CJK at scale.</span>
+      <span class="zh">此技術與大型 webfont 服務使用的 <code>unicode-range</code> 分片載入方式相同。</span>
+      <span class="en">This follows the same <code>unicode-range</code> chunk-loading pattern used by large webfont services.</span>
     </p>
   </section>
 
@@ -556,48 +685,59 @@ python build.py --jobs 8   # 平行 worker 數（預設：CPU 核心數）/ para
   sandboxInput.addEventListener('input', syncSandbox);
   syncSandbox();
 
-  const FALLBACK = "'STSong', 'SimSun', serif";
   const toggle   = document.getElementById('webfonts-on');
-  const jigmoEnable = document.getElementById('jigmo-enable');
-  const variantRadios = () => [...document.querySelectorAll('input[name="jigmo-variant"]')];
-  const cbs      = () => [...document.querySelectorAll('.font-cb')];
+  const cjkModes = () => [...document.querySelectorAll('input[name="cjk-mode"]')];
   const demos    = () => [...document.querySelectorAll('.jigmo, #sandbox-output')];
+  const cjkFamilyLabel = document.getElementById('cjk-family-label');
+  const jigmoFamilyLabel = document.getElementById('jigmo-family-label');
+
+  const MODES = {
+    tc: {
+      specimen: ['趙士𦑌　齊𤇸', '張𦒎　趙時𤎖', '石𡼖　呂𡌳'],
+      cjk: 'Source Han Serif TC',
+      jigmo: 'Jigmo TC',
+    },
+    sc: {
+      specimen: ['赵士𦑌　齐𤇸', '张𦒎　赵时𤎖', '石𡼖　吕𡌳'],
+      cjk: 'Source Han Serif SC',
+      jigmo: 'Jigmo SC',
+    },
+    jp: {
+      specimen: ['趙士𦑌　齊𤇸', '張𦒎　趙時𤎖', '石𡼖　呂𡌳'],
+      cjk: 'Source Han Serif JP',
+      jigmo: 'Jigmo',
+    },
+  };
+
+  function setSpecimen(mode) {
+    document.getElementById('specimen-text').innerHTML = mode.specimen
+      .map(line => `<span class="specimen-line">${line}</span>`)
+      .join('');
+  }
 
   function applyFonts() {
     const on = toggle.checked;
-    cbs().forEach(cb => cb.disabled = !on);
-    jigmoEnable.disabled = !on;
-    variantRadios().forEach(r => r.disabled = !on || !jigmoEnable.checked);
+    const modeName = document.querySelector('input[name="cjk-mode"]:checked').value;
+    const mode = MODES[modeName];
+
+    setSpecimen(mode);
 
     if (!on) {
       demos().forEach(el => el.style.fontFamily = 'serif');
+      cjkFamilyLabel.textContent = `${mode.cjk} off`;
+      jigmoFamilyLabel.textContent = `${mode.jigmo} off`;
       return;
     }
 
-    const familyParts = [];
-    cbs().forEach(cb => {
-      if (cb.checked) {
-        familyParts.push(`'${cb.value}'`);
-      }
-    });
-
-    if (jigmoEnable.checked) {
-      const selectedVariant = document.querySelector('input[name="jigmo-variant"]:checked').value;
-      familyParts.push(`'${selectedVariant}'`);
-    }
-
-    familyParts.push(FALLBACK);
-    const family = familyParts.join(', ');
-
+    const family = `'Source Serif 4', '${mode.cjk}', '${mode.jigmo}', serif`;
     demos().forEach(el => el.style.fontFamily = family);
+    cjkFamilyLabel.textContent = mode.cjk;
+    jigmoFamilyLabel.textContent = mode.jigmo;
   }
 
   toggle.addEventListener('change', applyFonts);
-  jigmoEnable.addEventListener('change', applyFonts);
-  variantRadios().forEach(r => r.addEventListener('change', applyFonts));
-  document.querySelectorAll('.font-cb').forEach(cb => cb.addEventListener('change', applyFonts));
+  cjkModes().forEach(r => r.addEventListener('change', applyFonts));
 
-  // Initialize UI state
   applyFonts();
 </script>
 </body>

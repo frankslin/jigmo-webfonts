@@ -21,10 +21,9 @@ Chunked woff2 webfonts for CJK rare ideograph display — covering Unicode Exten
 ```css
 body {
   font-family:
-    'Source Serif 4',        /* 拉丁文 / Latin — pairs with Source Han Serif */
-    'Source Han Serif TC',   /* 常用漢字 / common CJK */
-    'Noto Serif CJK TC',     /* 常用漢字備援 / common CJK fallback */
-    'Jigmo',                 /* 生僻字 / rare ideographs (Ext A–J) */
+    'Source Serif 4',        /* 拉丁文 / Latin */
+    'Source Han Serif TC',   /* 常用漢字，SC 包可改 Source Han Serif SC */
+    'Jigmo TC',              /* 生僻字，可改 Jigmo SC；日文用 Jigmo */
     serif;
 }
 ```
@@ -46,7 +45,7 @@ body {
 }
 ```
 
-瀏覽器讀取 `unicode-range` 描述符，**只在頁面包含該範圍字符時才下載對應分片**。此技術與 Google 大規模提供 Noto CJK 時所用的方式相同。
+瀏覽器讀取 `unicode-range` 描述符，**只在頁面包含該範圍字符時才下載對應分片**。常用 CJK 也以 Source Han Serif 分片自托管；原版與 TC CSS 使用 TC，SC CSS 使用 SC。
 
 ---
 
@@ -73,8 +72,11 @@ pip install -r requirements.txt
 python build.py
 
 # 3. 部署
-python split.py --clean
-wrangler pages deploy dist/jigmo --project-name jigmo --branch main
+npm run build
+wrangler pages deploy dist --project-name jigmo --branch main
+
+# 可選：分別打包三套 CSS + 對應 fonts/，用於獨立網站或 npm package
+npm run build:variants
 ```
 
 常用選項：
@@ -82,8 +84,29 @@ wrangler pages deploy dist/jigmo --project-name jigmo --branch main
 ```bash
 python build.py --no-dl    # 跳過下載（src/*.ttf 已存在）
 python build.py --no-ss4   # 跳過 Source Serif 4 下載
+python build.py --no-shs   # 跳過 Source Han Serif 下載
 python build.py --force    # 強制重建所有分片
 python build.py --jobs 8   # 指定平行 worker 數（預設：CPU 核心數）
+```
+
+分包輸出：
+
+```bash
+python split_variants.py --clean
+
+# 輸出：
+# dist-variants/jigmo/
+# dist-variants/jigmo-tc/
+# dist-variants/jigmo-sc/
+```
+
+`npm run build` 只把三套 CSS 實際引用到的 `fonts/*.woff2` 複製進 `dist/fonts/`；`dist/` 可直接作為 Cloudflare Pages 的 build output directory。分包輸出的每個目錄也只包含該 CSS 實際引用的字型檔。如需把 demo 頁與 Cloudflare `_headers` 也放進每個分包目錄，可加 `--with-site`。
+
+Cloudflare Pages 連接 Git repo 時可使用：
+
+```text
+Build command: npm run build
+Build output directory: dist
 ```
 
 升級 Jigmo 新版本：修改 `build.py` 頂部的 `JIGMO_URL`，刪除 `src/` 與 `fonts/` 後重新執行。
@@ -99,7 +122,7 @@ GlyphWiki 同一 Unicode 字常有不同來源字形，例如 `u21a05-g`、`u21a
 
 ```bash
 # 1. 先確保 src/Jigmo.ttf / Jigmo2.ttf / Jigmo3.ttf 存在
-python build.py --no-ss4 --no-sht
+python build.py --no-ss4 --no-shs
 
 # 2. 從 GlyphWiki dump 建立替換 mapping；dump 內是 KAGE data，不是 SVG
 python build_jigmo_variants.py --prepare-only
