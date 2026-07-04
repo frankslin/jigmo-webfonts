@@ -1,170 +1,170 @@
 [
   {
-    "family": "Noto Serif TC",
+    "family": "GF Self-host Serif TC",
     "char": "你",
-    "top": -51,
-    "bottom": 8,
-    "height": 60
-  },
-  {
-    "family": "Noto Serif TC",
-    "char": "好",
-    "top": -50,
-    "bottom": 9,
-    "height": 60
-  },
-  {
-    "family": "Noto Serif TC",
-    "char": "臺",
-    "top": -53,
+    "top": -54,
     "bottom": 4,
-    "height": 58
+    "height": 59
   },
   {
-    "family": "Noto Serif TC",
+    "family": "GF Self-host Serif TC",
+    "char": "好",
+    "top": -55,
+    "bottom": 4,
+    "height": 60
+  },
+  {
+    "family": "GF Self-host Serif TC",
+    "char": "臺",
+    "top": -54,
+    "bottom": 1,
+    "height": 56
+  },
+  {
+    "family": "GF Self-host Serif TC",
     "char": "灣",
     "top": -54,
-    "bottom": 7,
-    "height": 62
+    "bottom": 5,
+    "height": 60
   },
   {
-    "family": "Noto Serif TC",
+    "family": "GF Self-host Serif TC",
     "char": "漢",
-    "top": -53,
-    "bottom": 8,
-    "height": 62
+    "top": -54,
+    "bottom": 5,
+    "height": 60
   },
   {
-    "family": "Noto Serif TC",
+    "family": "GF Self-host Serif TC",
     "char": "字",
-    "top": -55,
-    "bottom": 8,
-    "height": 64
+    "top": -54,
+    "bottom": 5,
+    "height": 60
   },
   {
-    "family": "Noto Serif TC",
+    "family": "GF Self-host Serif TC",
     "char": "測",
-    "top": -53,
-    "bottom": 8,
-    "height": 62
+    "top": -54,
+    "bottom": 4,
+    "height": 59
   },
   {
-    "family": "Noto Serif TC",
+    "family": "GF Self-host Serif TC",
     "char": "試",
     "top": -54,
-    "bottom": 8,
-    "height": 63
+    "bottom": 4,
+    "height": 59
   },
   {
-    "family": "Noto Serif TC",
+    "family": "GF Self-host Serif TC",
     "char": "H",
-    "top": -42,
+    "top": -47,
     "bottom": -1,
-    "height": 42
-  },
-  {
-    "family": "Noto Serif TC",
-    "char": "g",
-    "top": -33,
-    "bottom": 13,
     "height": 47
   },
   {
-    "family": "Noto Serif TC",
-    "char": "p",
-    "top": -30,
-    "bottom": 13,
-    "height": 44
+    "family": "GF Self-host Serif TC",
+    "char": "g",
+    "top": -34,
+    "bottom": 16,
+    "height": 51
   },
   {
-    "family": "Noto Serif TC",
+    "family": "GF Self-host Serif TC",
+    "char": "p",
+    "top": -34,
+    "bottom": 16,
+    "height": 51
+  },
+  {
+    "family": "GF Self-host Serif TC",
     "char": "x",
-    "top": -29,
+    "top": -33,
     "bottom": -1,
-    "height": 29
+    "height": 33
   },
   {
     "family": "Adobe SHS TC Full",
     "char": "你",
-    "top": -51,
-    "bottom": 8,
+    "top": -54,
+    "bottom": 5,
     "height": 60
   },
   {
     "family": "Adobe SHS TC Full",
     "char": "好",
-    "top": -50,
-    "bottom": 9,
-    "height": 60
+    "top": -55,
+    "bottom": 5,
+    "height": 61
   },
   {
     "family": "Adobe SHS TC Full",
     "char": "臺",
-    "top": -53,
-    "bottom": 4,
+    "top": -55,
+    "bottom": 2,
     "height": 58
   },
   {
     "family": "Adobe SHS TC Full",
     "char": "灣",
-    "top": -54,
-    "bottom": 7,
-    "height": 62
+    "top": -55,
+    "bottom": 5,
+    "height": 61
   },
   {
     "family": "Adobe SHS TC Full",
     "char": "漢",
-    "top": -53,
-    "bottom": 8,
+    "top": -55,
+    "bottom": 6,
     "height": 62
   },
   {
     "family": "Adobe SHS TC Full",
     "char": "字",
-    "top": -55,
-    "bottom": 8,
-    "height": 64
+    "top": -54,
+    "bottom": 5,
+    "height": 60
   },
   {
     "family": "Adobe SHS TC Full",
     "char": "測",
-    "top": -53,
-    "bottom": 8,
-    "height": 62
+    "top": -54,
+    "bottom": 5,
+    "height": 60
   },
   {
     "family": "Adobe SHS TC Full",
     "char": "試",
     "top": -54,
-    "bottom": 8,
-    "height": 63
+    "bottom": 5,
+    "height": 60
   },
   {
     "family": "Adobe SHS TC Full",
     "char": "H",
-    "top": -42,
+    "top": -47,
     "bottom": -1,
-    "height": 42
-  },
-  {
-    "family": "Adobe SHS TC Full",
-    "char": "g",
-    "top": -33,
-    "bottom": 13,
     "height": 47
   },
   {
     "family": "Adobe SHS TC Full",
+    "char": "g",
+    "top": -34,
+    "bottom": 16,
+    "height": 51
+  },
+  {
+    "family": "Adobe SHS TC Full",
     "char": "p",
-    "top": -30,
-    "bottom": 13,
-    "height": 44
+    "top": -34,
+    "bottom": 16,
+    "height": 51
   },
   {
     "family": "Adobe SHS TC Full",
     "char": "x",
-    "top": -29,
+    "top": -33,
     "bottom": -1,
-    "height": 29
+    "height": 33
   }
 ]

@@ -9,6 +9,28 @@ Everything below was produced by the scripts in `research/scripts/` against the 
 `research/fonts/` and `research/repro/`. Re-running `scripts/fetch-google-fonts.sh` will re-download
 current Google Fonts assets (they may differ from what's recorded here if Google ships a new build).
 
+> **Erratum (post-publication correction):** an earlier version of the repro pages
+> (`repro/index.html`, `repro/per-char.html`) included a `<link>` tag loading the live
+> `fonts.googleapis.com` CSS to render a "Google Fonts CDN (network)" comparison variant. In this
+> sandboxed environment, headless Chromium (launched via Playwright) cannot reach
+> `fonts.googleapis.com`/`fonts.gstatic.com` through the egress proxy this environment requires —
+> unlike `curl`, which reads `HTTPS_PROXY` automatically and was used for every download in §1, Chromium
+> does not use that env var by default, and the request fails with `net::ERR_CONNECTION_RESET`
+> (confirmed reproducible, and not fixed by explicitly passing `--proxy-server`, disabling QUIC, or
+> disabling Encrypted Client Hello — the exact proxy-side cause was not isolated). When the `<link>`
+> silently failed, `font-family: 'Noto Serif TC'` resolved to nothing, `document.fonts` never
+> registered it, and CSS fell through to the generic `serif` keyword — which triggered Chromium's
+> own system-fallback logic to substitute **`WenQuanYi Zen Hei`** (a pre-installed, unrelated
+> sans-serif Chinese font, nothing to do with Noto or Source Han) for every CJK character. This was
+> caught by pixel-diffing an explicit `font-family: 'WenQuanYi Zen Hei'` render against the "Google
+> Fonts CDN" render: identical. **All data and screenshots previously labeled "Google Fonts CDN
+> (network)" have been removed** — they were not measuring Noto Serif TC at all. The tables in §3
+> (built from files downloaded by `curl`, hash-verified in `data/sha256.tsv`) were never affected by
+> this bug and remain valid; only the live-in-browser rendering variant was wrong. The "self-hosted
+> Google woff2" variant is unaffected (it only ever loaded local files) and is now the sole
+> representative of Google's font in the repro pages, since it is byte-identical to what
+> `fonts.gstatic.com` serves.
+
 ## 1. What was downloaded
 
 ### 1.1 Google Fonts (via CSS2 API, Chrome UA, `wght@400`)
@@ -163,15 +185,17 @@ investigation only requested weight 400 normal style).
 ## 5. Repro page + measurements
 
 `repro/index.html` (served locally over HTTP, screenshotted/measured with Playwright + the
-pre-installed Chromium) renders 5 sources × 3 test strings × 3 line-heights:
+pre-installed Chromium) renders 4 sources × 3 test strings × 3 line-heights. (An earlier version had
+a 5th "Google Fonts CDN, live network" source; see the erratum at the top of this document for why it
+was removed — it was not actually rendering Noto Serif TC.)
 
-1. Google Fonts CDN (`<link>` to the live `fonts.googleapis.com` CSS — exercises the real network
-   path)
-2. The same Google woff2 bytes, self-hosted locally (byte-identical files, different origin)
-3. Adobe Source Han Serif TC compiled straight to WOFF2, no subsetting (all tables/glyphs kept)
-4. Adobe original run through `pyftsubset` with `--layout-features='*' --name-IDs='*'
+1. The Google woff2 bytes downloaded in §1.1, self-hosted locally via the same `unicode-range`
+   chunking Google uses (byte-identical to the `fonts.gstatic.com` originals, verified by SHA-256 in
+   `data/sha256.tsv`)
+2. Adobe Source Han Serif TC compiled straight to WOFF2, no subsetting (all tables/glyphs kept)
+3. Adobe original run through `pyftsubset` with `--layout-features='*' --name-IDs='*'
    --drop-tables-=BASE` (explicit "keep everything relevant")
-5. Adobe original run through `pyftsubset` with only `--text=... --flavor=woff2` (bare defaults)
+4. Adobe original run through `pyftsubset` with only `--text=... --flavor=woff2` (bare defaults)
 
 Screenshots: `repro/screenshots/variant-*.png`, `repro/screenshots/index-full.png`.
 
@@ -180,22 +204,79 @@ Canvas ink-bounding-box measurements (`data/measure-index.json`, alphabetic base
 
 | source | ink top (px from baseline) | ink bottom (px from baseline) | ink height (px) |
 |---|---|---|---|
-| Google Fonts CDN | -55 | 9 | 65 |
-| Google self-hosted (same bytes) | -55 | 5 | 61 |
+| Google self-hosted (verified same bytes as fonts.gstatic.com) | -55 | 5 | 61 |
 | Adobe full | -55 | 6 | 62 |
 | Adobe subset (tables kept) | -55 | 6 | 62 |
 | Adobe subset (default) | -55 | 6 | 62 |
 
-All five sources put the **top** of the ink at the same pixel row (-55). The **bottom** varies by
-3-4px (out of ~62-65px ink height, i.e. ~5%) between the live CDN response and the others — plausibly
-antialiasing/hinting noise from the TrueType-vs-CFF outline difference noted in §2, and/or the
-specific glyph shapes touched by whichever chunk the live CDN happened to serve for each character
-in the test string. This was visually confirmed in the screenshots: at normal reading distance the
-five renderings are not distinguishable by eye (see `variant-gf-cdn.png` vs `variant-adobe-full.png`).
-**This small, measured pixel-level difference exists, but it is not a line-height difference and not
-a whole-line baseline shift** — it's within-glyph ink-extent noise.
+All four sources put the **top** of the ink at the same pixel row (-55). The **bottom** for the
+Google file is 1px higher than all three Adobe-derived variants (5 vs 6, out of ~61-62px ink height,
+i.e. ~1.6%) — consistent with the TrueType-vs-CFF outline/rounding difference noted in §2, and with
+the ≤4/1000-em `BASE` coordinate rounding noted in §3. This was visually confirmed in the screenshots:
+at normal reading distance the four renderings are not distinguishable by eye (see
+`variant-gf-selfhost.png` vs `variant-adobe-full.png`). **This 1px difference is not a line-height
+difference and not a whole-line baseline shift** — it's within-glyph ink-extent noise, an order of
+magnitude smaller than anything a reader would notice.
 
-## 6. Controlled pyftsubset variable-isolation experiment (§8 of the task)
+## 6. Per-character glyph-ink verification (does chunking cause misalignment, and is chunk-splitting even the right suspect?)
+
+A reviewer looking at an earlier (since-corrected — see erratum) screenshot pointed out that within a
+single rendered line — one `font-family`, one weight, one line — "你好" and "臺灣漢字" visibly do not
+line up: some characters look like they sit higher or lower than others. That is a real, correct
+visual observation about CJK text rendering in general, worth checking directly rather than waving
+away, because Google Fonts serves Noto Serif TC as ~108 separate `unicode-range` chunk files (§1.1) —
+if two chunks were built or hinted inconsistently, that would show up exactly as within-line vertical
+misalignment between characters from different chunks, and would be a genuinely different bug from
+anything in §2/§3 (which only looked at whole-font tables, not per-glyph vertical placement).
+
+Investigating this is what surfaced the bug described in the erratum: the first attempt at this test
+compared "live Google Fonts CDN" against the Adobe original and found **suspiciously perfect,
+pixel-identical** results for every character — which in hindsight was the tell that the "CDN" side
+wasn't actually Noto Serif TC (it was the WenQuanYi Zen Hei fallback, which is a coincidence-free,
+character-for-character match to itself, not to Adobe). Redone correctly, using the self-hosted
+Google woff2 bytes (verified identical to `fonts.gstatic.com` via SHA-256) against the Adobe original
+— `repro/per-char.html`, full data in `data/per-char.json`, screenshot `repro/screenshots/per-char.png`:
+
+`你`/`好`/`字`/`灣` are served from chunk `.122`, `漢` from chunk `.117`, `臺` from chunk `.119`, and
+`測`/`試` from two further chunks not separately isolated in this test — four-plus different files
+(see `scripts/parse_css_ranges.py` output), all loaded together in one `font-family` in
+`repro/per-char.html` exactly as Google's CSS declares them.
+
+| char | chunk | Google self-hosted top / bottom (px) | Adobe original top / bottom (px) | diff |
+|---|---|---|---|---|
+| 你 | .122 | -54 / 4 | -54 / 5 | 1px (bottom) |
+| 好 | .122 | -55 / 4 | -55 / 5 | 1px (bottom) |
+| 臺 | .119 | -54 / 1 | -55 / 2 | 1px (both) |
+| 灣 | .122 | -54 / 5 | -55 / 5 | 1px (top) |
+| 漢 | .117 | -54 / 5 | -55 / 6 | 1px (both) |
+| 字 | .122 | -54 / 5 | -54 / 5 | 0 |
+| 測 | — | -54 / 4 | -54 / 5 | 1px (bottom) |
+| 試 | — | -54 / 4 | -54 / 5 | 1px (bottom) |
+| H (Latin, for scale) | — | -47 / -1 | -47 / -1 | 0 |
+| g (Latin, for scale) | — | -34 / 16 | -34 / 16 | 0 |
+
+Every character is within 0-1px of the Adobe original, with **no correlation between which chunk a
+character came from and the size of the (tiny) discrepancy** — `字` (chunk `.122`, same chunk as
+`你`/`好`/`灣`) matches exactly, while `你`/`好`/`灣` (same chunk) each show a 1px difference on one
+side. So:
+
+- **Chunking is not the cause of anything visible.** If splitting the font into per-unicode-range
+  files introduced inconsistent vertical placement, characters from the same chunk would move
+  together and characters from different chunks would move independently; instead the ≤1px
+  differences look like ordinary rounding noise scattered without regard to which chunk each
+  character came from.
+- **The visual unevenness a reader sees between "你好" and "臺灣漢字" is real, but it is a property of
+  the glyph designs themselves — present identically in Google's font and in Adobe's original.**
+  `好`'s ink descends 4-5px below baseline while `臺`'s only descends 1-2px — a gap on the same order
+  as the 17px gap between Latin `g` (descends 16px) and `H` (does not descend, -1px). Nobody reads
+  Latin `g`/`H` unevenness as a font bug; the same design logic (uneven ink distribution within the
+  em-box, character by character) applies to CJK ideographs too, and both fonts show it the same way.
+- This finding is **consistent with, not contradicting,** §3's conclusion that Google's and Adobe's
+  whole-font metrics (`hhea`/`OS/2`/`BASE`) match almost exactly (the ≤4/1000-em `BASE` rounding noted
+  there shows up here as the ≤1px per-glyph noise) — it adds a second, independent, per-glyph
+  confirmation using genuinely verified files this time.
+
+## 7. Controlled pyftsubset variable-isolation experiment (§8 of the task)
 
 `repro/measure.html` isolates each candidate variable individually, starting from the Adobe Source
 Han Serif TC Regular original:
@@ -233,7 +314,7 @@ This isolates the causes precisely, in Chromium (via Playwright), for horizontal
   edits — glyph ink position is fixed by the glyph outlines, not by `hhea`/`OS/2`/`BASE`, and none of
   A-E2 touched the outlines.
 
-## 7. Answers to the specific verification checklist
+## 8. Answers to the specific verification checklist
 
 | Question | Answer |
 |---|---|
@@ -245,12 +326,12 @@ This isolates the causes precisely, in Chromium (via Playwright), for horizontal
 | `OS/2.usWinAscent/Descent` | Identical: Serif 1151/286, Sans 1160/288. |
 | `OS/2.fsSelection`, `USE_TYPO_METRICS` bit | Identical: `0x0040`, bit 7 (`USE_TYPO_METRICS`) is **off** on both sides. |
 | Does `BASE` exist? | Yes, in every file checked (Google and Adobe alike). |
-| Is `BASE` content identical? | Nearly — DFLT-script coordinates differ by 1 unit (Serif) to 4 units (Sans) out of 1000 upm. Not visually significant, confirmed by experiment (§6) to have zero effect on this test's line-height/baseline. |
+| Is `BASE` content identical? | Nearly — DFLT-script coordinates differ by 1 unit (Serif) to 4 units (Sans) out of 1000 upm. Not visually significant, confirmed by experiment (§7) to have zero effect on this test's line-height/baseline. |
 | `name` table family/subfamily/full/PostScript name | CSS-visible family name (`Noto Serif TC` / `Noto Sans TC`, weight 400) is correct; the font's **internal** RIBBI name strings (nameID 1/2/4/6) incorrectly say "ExtraLight"/"Thin" for all four Regular-weight Google families tested — a real, confirmed cosmetic bug, unrelated to metrics. |
 | Is `cmap` coverage just differently-sized subsetting, or anomalous loss? | Ordinary unicode-range-chunked subsetting; no anomalous gaps found for the codepoints tested. |
 | Google Fonts CSS: `ascent-override`/`descent-override`/`line-gap-override`/`size-adjust`? | None present in any of the four CSS responses. |
 
-## 8. Conclusions
+## 9. Conclusions
 
 1. For the **currently shipped** builds (`v36`/`v39` Google Fonts CSS vs Adobe `2.003R`/`2.005R`
    release-branch OTFs), Google Fonts' Noto Serif TC/Sans TC (and SC) are **identical** to Adobe's
@@ -262,7 +343,7 @@ This isolates the causes precisely, in Chromium (via Playwright), for horizontal
    and CJK chunks checked. No missing-`BASE` case was found.
 3. Google Fonts WOFF2's `OS/2`/`hhea` metrics **are** identical to the Source Han originals, for the
    Regular weight of TC/SC Serif and Sans, as shipped today.
-4. In this investigation's own controlled test (§6), default `line-height: normal` differences are
+4. In this investigation's own controlled test (§7), default `line-height: normal` differences are
    caused **exclusively** by actual differences in `hhea`/`OS/2` typo metric values or by the
    `USE_TYPO_METRICS` bit — not by `BASE` table presence. Since Google's current build and Adobe's
    current original carry identical `hhea`/`OS/2`/`fsSelection` values for this weight/family
@@ -272,18 +353,25 @@ This isolates the causes precisely, in Chromium (via Playwright), for horizontal
    **not directly tested here** — are: (a) an older, previously-shipped Google Fonts build with
    different metrics (Google's CSS build tags go up to v36/v39, implying many prior revisions not
    examined in this investigation), (b) comparison against a different weight/style than Regular 400,
-   or (c) a different actual fallback font being rendered (e.g., a system CJK font substituting for
-   an unavailable "Source Han Serif TC" locally, which was not compared here). This report does not
-   have evidence for or against those scenarios — they are stated as open hypotheses, not established
-   facts.
+   or (c) a different actual fallback font being rendered because the intended web font failed to load
+   for the *user's* browser (network failure, ad blocker, corporate proxy, CSP, etc.) and the browser
+   silently substituted whatever CJK-capable system font it could find. This last scenario is not
+   hypothetical: §6's erratum documents this investigation accidentally reproducing exactly this
+   failure mode in its own test harness (Chromium in this sandbox silently substituted an unrelated
+   system font, `WenQuanYi Zen Hei`, when the real network request failed) — which is direct, if
+   incidental, proof that "the font that actually rendered wasn't the one requested" is a real,
+   easy-to-miss failure mode for this kind of comparison, worth checking for in any report of a
+   Google-Fonts-vs-self-hosted visual difference before concluding the two font *files* differ.
 5. **Baseline** (vertical ink position within the line) differences: this investigation measured a
-   small (~3-4px out of ~62-65px ink height, i.e. ~5%) discrepancy in the *bottom* ink extent between
-   the live Google Fonts CDN response and the self-hosted/Adobe-derived files, with the *top* extent
-   identical across all five sources tested. This is far too small to be a "disaster"-level visual
-   defect, is not explained by any `hhea`/`OS/2`/`BASE` field (all of which matched exactly, per §3),
-   and is most plausibly attributable to the CFF-vs-TrueType outline/hinting difference documented in
-   §2 — **this attribution is a plausible correlation, not a proven causal mechanism**; isolating it
-   further would require diffing the actual glyph outlines/hints, which this investigation did not do.
+   small (1px out of ~60-62px ink height, i.e. ~1.6%) discrepancy in ink extent between the verified
+   self-hosted Google woff2 (byte-identical to `fonts.gstatic.com`, confirmed by SHA-256) and the
+   Adobe-derived files, scattered across top/bottom with no correlation to which `unicode-range` chunk
+   a character came from (§6). This is far too small to be a "disaster"-level visual defect, is not
+   explained by any `hhea`/`OS/2` field (all of which matched exactly, per §3), and is most plausibly
+   attributable to the CFF-vs-TrueType outline/rounding difference documented in §2 and/or the
+   ≤4/1000-em `BASE` coordinate rounding documented in §3 — **this attribution is a plausible
+   correlation, not a proven causal mechanism**; isolating it further would require diffing the actual
+   glyph outlines/hints, which this investigation did not do.
 6. Actionable mitigations (independent of whether they're needed for the *current* builds, since this
    investigation found no live metrics mismatch for Regular/400 TC/SC):
    - **CSS metrics override**: if a real mismatch is ever found (e.g., against an older cached Google
@@ -305,12 +393,12 @@ This isolates the causes precisely, in Chromium (via Playwright), for horizontal
      without bumping `OS/2.version` to 4, contrary to a literal reading of the OpenType spec's
      "defined for version ≥ 4" language.
 
-## 9. What this report does NOT claim
+## 10. What this report does NOT claim
 
 - It does not claim anything about weights other than Regular/400, or about italic/oblique styles.
 - It does not claim anything about older/historical Google Fonts builds — only the `v36`/`v39`/`v35`/
   `v40` CSS responses fetched on 2026-07-04 were examined.
-- It does not claim to have isolated the exact cause of the ~3-4px ink-bottom discrepancy in §5/§6 —
+- It does not claim to have isolated the exact cause of the ~3-4px ink-bottom discrepancy in §5/§7 —
   that is reported as a measured fact with a plausible (outline-flavor) explanation, explicitly marked
   unproven.
 - It does not cite Wikipedia, Grokipedia, or any GitHub issue content as evidence — `google/fonts#8911`

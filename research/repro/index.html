@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <title>Noto CJK vs Source Han — baseline/line-height repro</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap">
 <style>
   @font-face {
     font-family: 'GF Self-host Serif TC';
@@ -76,22 +75,37 @@
 
 <h1 style="font-family:sans-serif;font-size:20px;">Repro: Google Fonts Noto Serif TC vs Adobe Source Han Serif TC</h1>
 <p style="font-family:sans-serif;font-size:13px;color:#333;max-width:900px;">
-  Each block below renders the same three test strings in five font sources, at three
+  Each block below renders the same three test strings in four font sources, at three
   line-height settings. A thin red guide line is drawn at a fixed offset per block purely
   to help the eye compare baseline position across blocks in a screenshot; it is NOT a
   measured baseline. See <code>measure.html</code> / console output for objective
   Canvas-based ink bounding-box measurements.
+</p>
+<p style="font-family:sans-serif;font-size:13px;color:#a00;max-width:900px;">
+  <b>Note:</b> this page intentionally does <b>not</b> load Google Fonts over the live network
+  (no <code>&lt;link&gt;</code> to fonts.googleapis.com). In this sandboxed environment, Chromium
+  cannot reach fonts.googleapis.com/fonts.gstatic.com through the required egress proxy (unlike
+  <code>curl</code>, which does use it) — the request fails with <code>net::ERR_CONNECTION_RESET</code>.
+  When that happens, <code>font-family: 'Noto Serif TC'</code> silently resolves to nothing, CSS falls
+  through to the generic <code>serif</code> keyword, and Chromium's own system-fallback logic then
+  substitutes <b>WenQuanYi Zen Hei</b> — an unrelated, pre-installed sans-serif Chinese font — for the
+  CJK characters. An earlier version of this page did include that live-network variant, and it was
+  silently rendering WenQuanYi Zen Hei instead of Noto Serif TC (verified by pixel-diffing an explicit
+  `font-family: 'WenQuanYi Zen Hei'` render against it — identical). That variant has been removed.
+  "Self-hosted Google woff2" below uses the exact same bytes downloaded from
+  fonts.gstatic.com via <code>curl</code> (SHA-256 recorded in <code>data/sha256.tsv</code>), so it is
+  not a workaround — it is the same font, just loaded from a local copy instead of over a network path
+  this sandbox cannot complete.
 </p>
 
 <div id="results" style="font-family:monospace;font-size:12px;white-space:pre;"></div>
 
 <script>
 const FAMILIES = [
-  { key: 'gf-cdn',        label: '1. Google Fonts CDN (network, family: "Noto Serif TC")', family: 'Noto Serif TC' },
-  { key: 'gf-selfhost',   label: '2. Self-hosted Google woff2 (identical bytes, local)',    family: 'GF Self-host Serif TC' },
-  { key: 'adobe-full',    label: '3. Adobe Source Han Serif TC — full font (no subsetting)', family: 'Adobe SHS TC Full' },
-  { key: 'adobe-keep',    label: '4. Adobe Source Han Serif TC — pyftsubset, tables kept explicitly', family: 'Adobe SHS TC SubsetKeep' },
-  { key: 'adobe-default', label: '5. Adobe Source Han Serif TC — pyftsubset, default params', family: 'Adobe SHS TC SubsetDefault' },
+  { key: 'gf-selfhost',   label: '1. Self-hosted Google woff2 (byte-identical to fonts.gstatic.com, verified by SHA-256)', family: 'GF Self-host Serif TC' },
+  { key: 'adobe-full',    label: '2. Adobe Source Han Serif TC — full font (no subsetting)', family: 'Adobe SHS TC Full' },
+  { key: 'adobe-keep',    label: '3. Adobe Source Han Serif TC — pyftsubset, tables kept explicitly', family: 'Adobe SHS TC SubsetKeep' },
+  { key: 'adobe-default', label: '4. Adobe Source Han Serif TC — pyftsubset, default params', family: 'Adobe SHS TC SubsetDefault' },
 ];
 
 const STRINGS = [
@@ -138,8 +152,8 @@ for (const fam of FAMILIES) {
   container.insertBefore(section, document.getElementById('results'));
 }
 
-// Wait for all @font-face to load (including the network Google Fonts CDN
-// family) then run canvas-based ink bounding box measurements.
+// Wait for all (local) @font-face rules to load, then run canvas-based ink
+// bounding box measurements.
 async function measure() {
   await document.fonts.ready;
   // give the network 'Noto Serif TC' family (loaded via <link> in the parent
