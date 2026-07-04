@@ -45,7 +45,7 @@ FONT_DIR = WORK_DIR / "font"
 KAGE_ENGINE_DIR = WORK_DIR / "kage-engine"
 KAGE_DATA_PATH = WORK_DIR / "kage-data.tsv"
 KAGE_DATA_META_PATH = WORK_DIR / "kage-data.tsv.meta"
-KAGE_DATA_CACHE_VERSION = "3"
+KAGE_DATA_CACHE_VERSION = "4"
 KAGE_RENDERER = ROOT / "render_glyphwiki_svgs.js"
 
 GLYPHWIKI_DUMP_URL = "https://glyphwiki.org/dump.tar.gz"
@@ -102,7 +102,7 @@ CJK_RANGES = (
     (0x323B0, 0x3347F),
 )
 
-VERSIONED_REF_RE = re.compile(r":([^:$\s]+@[0-9]+)(?=[:$])")
+VERSIONED_REF_RE = re.compile(r":([^:$\s]+@[0-9]+)(?=[:$]|$)")
 
 
 def log(message: str) -> None:
