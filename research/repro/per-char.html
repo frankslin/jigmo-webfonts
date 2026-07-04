@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>per-character baseline check</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap">
+<style>
+  @font-face {
+    font-family: 'Adobe SHS TC Full';
+    src: url('fonts/adobe-full.woff2') format('woff2');
+  }
+  body { font-size: 64px; margin: 20px; font-family: monospace; }
+</style>
+</head>
+<body>
+<div id="out" style="white-space:pre; font-size: 13px;"></div>
+<script>
+const CHARS = ['你', '好', '臺', '灣', '漢', '字', '測', '試', 'H', 'g', 'p', 'x'];
+const FAMILIES = ['Noto Serif TC', 'Adobe SHS TC Full'];
+
+async function run() {
+  await document.fonts.ready;
+  const canvas = document.createElement('canvas');
+  canvas.width = 200; canvas.height = 220;
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+  function inkBBox(ch, family, size) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = `${size}px "${family}", serif`;
+    ctx.textBaseline = 'alphabetic';
+    const baselineY = 140;
+    ctx.fillStyle = '#000';
+    ctx.fillText(ch, 10, baselineY);
+    const img = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let top = null, bottom = null, left = null, right = null;
+    for (let y = 0; y < canvas.height; y++) {
+      for (let x = 0; x < canvas.width; x++) {
+        if (img[(y * canvas.width + x) * 4 + 3] > 10) {
+          if (top === null) top = y;
+          bottom = y;
+          if (left === null || x < left) left = x;
+          if (right === null || x > right) right = x;
+        }
+      }
+    }
+    if (top === null) return null;
+    return { top: top - baselineY, bottom: bottom - baselineY, height: bottom - top + 1 };
+  }
+
+  const results = [];
+  for (const fam of FAMILIES) {
+    for (const ch of CHARS) {
+      const r = inkBBox(ch, fam, 64);
+      results.push({ family: fam, char: ch, ...r });
+    }
+  }
+
+  let text = 'family\tchar\ttop\tbottom\theight\n';
+  for (const r of results) {
+    text += `${r.family}\t${r.char}\t${r.top}\t${r.bottom}\t${r.height}\n`;
+  }
+  document.getElementById('out').textContent = text;
+  console.log('PERCHAR_RESULTS_JSON:' + JSON.stringify(results));
+  document.title += ' [done]';
+}
+run();
+</script>
+</body>
+</html>
