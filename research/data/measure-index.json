@@ -1,0 +1,72 @@
+[
+  {
+    "family": "gf-cdn",
+    "text": "你好臺灣漢字測試",
+    "topFromBaseline": -55,
+    "bottomFromBaseline": 9,
+    "inkHeight": 65
+  },
+  {
+    "family": "gf-cdn",
+    "text": "Hgpx",
+    "topFromBaseline": -42,
+    "bottomFromBaseline": 13,
+    "inkHeight": 56
+  },
+  {
+    "family": "gf-selfhost",
+    "text": "你好臺灣漢字測試",
+    "topFromBaseline": -55,
+    "bottomFromBaseline": 5,
+    "inkHeight": 61
+  },
+  {
+    "family": "gf-selfhost",
+    "text": "Hgpx",
+    "topFromBaseline": -47,
+    "bottomFromBaseline": 16,
+    "inkHeight": 64
+  },
+  {
+    "family": "adobe-full",
+    "text": "你好臺灣漢字測試",
+    "topFromBaseline": -55,
+    "bottomFromBaseline": 6,
+    "inkHeight": 62
+  },
+  {
+    "family": "adobe-full",
+    "text": "Hgpx",
+    "topFromBaseline": -47,
+    "bottomFromBaseline": 16,
+    "inkHeight": 64
+  },
+  {
+    "family": "adobe-keep",
+    "text": "你好臺灣漢字測試",
+    "topFromBaseline": -55,
+    "bottomFromBaseline": 6,
+    "inkHeight": 62
+  },
+  {
+    "family": "adobe-keep",
+    "text": "Hgpx",
+    "topFromBaseline": -47,
+    "bottomFromBaseline": 16,
+    "inkHeight": 64
+  },
+  {
+    "family": "adobe-default",
+    "text": "你好臺灣漢字測試",
+    "topFromBaseline": -55,
+    "bottomFromBaseline": 6,
+    "inkHeight": 62
+  },
+  {
+    "family": "adobe-default",
+    "text": "Hgpx",
+    "topFromBaseline": -47,
+    "bottomFromBaseline": 16,
+    "inkHeight": 64
+  }
+]

@@ -5,3 +5,11 @@ dist-variants/
 __pycache__/
 *.pyc
 .DS_Store
+
+# research/: downloaded third-party font binaries and generated ttx dumps are
+# reproducible via research/scripts/*.sh + the URLs/hashes in research/data/,
+# so they're excluded to keep the repo small. Reports, scripts, tsv/json/css
+# data, repro HTML, and screenshots are tracked.
+research/fonts/
+research/repro/fonts/
+research/work/

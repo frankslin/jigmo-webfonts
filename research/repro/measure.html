@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>pyftsubset variable-control measurements</title>
+<style>
+  @font-face { font-family: 'Exp-A-default';    src: url('fonts/A-default.woff2') format('woff2'); }
+  @font-face { font-family: 'Exp-B-keep-base';  src: url('fonts/B-keep-base.woff2') format('woff2'); }
+  @font-face { font-family: 'Exp-C-drop-base';  src: url('fonts/C-drop-base.woff2') format('woff2'); }
+  @font-face { font-family: 'Exp-D-altered-metrics'; src: url('fonts/D-altered-metrics.woff2') format('woff2'); }
+  @font-face { font-family: 'Exp-E-use-typo-metrics'; src: url('fonts/E-use-typo-metrics.woff2') format('woff2'); }
+  @font-face { font-family: 'Exp-E2-use-typo-metrics-v4'; src: url('fonts/E2-use-typo-metrics-v4.woff2') format('woff2'); }
+  @font-face { font-family: 'Adobe-Full'; src: url('fonts/adobe-full.woff2') format('woff2'); }
+
+  body { font-size: 64px; margin: 20px; }
+  .line { line-height: normal; display: inline-block; background: #eef; }
+  #out { font-family: monospace; font-size: 13px; white-space: pre; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div id="rows"></div>
+<div id="out"></div>
+<script>
+const VARIANTS = [
+  'Adobe-Full',
+  'Exp-A-default',
+  'Exp-B-keep-base',
+  'Exp-C-drop-base',
+  'Exp-D-altered-metrics',
+  'Exp-E-use-typo-metrics',
+  'Exp-E2-use-typo-metrics-v4',
+];
+const TEXT = '你好臺灣漢字Hgpx';
+
+const rowsDiv = document.getElementById('rows');
+const spans = {};
+for (const v of VARIANTS) {
+  const wrap = document.createElement('div');
+  const span = document.createElement('span');
+  span.className = 'line';
+  span.style.fontFamily = `'${v}', serif`;
+  span.textContent = TEXT;
+  wrap.appendChild(document.createTextNode(v + ': '));
+  wrap.appendChild(span);
+  rowsDiv.appendChild(wrap);
+  spans[v] = span;
+}
+
+async function run() {
+  await document.fonts.ready;
+  // extra rAF to ensure layout has settled after font swap
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+  const canvas = document.createElement('canvas');
+  canvas.width = 900; canvas.height = 220;
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  function inkBBox(text, family, size) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = `${size}px "${family}", serif`;
+    ctx.textBaseline = 'alphabetic';
+    const baselineY = 140;
+    ctx.fillStyle = '#000';
+    ctx.fillText(text, 10, baselineY);
+    const img = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let top = null, bottom = null;
+    for (let y = 0; y < canvas.height; y++) {
+      let hasInk = false;
+      for (let x = 0; x < canvas.width; x++) {
+        if (img[(y * canvas.width + x) * 4 + 3] > 10) { hasInk = true; break; }
+      }
+      if (hasInk) { if (top === null) top = y; bottom = y; }
+    }
+    if (top === null) return null;
+    return { topFromBaseline: top - baselineY, bottomFromBaseline: bottom - baselineY, inkHeight: bottom - top + 1 };
+  }
+
+  const results = [];
+  for (const v of VARIANTS) {
+    const rect = spans[v].getBoundingClientRect();
+    const ink = inkBBox(TEXT, v, 64);
+    results.push({ variant: v, lineBoxHeight: rect.height, ink });
+  }
+
+  let text = 'variant\tlineBoxHeight(px)\tinkTopFromBaseline\tinkBottomFromBaseline\tinkHeight\n';
+  for (const r of results) {
+    text += `${r.variant}\t${r.lineBoxHeight}\t${r.ink ? r.ink.topFromBaseline : 'NA'}\t${r.ink ? r.ink.bottomFromBaseline : 'NA'}\t${r.ink ? r.ink.inkHeight : 'NA'}\n`;
+  }
+  document.getElementById('out').textContent = text;
+  window.__measureResults = results;
+  console.log('MEASURE2_RESULTS_JSON:' + JSON.stringify(results));
+  document.title = document.title + ' [done]';
+}
+run();
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+[
+  {
+    "variant": "Adobe-Full",
+    "lineBoxHeight": 92,
+    "ink": {
+      "topFromBaseline": -55,
+      "bottomFromBaseline": 16,
+      "inkHeight": 72
+    }
+  },
+  {
+    "variant": "Exp-A-default",
+    "lineBoxHeight": 92,
+    "ink": {
+      "topFromBaseline": -55,
+      "bottomFromBaseline": 16,
+      "inkHeight": 72
+    }
+  },
+  {
+    "variant": "Exp-B-keep-base",
+    "lineBoxHeight": 92,
+    "ink": {
+      "topFromBaseline": -55,
+      "bottomFromBaseline": 16,
+      "inkHeight": 72
+    }
+  },
+  {
+    "variant": "Exp-C-drop-base",
+    "lineBoxHeight": 92,
+    "ink": {
+      "topFromBaseline": -55,
+      "bottomFromBaseline": 16,
+      "inkHeight": 72
+    }
+  },
+  {
+    "variant": "Exp-D-altered-metrics",
+    "lineBoxHeight": 103,
+    "ink": {
+      "topFromBaseline": -55,
+      "bottomFromBaseline": 16,
+      "inkHeight": 72
+    }
+  },
+  {
+    "variant": "Exp-E-use-typo-metrics",
+    "lineBoxHeight": 64,
+    "ink": {
+      "topFromBaseline": -55,
+      "bottomFromBaseline": 16,
+      "inkHeight": 72
+    }
+  },
+  {
+    "variant": "Exp-E2-use-typo-metrics-v4",
+    "lineBoxHeight": 64,
+    "ink": {
+      "topFromBaseline": -55,
+      "bottomFromBaseline": 16,
+      "inkHeight": 72
+    }
+  }
+]

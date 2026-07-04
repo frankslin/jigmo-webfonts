@@ -1,0 +1,11 @@
+file	OS/2	hhea	BASE	vhea	vmtx	name	cmap	head	maxp	GSUB	GPOS	GDEF	STAT	glyf	loca	CFF	prep	gasp	fpgm	cvt	DSIG	VORG
+SourceHanSansTC-Regular.otf	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	1	0	0	0	0	1	1
+SourceHanSerifTC-Regular.otf	1	1	1	1	1	1	1	1	1	1	1	1	0	0	0	1	0	0	0	0	1	1
+noto-sans-sc-cjk.woff2	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1	0	1	1	0	0	0	0
+noto-sans-sc-latin.woff2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1	0	0	0	0
+noto-sans-tc-cjk.woff2	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1	0	1	1	0	0	0	0
+noto-sans-tc-latin.woff2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1	0	0	0	0
+noto-serif-sc-cjk.woff2	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1	0	1	1	0	0	0	0
+noto-serif-sc-latin.woff2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1	0	0	0	0
+noto-serif-tc-cjk.woff2	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1	0	1	1	0	0	0	0
+noto-serif-tc-latin.woff2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1	0	0	0	0

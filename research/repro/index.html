@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>Noto CJK vs Source Han — baseline/line-height repro</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap">
+<style>
+  @font-face {
+    font-family: 'GF Self-host Serif TC';
+    src: url('fonts/google-serif-tc-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'GF Self-host Serif TC';
+    src: url('fonts/google-serif-tc-cjk.117.woff2') format('woff2');
+    unicode-range: U+3c, U+d7, U+300e, U+4e4e, U+4e82, U+4e92, U+4ec1, U+4ecd, U+4f48, U+4f53, U+4fb5, U+5012, U+502b, U+522a, U+52dd, U+52ff, U+532f, U+53eb, U+53f3, U+5409, U+5433, U+5496, U+54c8, U+554a, U+5561, U+5594, U+559d, U+56b4, U+56fa, U+5713, U+5750, U+57df, U+584a, U+58c7, U+58de, U+593e, U+5976, U+59d0, U+59d4, U+5a66, U+5b85, U+5b88, U+5ba3, U+5bae, U+5bbf, U+5bdf, U+5c01, U+5c04, U+5c3a, U+5c3e, U+5c4f, U+5ddd-5dde, U+5de8, U+5e63, U+5e7c, U+5e8a, U+5eda, U+5ef3, U+5ef6, U+5f48, U+6015, U+6025, U+602a, U+6050, U+6069, U+60e1, U+6162, U+6176, U+61c2, U+6200, U+6263, U+6279, U+6297, U+62b1, U+62bd, U+62ec, U+6311, U+6377, U+6388-6389, U+638c, U+63a2, U+63f4, U+641e, U+6436, U+64c1, U+6551, U+6557, U+6563, U+6696, U+66b4, U+66f2, U+6751, U+675f, U+676f, U+6790, U+6838, U+684c, U+68d2, U+6982, U+699c, U+69ae, U+69cb, U+6a39, U+6a4b, U+6b66, U+6bd2, U+6cb3, U+6ce1, U+6d3e, U+6de8, U+6ed1, U+6f22, U+6f54, U+6fc0, U+6fdf, U+719f, U+71c8, U+7236, U+7259, U+72d7, U+7389, U+73e0, U+745e, U+751a, U+7532-7533, U+7562, U+7591, U+75c5, U+75db, U+7686, U+76d2, U+76db, U+76df, U+76e3, U+7701, U+7761, U+786c, U+7981, U+79cb, U+79d2, U+79fb, U+7a81, U+7a97, U+7aef, U+7b26, U+7b80, U+7c64, U+7d0d, U+7d14, U+7d2f, U+7dca, U+7df4, U+7e54, U+7e6b, U+7f3a, U+8033, U+804a, U+805a, U+81a0, U+81e8, U+8212, U+821e, U+82e6, U+8336, U+8449, U+84cb, U+84ee, U+85e5, U+8607, U+888b, U+8a13, U+8a5e, U+8aa0, U+8aa4, U+8ab0, U+8ab2, U+8ac7, U+8b66, U+8c6a, U+8c93, U+8c9d, U+8de8, U+8f2a, U+8fb2, U+906d, U+907f, U+90a6, U+9109, U+9192, U+91cb, U+91dd, U+964d, U+9686, U+968e, U+9694, U+969c, U+96de, U+96e8, U+96ea, U+96f7, U+975c, U+9760, U+978b, U+9858, U+9918, U+9aee, U+9ebb, U+ff0e-ff0f, U+ff5c;
+  }
+  @font-face {
+    font-family: 'GF Self-host Serif TC';
+    src: url('fonts/google-serif-tc-cjk.119.woff2') format('woff2');
+    unicode-range: U+23-25, U+3d, U+2026, U+4e03, U+4e45, U+4e5d, U+4eae, U+4ed4, U+4ed8, U+4f01, U+4f11, U+4f3c, U+4f8b, U+4fc2, U+5019, U+505c, U+50c5, U+5145, U+51b7, U+5207, U+521d, U+525b, U+5287, U+52e2, U+535a, U+537b, U+5426, U+542b, U+5438, U+5462, U+54ea, U+555f, U+5566, U+5584, U+5609, U+570d, U+571f, U+5747, U+5802, U+58d3, U+591c, U+5920, U+5922, U+5957, U+5979, U+5a92, U+5abd, U+5b63, U+5b69, U+5b83, U+5b9c, U+5bb3, U+5bc4, U+5bf5, U+5c3c, U+5c40, U+5c4b, U+5c64, U+5cf6, U+5de6, U+5e0c, U+5e55, U+5eab, U+5ead, U+5ee0, U+5f85, U+5f8b, U+5fa9, U+5fd7-5fd8, U+5ff5, U+600e, U+6298, U+62db, U+62ff, U+639b, U+63a7, U+642d, U+6469, U+64ad, U+651d, U+653b, U+65b7, U+65cf, U+665a, U+666e, U+66fe, U+6728, U+674e, U+67b6, U+6821, U+6839, U+6843, U+6a94, U+6b50, U+6b62, U+6b72, U+6b7b, U+6bcd, U+6bdb, U+6c38, U+6c7a, U+6c7d, U+6c99, U+6cb9, U+6ce2, U+6cf0, U+6d17, U+6d32, U+6e2c, U+6fb3, U+7206, U+723e, U+725b, U+734e, U+7387, U+73ed, U+7565, U+7570, U+76ca, U+76e4, U+773e, U+77ed, U+77f3, U+7814, U+7834, U+7968, U+79d8, U+7a76, U+7a7f, U+7b11, U+7b46, U+7b54, U+7bc4, U+7d19, U+7d20, U+7d22, U+7d42, U+7d55, U+7e7c, U+7f85, U+7ffb, U+8077, U+8089, U+80cc, U+81c9, U+81f4, U+81fa, U+820a, U+822c, U+826f, U+85cd, U+86cb, U+88dc, U+8986, U+8a0e, U+8a2a, U+8a73, U+8a8c, U+8b1b, U+8b9a, U+8c50, U+8c61, U+8ca0, U+8cde, U+8cfd, U+8d8a, U+8df3, U+8e64, U+8ecd, U+8edf, U+8f38, U+8ff7, U+9000, U+9047, U+9060, U+90f5, U+9152, U+91ce, U+9280, U+9418, U+9435, U+9589, U+9592, U+9678, U+967d, U+968a, U+96aa, U+96c5, U+96d6, U+96dc, U+96f6, U+9732, U+9748, U+9802, U+9806, U+9808, U+9818, U+983b, U+984d, U+9867, U+98db, U+98f2, U+98fe, U+9a5a, U+9b06, U+9b5a, U+9bae, U+9e97, U+ff1b, U+ff5e;
+  }
+  @font-face {
+    font-family: 'GF Self-host Serif TC';
+    src: url('fonts/google-serif-tc-cjk.120.woff2') format('woff2');
+    unicode-range: U+26, U+40, U+5f, U+4e14, U+4e9e, U+4ec0, U+4f4e-4f4f, U+4f73, U+4fee, U+503c, U+5047, U+514b, U+516b, U+516d, U+5178, U+520a, U+5236, U+5343, U+5347, U+534a, U+5370, U+53cd, U+53e4, U+53e6, U+53f2, U+5403, U+5411, U+5427, U+5468, U+5473, U+547d, U+552e, U+55ce, U+5740, U+57ce, U+5883, U+589e, U+5931, U+5947, U+59cb, U+5a1b, U+5b58, U+5b98, U+5ba4, U+5bc6, U+5bcc, U+5beb, U+5bf6, U+5c45, U+5c6c, U+5dee, U+5df4, U+5e03, U+5e33, U+5e6b, U+5e7e, U+5e8f, U+5e95, U+5ea7, U+5f15, U+5f62, U+5f69, U+5f80, U+5fae, U+5fb7, U+601d, U+60e0, U+614b, U+6230, U+6236, U+623f, U+628a, U+6295, U+62c9, U+6309, U+63db, U+64c7, U+64ca, U+64da, U+652f, U+6545, U+6548, U+65af, U+65e9, U+6625, U+666f, U+667a, U+670b, U+671b, U+6750, U+677f, U+6848, U+6975, U+6a13, U+6a21, U+6aa2, U+6b65, U+6b77, U+6bb5, U+6cc1, U+6ce8, U+6df1, U+6e90, U+6e96, U+6eab, U+6f14, U+6f2b, U+700f, U+706b, U+724c, U+72c0, U+7368, U+7372, U+74b0, U+756b, U+76ae, U+773c, U+78ba, U+78bc, U+798f, U+79ae, U+7a4d, U+7ae5, U+7b56, U+7b97, U+7bb1, U+7bc7, U+7c73, U+7c89, U+7d00, U+7d30, U+7d39, U+7d72, U+7dad, U+7e8c, U+7f6e, U+7fa4, U+7fa9, U+7fd2, U+8003, U+807d, U+80a1, U+80b2, U+8166, U+8208-8209, U+82e5, U+843d, U+85cf, U+85dd, U+862d, U+8857, U+8863, U+88e1, U+89ba, U+89d2, U+8a31, U+8a62, U+8a66, U+8a72, U+8abf, U+8b1d, U+8b58, U+8b70, U+8b80, U+8ca1, U+8ca8, U+8cac, U+8cbc, U+8d70, U+8da3, U+8db3, U+8ddf, U+8f03, U+8f15, U+8f2f, U+8fa6, U+8fce, U+8ffd, U+900f, U+9031, U+9069, U+908a, U+91ab, U+91cc, U+92b7, U+9322, U+932f, U+9375, U+9632, U+963f, U+9644, U+9662, U+9673, U+96a8, U+96c4, U+96d9, U+96e2-96e3, U+96f2, U+9752, U+97d3, U+97ff, U+9805, U+9810, U+986f, U+990a, U+9910, U+9928, U+9ec3, U+9ed1, U+9f8d;
+  }
+  @font-face {
+    font-family: 'GF Self-host Serif TC';
+    src: url('fonts/google-serif-tc-cjk.122.woff2') format('woff2');
+    unicode-range: U+d, U+2b, U+7c, U+a0, U+a9, U+300c-300d, U+4e09, U+4e3b, U+4e4b, U+4e5f, U+4e86, U+4e8b-4e8c, U+4eab, U+4ed6, U+4ee3-4ee4, U+4ef6, U+4f1a, U+4f4d, U+4f60, U+4f7f, U+4f86, U+4fdd, U+4fe1, U+5011, U+50b3, U+5149, U+5167, U+5176, U+518d, U+5229, U+524d, U+529b, U+52a0, U+52d9, U+5316-5317, U+5340, U+539f, U+53ca-53cb, U+5408, U+540c-540d, U+544a, U+548c, U+54c1, U+54e1, U+5546, U+554f, U+55ae, U+56de, U+5716, U+5831, U+5834, U+5916, U+5929, U+5973, U+597d, U+5982, U+5b57, U+5b78, U+5b89, U+5b8c, U+5b9a, U+5ba2, U+5bb9, U+5be6, U+5c07-5c08, U+5c0d, U+5c31, U+5de5, U+5df2, U+5e02, U+5e38, U+5e73-5e74, U+5ea6, U+5f0f, U+5f71, U+5f8c, U+5f97, U+5feb, U+6027, U+60c5, U+60f3, U+610f, U+611b, U+611f, U+61c9, U+6210, U+6216, U+6240, U+624b, U+63a8, U+63d0, U+641c, U+6536, U+6578, U+6599, U+65b9, U+660e, U+661f, U+662d, U+66f4, U+670d, U+671f, U+6771, U+679c, U+682a, U+683c, U+689d, U+696d, U+6a02, U+6a5f, U+6b0a, U+6b21, U+6b3e, U+6b64, U+6c23, U+6c34, U+6c92, U+6cbb, U+6cd5, U+6d3b, U+7063, U+7121, U+71b1, U+7247-7248, U+7269, U+7279, U+73fe, U+7406, U+7522, U+7576, U+767b, U+76ee, U+76f8, U+770b, U+771f, U+77e5, U+793e, U+7a0b, U+7acb, U+7ad9, U+7b2c, U+7b49, U+7cbe, U+7d50, U+7d61, U+7d93, U+7dda, U+7f8e, U+8005, U+806f, U+80fd, U+81ea, U+8207, U+8272, U+865f, U+8868, U+8981, U+898b, U+8996, U+8a00, U+8a08, U+8a0a, U+8a18, U+8a2d, U+8a71, U+8aaa, U+8acb, U+8cbb, U+8cc7, U+8d77, U+8d85, U+8def, U+8eab, U+8eca, U+8f49, U+9019-901a, U+9023, U+9032, U+904a-904b, U+904e, U+9053, U+9078, U+9084, U+90e8, U+90fd, U+91cd, U+91d1, U+9577, U+9580, U+9593, U+9762, U+982d, U+984c, U+985e, U+9996, U+9ad4, U+9ad8, U+9ede, U+ff01, U+ff08-ff09, U+ff1f;
+  }
+  @font-face {
+    font-family: 'Adobe SHS TC Full';
+    src: url('fonts/adobe-full.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Adobe SHS TC SubsetKeep';
+    src: url('fonts/adobe-subset-keep-tables.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Adobe SHS TC SubsetDefault';
+    src: url('fonts/adobe-subset-default.woff2') format('woff2');
+  }
+
+  html, body { margin: 0; padding: 0; background: #fff; color: #000; }
+  body { font-size: 64px; line-height: normal; padding: 0 20px; }
+  .lh-normal { line-height: normal; }
+  .lh-1 { line-height: 1; }
+  .lh-1_2 { line-height: 1.2; }
+
+  .variant { margin: 40px 0 60px; border-top: 3px solid #000; padding-top: 8px; }
+  .variant h2 { font-family: sans-serif; font-size: 16px; margin: 0 0 4px; color: #06c; }
+  .variant .meta { font-family: monospace; font-size: 12px; color: #666; margin-bottom: 10px; }
+
+  .row { position: relative; margin: 20px 0; }
+  .row .label { position: absolute; left: -0px; top: -18px; font-family: monospace; font-size: 11px; color: #999; }
+
+  /* Baseline ruler: a horizontal red line drawn at a fixed distance from the
+     top of each .rulerwrap, so the same pixel row can be compared across
+     variants when the page is screenshotted. */
+  .rulerwrap { position: relative; display: inline-block; }
+  .rulerwrap::after {
+    content: "";
+    position: absolute;
+    left: -10px; right: -400px;
+    top: 48px; /* approx alphabetic-baseline offset guide, purely visual */
+    border-top: 1px solid red;
+    pointer-events: none;
+  }
+
+  .test { margin: 4px 0; white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<h1 style="font-family:sans-serif;font-size:20px;">Repro: Google Fonts Noto Serif TC vs Adobe Source Han Serif TC</h1>
+<p style="font-family:sans-serif;font-size:13px;color:#333;max-width:900px;">
+  Each block below renders the same three test strings in five font sources, at three
+  line-height settings. A thin red guide line is drawn at a fixed offset per block purely
+  to help the eye compare baseline position across blocks in a screenshot; it is NOT a
+  measured baseline. See <code>measure.html</code> / console output for objective
+  Canvas-based ink bounding-box measurements.
+</p>
+
+<div id="results" style="font-family:monospace;font-size:12px;white-space:pre;"></div>
+
+<script>
+const FAMILIES = [
+  { key: 'gf-cdn',        label: '1. Google Fonts CDN (network, family: "Noto Serif TC")', family: 'Noto Serif TC' },
+  { key: 'gf-selfhost',   label: '2. Self-hosted Google woff2 (identical bytes, local)',    family: 'GF Self-host Serif TC' },
+  { key: 'adobe-full',    label: '3. Adobe Source Han Serif TC — full font (no subsetting)', family: 'Adobe SHS TC Full' },
+  { key: 'adobe-keep',    label: '4. Adobe Source Han Serif TC — pyftsubset, tables kept explicitly', family: 'Adobe SHS TC SubsetKeep' },
+  { key: 'adobe-default', label: '5. Adobe Source Han Serif TC — pyftsubset, default params', family: 'Adobe SHS TC SubsetDefault' },
+];
+
+const STRINGS = [
+  'ABCxyz 你好臺灣漢字',
+  'Hgpx 你好',
+  'Source Han Serif TC / Noto Serif TC 混排測試',
+];
+
+const LH = [ ['lh-normal', 'line-height: normal'], ['lh-1', 'line-height: 1'], ['lh-1_2', 'line-height: 1.2'] ];
+
+const container = document.body;
+for (const fam of FAMILIES) {
+  const section = document.createElement('div');
+  section.className = 'variant';
+  section.id = 'variant-' + fam.key;
+  const h2 = document.createElement('h2');
+  h2.textContent = fam.label;
+  section.appendChild(h2);
+  const meta = document.createElement('div');
+  meta.className = 'meta';
+  meta.textContent = 'font-family: ' + fam.family;
+  section.appendChild(meta);
+
+  for (const [cls, lhLabel] of LH) {
+    const row = document.createElement('div');
+    row.className = 'row';
+    const label = document.createElement('div');
+    label.className = 'label';
+    label.textContent = lhLabel;
+    row.appendChild(label);
+    for (const str of STRINGS) {
+      const wrap = document.createElement('div');
+      wrap.className = 'rulerwrap';
+      const p = document.createElement('div');
+      p.className = 'test ' + cls;
+      p.style.fontFamily = "'" + fam.family + "', serif";
+      p.textContent = str;
+      wrap.appendChild(p);
+      row.appendChild(wrap);
+      row.appendChild(document.createElement('br'));
+    }
+    section.appendChild(row);
+  }
+  container.insertBefore(section, document.getElementById('results'));
+}
+
+// Wait for all @font-face to load (including the network Google Fonts CDN
+// family) then run canvas-based ink bounding box measurements.
+async function measure() {
+  await document.fonts.ready;
+  // give the network 'Noto Serif TC' family (loaded via <link> in the parent
+  // page, see index.html usage) a moment in case it wasn't in document.fonts yet
+  const results = [];
+  const canvas = document.createElement('canvas');
+  canvas.width = 900;
+  canvas.height = 200;
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+  function inkBBox(text, family, size) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = `${size}px "${family}", serif`;
+    ctx.textBaseline = 'alphabetic';
+    const baselineY = 120;
+    ctx.fillStyle = '#000';
+    ctx.fillText(text, 10, baselineY);
+    const img = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let top = null, bottom = null;
+    for (let y = 0; y < canvas.height; y++) {
+      let hasInk = false;
+      for (let x = 0; x < canvas.width; x++) {
+        const idx = (y * canvas.width + x) * 4 + 3; // alpha channel
+        if (img[idx] > 10) { hasInk = true; break; }
+      }
+      if (hasInk) {
+        if (top === null) top = y;
+        bottom = y;
+      }
+    }
+    if (top === null) return null;
+    return {
+      topFromBaseline: top - baselineY,
+      bottomFromBaseline: bottom - baselineY,
+      inkHeight: bottom - top + 1,
+    };
+  }
+
+  for (const fam of FAMILIES) {
+    for (const str of ['你好臺灣漢字測試', 'Hgpx']) {
+      const r = inkBBox(str, fam.family, 64);
+      results.push({ family: fam.key, text: str, ...r });
+    }
+  }
+
+  const out = document.getElementById('results');
+  let text = 'family\ttext\ttopFromBaseline\tbottomFromBaseline\tinkHeight\n';
+  for (const r of results) {
+    text += `${r.family}\t${JSON.stringify(r.text)}\t${r.topFromBaseline}\t${r.bottomFromBaseline}\t${r.inkHeight}\n`;
+  }
+  out.textContent = text;
+  window.__measureResults = results;
+  console.log('MEASURE_RESULTS_JSON:' + JSON.stringify(results));
+  document.title = document.title + ' [measured]';
+}
+measure();
+</script>
+</body>
+</html>
